@@ -4,9 +4,9 @@
 module.exports = {
   siteMetadata: {
     title: `cesarolvr`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.cesarolvr.com`
   },
-  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
+  plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/icon.png"
