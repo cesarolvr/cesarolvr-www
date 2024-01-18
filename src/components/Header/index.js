@@ -3,15 +3,32 @@ import * as React from "react";
 // Components
 import Container from "../Container";
 
-const headerStyles = {
-  background: "yellow",
-  padding: "20px"
-};
+// Styles
+import "./index.scss";
 
 const Header = () => {
   return (
-    <header style={headerStyles}>
-      <Container>aaa</Container>
+    <header className="header">
+      <Container>
+        <div>
+          <a
+            className="header-logo"
+            href="https://cesarolvr.com"
+          >
+            cesarolvr.com
+          </a>
+          <div className="header-control">
+            <p>command</p>
+            <p>+</p>
+            <p>P</p>
+            <p>👀</p>
+          </div>
+          <ul className="header-list">
+            <li><a href="/about">about</a></li>
+            <li><a href="/recruiter">for you, recruiter</a></li>
+          </ul>
+        </div>
+      </Container>
     </header>
   );
 };
