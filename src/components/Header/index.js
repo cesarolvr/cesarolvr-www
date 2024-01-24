@@ -6,31 +6,25 @@ import Container from "../Container";
 
 // Styles
 import "./index.scss";
+import Shortcut from "../Shortcut";
 
-const Header = () => {
+const Header = ({ hideShortcut }) => {
   return (
     <header className="header">
       <Container>
-        <div>
-          <a className="header-logo" href="https://cesarolvr.com">
-            cesarolvr.com
-          </a>
-          <div className="header-control">
-            <p>command</p>
-            <p>+</p>
-            <p>P</p>
-            <p>👀</p>
-          </div>
-          <ul className="header-list">
-            <li>
-              <Link to="/about">about</Link>
-            </li>
-
-            <li>
-              <Link to="/recruiter">for recruiters</Link>
-            </li>
-          </ul>
+        <div className="header-logo">
+          <Link to="/">cesarolvr.com</Link>
         </div>
+        {!hideShortcut && <Shortcut text="👀" />}
+        <ul className="header-list">
+          <li>
+            <Link to="/about">about</Link>
+          </li>
+
+          <li>
+            <Link to="/recruiter">for recruiters</Link>
+          </li>
+        </ul>
       </Container>
     </header>
   );

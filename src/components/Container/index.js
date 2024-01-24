@@ -7,7 +7,7 @@ const containerStyles = {
 };
 
 const Container = ({ children }) => {
-  return <div style={containerStyles}>{children}</div>;
+  return <div className="container" style={containerStyles}>{children}</div>;
 };
 
 export default Container;

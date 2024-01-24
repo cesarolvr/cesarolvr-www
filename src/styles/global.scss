@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: green;
+  background-color: #282c32;
+  color: white;
   font-family: "Fira Code", monospace;
   width: 100vw;
   height: 100vh;
@@ -9,14 +14,52 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
+  font-size: 9px;
+  font-weight: lighter;
 }
 
-#___gatsby {
-  width: 100%;
-  height: 100%;
+#___gatsby, #gatsby-focus-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+#gatsby-focus-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 main {
   display: flex;
   justify-content: center;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+}
+
+p, a {
+  color: #ABABAB;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 10px 0 5px;
+}
+
+h2 {
+  font-size: 12px;
+  font-weight: lighter;
+  margin: 0 0 10px;
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
 }

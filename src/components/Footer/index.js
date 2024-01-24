@@ -10,18 +10,18 @@ const Footer = () => {
   return (
     <footer className="footer">
       <Container>
-        <ul>
-          <li className="header-logo" href="mailto:jn@gmail.com">
-            email
+        <ul className="list">
+          <li className="header-logo">
+            <a href="mailto:jn@gmail.com">email</a>
           </li>
-          <li className="header-logo" href="mailto:jn@gmail.com">
-            linkedin
+          <li className="header-logo">
+            <a href="mailto:jn@gmail.com">linkedin</a>
           </li>
-          <li className="header-logo" href="mailto:jn@gmail.com">
-            github
+          <li className="header-logo">
+            <a href="mailto:jn@gmail.com">github</a>
           </li>
-          <li className="header-logo" href="mailto:jn@gmail.com">
-            instagram
+          <li className="header-logo">
+            <a href="mailto:jn@gmail.com">instagram</a>
           </li>
         </ul>
       </Container>

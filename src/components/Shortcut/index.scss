@@ -1,0 +1,21 @@
+.shortcut {
+  display: flex;
+  align-items: center;
+  font-size: 8px;
+
+  p {
+    margin: 0 3px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  .key {
+    color: #e7eaef;
+    background-color: #3d434c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+  }
+}
