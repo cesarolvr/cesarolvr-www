@@ -31,4 +31,4 @@ jobs:
           AWS_DEFAULT_REGION: us-east-1
 
       - name: Invalidate cloudfront
-        run: aws cloudfront create-invalidation --distribution-id EI0DQ7VKOZ8XL --paths "/*" --region us-east-1
+        run: aws cloudfront create-invalidation --distribution-id E3C43LJ7H1JRHT --paths "/*" --region us-east-1
