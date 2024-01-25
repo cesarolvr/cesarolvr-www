@@ -31,4 +31,10 @@ jobs:
           AWS_DEFAULT_REGION: us-east-1
 
       - name: Invalidate cloudfront
-        run: aws cloudfront create-invalidation --distribution-id E3C43LJ7H1JRHT --paths "/*" --region us-east-1
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: E3C43LJ7H1JRHT
+          PATHS: "/*"
+          AWS_REGION: "us-east-1"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ID }}
