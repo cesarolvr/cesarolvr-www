@@ -15,31 +15,31 @@ const About = () => {
   return (
     <>
       <Header />
-      <main>
-        <div className="headshot-column">
+      <main className="about">
+        <div className="headshot column">
           <img src={headshot} alt="headshot" />
         </div>
-        <div className="bio-column">
+        <div className="bio column">
           <h3 className="about-title">bio</h3>
-          <p className="about-paragraph">
+          <p className="paragraph">
             I'm really focused about resolve real problems through technology,
             specifically web development, creative development, and usability
             engineering.
           </p>
-          <p className="about-paragraph">
+          <p className="paragraph">
             I'm really focused about resolve real problems through technology,
             specifically web development, creative development, and usability
             engineering.
           </p>
-          <ul className="about-control">
+          <ul className="control">
             <li>copy bio</li>
             <li>download cv</li>
           </ul>
-          <div className="about-toggle">
+          <div className="toggle">
             <button>career path</button>
             <button>academy journey</button>
           </div>
-          <ol className="about-career">
+          <ol className="career-path">
             {[
               {
                 role: "tech lead",

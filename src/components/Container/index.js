@@ -4,6 +4,7 @@ const containerStyles = {
   maxWidth: "930px",
   width: "90vw",
   margin: "auto",
+  position: "relative"
 };
 
 const Container = ({ children }) => {

@@ -1,6 +1,6 @@
 .banner-description {
   margin-top: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   max-width: 200px;
   line-height: 18px;
   font-size: 10px;
@@ -12,4 +12,44 @@
 
 .home {
   margin-top: -40px;
+}
+
+.about {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  font-size: 14px;
+
+  .column {
+    width: 20%;
+    max-width: 400px;
+    position: relative;
+  }
+
+  .bio {
+    padding: 20px 0 0 80px;
+    width: 70%;
+    max-width: 400px;
+    line-height: 2.2em;
+  }
+
+  .headshot {
+    img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      position: absolute;
+      right: 0;
+      max-width: none;
+    }
+  }
+
+  .paragraph {
+    margin-bottom: 20px;
+  }
+
+  .control {
+    margin: 20px 0;
+    display: flex;
+  }
 }
