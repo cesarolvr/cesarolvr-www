@@ -3,6 +3,7 @@ import * as React from "react";
 // Components
 import Header from "../components/Header";
 import Note from "../components/Note";
+import Loader from "../components/Loader";
 import { FiCopy } from "@react-icons/all-files/fi/FiCopy";
 import { FiDownload } from "@react-icons/all-files/fi/FiDownload";
 
@@ -33,8 +34,16 @@ const About = () => {
       }, 1000);
     }, console.log);
   };
+
+  const [isOpened, setIsOpened] = React.useState(true);
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsOpened(false);
+    }, 2000);
+  }, []);
   return (
     <div className="about">
+      <Loader isOpened={isOpened} />
       <Header />
       {copied && <div className="copied">copied 👍🏾</div>}
       <main>

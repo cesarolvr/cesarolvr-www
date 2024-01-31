@@ -1,0 +1,27 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+  background-color: #282c32;
+  display: none;
+  pointer-events: none;
+  
+  .value {
+    font-size: 30px;
+    color: #abb2bf;
+    
+  }
+  
+  a {
+    margin-top: 50px;
+  }
+
+  &.-opened {
+    display: flex;
+    pointer-events: auto;
+  }
+}

@@ -16,6 +16,8 @@
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "autoprefixer": "^10.4.17",
+    "classnames": "^2.5.1",
+    "countup.js": "^2.8.0",
     "gatsby": "^5.13.1",
     "gatsby-plugin-image": "^3.13.0",
     "gatsby-plugin-manifest": "^5.13.0",

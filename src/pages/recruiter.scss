@@ -1,0 +1,33 @@
+.recruiter {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .actions-list {
+    font-size: 45px;
+    color: #abb2bf;
+    font-weight: lighter;
+
+    li {
+      margin-bottom: 15px;
+      cursor: pointer;
+
+      a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .header {
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
