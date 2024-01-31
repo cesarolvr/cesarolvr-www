@@ -8,7 +8,9 @@ import Container from "../Container";
 import "./index.scss";
 import Shortcut from "../Shortcut";
 
+
 const Header = ({ hideShortcut }) => {
+  const pathname = window?.location?.pathname;
   return (
     <header className="header">
       <Container>
@@ -18,11 +20,21 @@ const Header = ({ hideShortcut }) => {
         {!hideShortcut && <Shortcut text="👀" />}
         <ul className="header-list">
           <li>
-            <Link to="/about">about</Link>
+            <Link
+              to="/about/"
+              className={pathname?.startsWith("/about") ? `-active` : ``}
+            >
+              about
+            </Link>
           </li>
 
           <li>
-            <Link to="/recruiter">for recruiters</Link>
+            <Link
+              to="/recruiter/"
+              className={pathname?.startsWith("/recruiter") ? `-active` : ``}
+            >
+              for recruiters
+            </Link>
           </li>
         </ul>
       </Container>

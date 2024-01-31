@@ -33,4 +33,4 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>cesarolvr.com</title>;
+export const Head = () => <title>cesarolvr</title>;
