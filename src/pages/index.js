@@ -12,9 +12,9 @@ import "./index.scss";
 
 const IndexPage = () => {
   return (
-    <>
+    <div className="home">
       <Header hideShortcut />
-      <main className="home">
+      <main>
         <Container>
           <h1 className="banner-title">cesar oliveira</h1>
           <h2 className="banner-subtitle">
@@ -27,7 +27,7 @@ const IndexPage = () => {
         </Container>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

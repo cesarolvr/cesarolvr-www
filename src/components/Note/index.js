@@ -9,9 +9,7 @@ import "./index.scss";
 const Footer = () => {
   return (
     <div className="note">
-      <Container>
-        <p>if you want one website like it, for yourself, let me know 👍🏾</p>
-      </Container>
+      <p>if you want one website like it, for yourself, let me know 👍🏾</p>
     </div>
   );
 };

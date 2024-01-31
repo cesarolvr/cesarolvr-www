@@ -14,20 +14,24 @@
   margin-bottom: 22px;
 }
 
-
 .home {
-  margin-top: -100px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  
+  main {
+    margin-top: -100px;
+  }
 }
 
 .shortcut {
   justify-content: flex-start;
 }
 
-.header {
+.home .header {
   .container {
     display: flex;
     justify-content: space-between;
   }
 }
-
-

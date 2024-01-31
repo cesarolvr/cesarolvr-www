@@ -2,10 +2,12 @@ import * as React from "react";
 
 // Components
 import Header from "../components/Header";
-import Container from "../components/Container";
 import Note from "../components/Note";
 import { FiCopy } from "@react-icons/all-files/fi/FiCopy";
 import { FiDownload } from "@react-icons/all-files/fi/FiDownload";
+
+// Files
+import cesarolvrCV from "../files/cv-cesarolvr.pdf";
 
 // Images
 import headshot from "../images/headshot.png";
@@ -14,20 +16,42 @@ import headshot from "../images/headshot.png";
 import "../styles/global.scss";
 import "./about.scss";
 
+const bioText = `8+ years of experience as a Software Engineer, working on
+large-scale and high-impact projects for digital companies, where I
+created digital acquisition experiences, dashboards, awwwards-like
+websites, design systems, mobile apps and email marketing tools.  I'm really focused about resolve real problems through technology,
+specifically web development, creative development, and usability
+engineering.`;
+
 const About = () => {
+  const [copied, setCopied] = React.useState(false);
+  const copyText = () => {
+    navigator.clipboard.writeText(bioText).then(() => {
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 1000);
+    }, console.log);
+  };
   return (
-    <>
+    <div className="about">
       <Header />
-      <main className="about">
+      {copied && <div className="copied">copied 👍🏾</div>}
+      <main>
         <div className="headshot column">
           <img src={headshot} alt="headshot" />
+          <a className="button -icon" href={headshot} download={true}>
+            <FiDownload />
+            <p>download photo</p>
+          </a>
         </div>
         <div className="bio column">
           <h3 className="about-title">bio</h3>
           <p className="paragraph">
-            I'm really focused about resolve real problems through technology,
-            specifically web development, creative development, and usability
-            engineering.
+            8+ years of experience as a Software Engineer, working on
+            large-scale and high-impact projects for digital companies, where I
+            created digital acquisition experiences, dashboards, awwwards-like
+            websites, design systems, mobile apps and email marketing tools.
           </p>
           <p className="paragraph">
             I'm really focused about resolve real problems through technology,
@@ -36,21 +60,21 @@ const About = () => {
           </p>
           <ul className="control">
             <li>
-              <button>
+              <button className="-icon" onClick={copyText}>
                 <FiCopy />
                 <p>copy bio</p>
               </button>
             </li>
             <li>
-              <button>
+              <a className="button -icon" href={cesarolvrCV} download={true}>
                 <FiDownload />
                 <p>download cv</p>
-              </button>
+              </a>
             </li>
           </ul>
           <div className="toggle">
-            <button>career path</button>
-            <button>academy journey</button>
+            <button className="-toggle --active">career path</button>
+            <button className="-toggle">academy journey</button>
           </div>
           <ol className="career-path">
             {[
@@ -94,13 +118,10 @@ const About = () => {
               );
             })}
           </ol>
-          <button>download cv</button>
         </div>
       </main>
-      <Container>
-        <Note />
-      </Container>
-    </>
+      <Note />
+    </div>
   );
 };
 

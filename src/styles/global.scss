@@ -2,10 +2,15 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Fira Code", monospace;
+}
+
+::selection {
+  background: white;
+  color: #282c32;
 }
 
 body {
-  font-family: "Fira Code", monospace;
   background-color: #282c32;
   color: white;
   width: 100vw;
@@ -18,7 +23,8 @@ body {
   font-weight: lighter;
 }
 
-#___gatsby, #gatsby-focus-wrapper {
+#___gatsby,
+#gatsby-focus-wrapper {
   width: 100vw;
   height: 100vh;
 }
@@ -29,18 +35,15 @@ body {
   justify-content: space-between;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-}
-
-ul, ol {
+ul,
+ol {
   list-style: none;
   padding: 0;
 }
 
-p, a {
-  color: #ABB2BF;
+p,
+a {
+  color: #abb2bf;
   text-decoration: none;
 }
 
@@ -59,6 +62,65 @@ h2 {
   margin: 0 0 10px;
 
   a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+h4 {
+  color: #abb2bf;
+  font-size: 16px;
+  margin: 10px 0;
+  line-height: 16px;
+  font-weight: bold;
+}
+
+h5 {
+  color: #abb2bf;
+  font-size: 14px;
+  font-weight: lighter;
+  margin: 10px 0;
+  line-height: 24px;
+  text-decoration: underline;
+}
+
+button, .button {
+  background: none;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  border: none;
+  color: #abb2bf;
+  font-size: 14px;
+  padding: 0px 12px;
+  border-radius: 5px;
+  appearance: none;
+  font-weight: lighter;
+  line-height: 14px;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: #3b4048;
+  }
+
+  &.-toggle {
+    padding: 0;
+    font-size: 16px;
+    color: #6b717d;
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  &.-icon { 
+    p {
+      margin-left: 10px;
+    }
+  }
+
+  &.--active {
     color: white;
     text-decoration: underline;
   }

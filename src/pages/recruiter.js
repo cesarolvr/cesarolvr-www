@@ -13,19 +13,23 @@ const Recruiter = () => {
     <>
       <Header />
       <main>
-        <ul className="actions-list">
-          <li>download cv</li>
-          <li>go to his linkedin</li>
-          <li>book a meeting</li>
-          <li>see his github</li>
-          <li>send and email</li>
-          <li>go to his instagram <span>(only friends)</span></li>
-          <li>his current readings <span>(only curious)</span></li>
-        </ul>
+        <Container>
+          <ul className="actions-list">
+            <li>download cv</li>
+            <li>go to his linkedin</li>
+            <li>book a meeting</li>
+            <li>see his github</li>
+            <li>send and email</li>
+            <li>
+              go to his instagram <span>(only friends)</span>
+            </li>
+            <li>
+              his current readings <span>(only curious)</span>
+            </li>
+          </ul>
+        </Container>
       </main>
-      <Container>
-        <Note />
-      </Container>
+      <Note />
     </>
   );
 };

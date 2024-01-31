@@ -5,24 +5,36 @@
     display: grid;
     width: 100%;
     max-width: none;
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: repeat(3, 33.3333333%);
   }
 
-  .header-control, .header-list {
+  .header-control,
+  .header-list {
     display: flex;
     margin: 0;
   }
 
-  .header-logo a {
-    color: #FFFFFF;
+  .shortcut {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-logo {
+    a {
+      color: #ffffff;
+    }
   }
 
   .header-list {
     display: flex;
     justify-content: flex-end;
-    
+
     li {
       margin: 0 10px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
   }
 }
