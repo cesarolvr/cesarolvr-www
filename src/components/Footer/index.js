@@ -11,16 +11,22 @@ const Footer = () => {
     <footer className="footer">
       <ul className="list">
         <li className="header-logo">
-          <a href="mailto:jn@gmail.com">email</a>
+          <a href="mailto:contact@cesarolvr.com">email</a>
         </li>
         <li className="header-logo">
-          <a href="mailto:jn@gmail.com">linkedin</a>
+          <a href="https://www.linkedin.com/in/cesarolvr/" target="_blank">
+            linkedin
+          </a>
         </li>
         <li className="header-logo">
-          <a href="mailto:jn@gmail.com">github</a>
+          <a href="https://github.com/cesarolvr/" target="_blank">
+            github
+          </a>
         </li>
         <li className="header-logo">
-          <a href="mailto:jn@gmail.com">instagram</a>
+          <a href="https://www.instagram.com/cesarolvr/" target="_blank">
+            instagram
+          </a>
         </li>
       </ul>
     </footer>

@@ -9,7 +9,8 @@ import "./index.scss";
 import Shortcut from "../Shortcut";
 
 const Header = ({ hideShortcut }) => {
-  const pathname = !!window ? window?.location?.pathname : "";
+  const pathname =
+    typeof window !== "undefined" ? window?.location?.pathname : "";
   return (
     <header className="header">
       <Container>
