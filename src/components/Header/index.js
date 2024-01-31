@@ -8,9 +8,8 @@ import Container from "../Container";
 import "./index.scss";
 import Shortcut from "../Shortcut";
 
-
 const Header = ({ hideShortcut }) => {
-  const pathname = window?.location?.pathname;
+  const pathname = !!window ? window?.location?.pathname : "";
   return (
     <header className="header">
       <Container>
