@@ -1,14 +1,10 @@
 import * as React from "react";
 
-const containerStyles = {
-  maxWidth: "930px",
-  width: "90vw",
-  margin: "auto",
-  position: "relative"
-};
+// Styles
+import "./index.scss";
 
 const Container = ({ children }) => {
-  return <div className="container" style={containerStyles}>{children}</div>;
+  return <div className="container">{children}</div>;
 };
 
 export default Container;

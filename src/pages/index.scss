@@ -1,6 +1,6 @@
 .banner-description {
   margin-top: 0px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   max-width: 300px;
   line-height: 1.5em;
   font-size: 16px;
@@ -19,42 +19,15 @@
   margin-top: -100px;
 }
 
-.about {
-  display: flex;
-  padding-top: 20px;
-  padding-bottom: 50px;
-  font-size: 14px;
+.shortcut {
+  justify-content: flex-start;
+}
 
-  .column {
-    width: 20%;
-    max-width: 400px;
-    position: relative;
-  }
-
-  .bio {
-    padding: 20px 0 0 80px;
-    width: 70%;
-    max-width: 400px;
-    line-height: 2.2em;
-  }
-
-  .headshot {
-    img {
-      width: 400px;
-      height: 400px;
-      object-fit: cover;
-      position: absolute;
-      right: 0;
-      max-width: none;
-    }
-  }
-
-  .paragraph {
-    margin-bottom: 20px;
-  }
-
-  .control {
-    margin: 20px 0;
+.header {
+  .container {
     display: flex;
+    justify-content: space-between;
   }
 }
+
+

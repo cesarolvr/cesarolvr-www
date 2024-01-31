@@ -4,12 +4,15 @@ import * as React from "react";
 import Header from "../components/Header";
 import Container from "../components/Container";
 import Note from "../components/Note";
+import { FiCopy } from "@react-icons/all-files/fi/FiCopy";
+import { FiDownload } from "@react-icons/all-files/fi/FiDownload";
 
 // Images
 import headshot from "../images/headshot.png";
 
 // Styles
 import "../styles/global.scss";
+import "./about.scss";
 
 const About = () => {
   return (
@@ -32,8 +35,18 @@ const About = () => {
             engineering.
           </p>
           <ul className="control">
-            <li>copy bio</li>
-            <li>download cv</li>
+            <li>
+              <button>
+                <FiCopy />
+                <p>copy bio</p>
+              </button>
+            </li>
+            <li>
+              <button>
+                <FiDownload />
+                <p>download cv</p>
+              </button>
+            </li>
           </ul>
           <div className="toggle">
             <button>career path</button>

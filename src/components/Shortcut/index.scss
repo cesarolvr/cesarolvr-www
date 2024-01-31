@@ -1,9 +1,10 @@
 .shortcut {
   display: flex;
+  justify-content: center;
   align-items: center;
   font-size: 14px;
-  position: absolute;
-  margin: auto;
+  cursor: pointer;
+  // font-weight: bold;
 
   p {
     margin: 0 3px;
@@ -18,6 +19,7 @@
     background-color: #3b4048;
     padding: 5px 10px;
     border-radius: 5px;
-    color: white;
+    color: #d7d7d7;
+    text-transform: lowercase;
   }
 }

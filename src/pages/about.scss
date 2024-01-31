@@ -1,0 +1,59 @@
+.about {
+  display: flex;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  font-size: 14px;
+
+  .column {
+    width: 20%;
+    max-width: 400px;
+    position: relative;
+  }
+
+  .bio {
+    padding: 20px 0 0 80px;
+    width: 70%;
+    max-width: 400px;
+    line-height: 2.2em;
+  }
+
+  .headshot {
+    img {
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+      position: absolute;
+      right: 0;
+      max-width: none;
+    }
+  }
+
+  .paragraph {
+    margin-bottom: 20px;
+  }
+
+  .control {
+    margin: 20px 0;
+    display: flex;
+    
+
+    li {
+      margin-right: 30px;
+
+      button {
+        background: none;
+        display: flex;
+        align-items: center;
+        box-shadow: none;
+        border: none;
+        color: #abb2bf;
+        font-size: 14px;
+        letter-spacing:0.5px;
+      }
+
+      p {
+        margin-left: 8px;
+      }
+    }
+  }
+}
