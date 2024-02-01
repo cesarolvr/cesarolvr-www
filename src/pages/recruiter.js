@@ -59,7 +59,7 @@ const Recruiter = () => {
               </a>
             </li>
             <li>
-              <a href="goodreads.com/cesarolvr" target="_blank">
+              <a href="https://goodreads.com/cesarolvr" target="_blank">
                 his current readings <span>(only curious)</span>
               </a>
             </li>
