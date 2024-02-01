@@ -4,7 +4,7 @@ import * as React from "react";
 import "./index.scss";
 
 const Shortcut = ({ text }) => {
-  const isMac = !!navigator?.platform?.indexOf("Mac") > -1;
+  const isMac = window !== "undefined" ? !!navigator?.platform?.indexOf("Mac") > -1 : true;
 
   return (
     <div className="shortcut">
