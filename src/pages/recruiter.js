@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Container from "../components/Container";
 import Note from "../components/Note";
 import Loader from "../components/Loader";
+import Layout from "../components/Layout";
 
 // Files
 import cesarolvrCV from "../files/cv-cesarolvr.pdf";
@@ -22,7 +23,7 @@ const Recruiter = () => {
   }, []);
 
   return (
-    <div className="recruiter">
+    <Layout page="recruiter">
       <Loader isOpened={isOpened} />
       <Header hideShortcut={true} />
       <main>
@@ -74,7 +75,7 @@ const Recruiter = () => {
         </Container>
       </main>
       <Note />
-    </div>
+    </Layout>
   );
 };
 

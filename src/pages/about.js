@@ -4,6 +4,7 @@ import * as React from "react";
 import Header from "../components/Header";
 import Note from "../components/Note";
 import Loader from "../components/Loader";
+import Layout from "../components/Layout";
 import { FiCopy } from "@react-icons/all-files/fi/FiCopy";
 import { FiDownload } from "@react-icons/all-files/fi/FiDownload";
 
@@ -42,7 +43,7 @@ const About = () => {
     }, 2000);
   }, []);
   return (
-    <div className="about">
+    <Layout page="about">
       <Loader isOpened={isOpened} />
       <Header />
       {copied && <div className="copied">copied 👍🏾</div>}
@@ -130,7 +131,7 @@ const About = () => {
         </div>
       </main>
       <Note />
-    </div>
+    </Layout>
   );
 };
 
