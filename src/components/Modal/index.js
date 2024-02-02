@@ -11,6 +11,13 @@ import { FiCalendar } from "@react-icons/all-files/fi/FiCalendar";
 import { FiInstagram } from "@react-icons/all-files/fi/FiInstagram";
 import { FiBook } from "@react-icons/all-files/fi/FiBook";
 import { FiCoffee } from "@react-icons/all-files/fi/FiCoffee";
+import { FiMail } from "@react-icons/all-files/fi/FiMail";
+
+// Context
+import { State } from "../Layout";
+
+// Files
+import cesarolvrCV from "../../files/cv-cesarolvr.pdf";
 
 // Styles
 import "./index.scss";
@@ -20,47 +27,62 @@ const actionList = [
     text: "copy link",
     nick: "c",
     icon: <FiCopy />,
+    type: 1,
   },
   {
     text: "download cv",
     nick: "d",
     icon: <FiDownload />,
+    target: cesarolvrCV,
   },
   {
     text: "know my career",
     nick: "k",
     icon: <FiAward />,
+    target: "https://www.linkedin.com/in/cesarolvr/",
   },
   {
     text: "see my github",
     nick: "g",
     icon: <FiGithub />,
+    target: "https://github.com/cesarolvr/",
   },
   {
     text: "book a meeting",
     nick: "b",
     icon: <FiCalendar />,
+    target: "https://meet.google.com/",
+  },
+  {
+    text: "send an email",
+    nick: "e",
+    icon: <FiMail />,
+    target: "mailto:contact@cesarolvr.com",
   },
   {
     text: "go to my instagram",
     nick: "g",
     icon: <FiInstagram />,
+    target: "https://www.instagram.com/cesarolvr/",
   },
   {
     text: "see my current readings",
     nick: "r",
     icon: <FiBook />,
+    target: "https://goodreads.com/cesarolvr",
   },
   {
     text: "view source code",
     nick: "r",
     icon: <FiCoffee />,
+    target: "https://github.com/cesarolvr/cesarolvr-www",
   },
 ];
 
 const Modal = () => {
-  const [modalIsOpened, setModalIsOpened] = React.useState(false);
   const [list, setList] = React.useState(actionList);
+
+  const { modalIsOpened, setModalIsOpened } = React.useContext(State);
 
   React.useEffect(() => {
     Mousetrap.bind(["command+enter", "ctrl+enter"], (e) => {
@@ -79,7 +101,6 @@ const Modal = () => {
   const onSearch = (e) => {
     const value = e?.target?.value;
     const newList = actionList.filter((item) => item?.text?.includes(value));
-    console.log(value, newList);
     setList(newList);
   };
 
@@ -89,9 +110,12 @@ const Modal = () => {
         "-opened": modalIsOpened,
       })}
     >
-      <div className="layer" onClick={() => {
-        setModalIsOpened(false)
-      }}></div>
+      <div
+        className="layer"
+        onClick={() => {
+          setModalIsOpened(false);
+        }}
+      ></div>
       <div className="panel">
         <div className="panel-header">
           <input
@@ -104,14 +128,13 @@ const Modal = () => {
         </div>
         <ul className="list" role="listbox">
           {list.length > 0 ? (
-            list.map(({ text, icon }) => {
+            list.map(({ text, icon, target, type }, index) => {
               return (
-                <li role="option">
-                  <div className="description">
+                <li role="option" key={index}>
+                  <a href={target} className="description" target="_blank">
                     {icon}
                     <p>{text}</p>
-                  </div>
-                  {/* <span className="nick">{nick}</span> */}
+                  </a>
                 </li>
               );
             })

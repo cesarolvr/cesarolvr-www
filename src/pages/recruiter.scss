@@ -5,21 +5,47 @@
   flex-direction: column;
 
   .actions-list {
-    font-size: 45px;
+    font-size: 30px;
     color: #abb2bf;
     font-weight: lighter;
 
-    li {
-      margin-bottom: 15px;
-      cursor: pointer;
+    @media (min-width: 430px) {
+      font-size: 45px;
+    }
 
-      a:hover {
-        color: white;
-        text-decoration: underline;
+    li {
+      margin-bottom: 30px;
+      cursor: pointer;
+      line-height: 35px;
+
+      @media (min-width: 430px) {
+        margin-bottom: 45px;
+        line-height: 45px;
+      }
+
+      a {
+        position: relative;
+        width: 100%;
+        display: inline-block;
+
+        &:hover {
+          color: white;
+          text-decoration: underline;
+        }
       }
 
       span {
         font-size: 14px;
+        line-height: 20px;
+        background-color: #121417;
+        bottom: -30px;
+        left: 0;
+        right: auto;
+
+        @media (min-width: 430px) {
+          bottom: -20px;
+          right: 0%;
+        }
       }
     }
   }

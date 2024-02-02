@@ -6,7 +6,6 @@ import Container from "../components/Container";
 import Footer from "../components/Footer";
 import Shortcut from "../components/Shortcut";
 import Loader from "../components/Loader";
-import Layout from "../components/Layout";
 
 // Styles
 import "../styles/global.scss";
@@ -22,7 +21,7 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <Layout page="home">
+    <div className="home">
       <Loader isOpened={isOpened} />
       <Header hideShortcut />
       <main>
@@ -37,11 +36,11 @@ const IndexPage = () => {
           <p className="banner-description">
             and having fun creating cool digital experiences
           </p>
-          <Shortcut text="to find what you are looking for" />
+          <Shortcut text="to find what you are looking for" onClick={f=>f} />
         </Container>
       </main>
       <Footer />
-    </Layout>
+    </div>
   );
 };
 

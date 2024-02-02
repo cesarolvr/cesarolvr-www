@@ -26,14 +26,19 @@
 
   .panel {
     width: 400px;
+    max-width: 80vw;
     height: auto;
     max-height: 400px;
     background-color: #35393f;
-    top: 150px;
+    top: 80px;
     position: relative;
     z-index: 21;
     border-radius: 5px;
     overflow: scroll;
+
+    @media (min-width: 430px) {
+      top: 150px;
+    }
 
     .search {
       margin-bottom: 10px;
@@ -52,7 +57,7 @@
     ul {
       margin: 0;
       li {
-        padding: 5px 20px;
+        padding: 3px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -62,6 +67,10 @@
 
         &:hover {
           background: #222529;
+
+          a {
+            text-decoration: none;
+          }
         }
 
         &:last-of-type {
@@ -89,7 +98,7 @@
         p {
           margin-left: 15px;
           color: white;
-          line-height: 16px;
+          line-height: 20px;
         }
       }
     }

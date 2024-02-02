@@ -1,5 +1,11 @@
 .container {
-  width: 90vw;
+  width: 100vw;
   margin: auto;
   position: relative;
+  padding: 0 20px;
+
+  @media (min-width: 430px) {
+    width: 90vw;
+    padding: 0;
+  }
 }

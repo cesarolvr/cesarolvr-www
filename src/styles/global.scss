@@ -52,14 +52,22 @@ a:hover {
 }
 
 h1 {
-  font-size: 40px;
   margin: 10px 0 5px;
+  font-size: 30px;
+
+  @media (min-width: 430px) {
+    font-size: 40px;
+  }
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: lighter;
   margin: 0 0 10px;
+
+  @media (min-width: 430px) {
+    font-size: 18px;
+  }
 
   a {
     color: white;
@@ -130,12 +138,12 @@ button,
 .only-desktop.only-desktop {
   display: none;
   @media (min-width: 430px) {
-    display:inherit;
+    display: flex;
   }
 }
 
 .only-mobile.only-mobile {
-  display: block;
+  display: flex;
   @media (min-width: 430px) {
     display: none;
   }

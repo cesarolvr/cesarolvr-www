@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import Container from "../components/Container";
 import Note from "../components/Note";
 import Loader from "../components/Loader";
-import Layout from "../components/Layout";
 
 // Files
 import cesarolvrCV from "../files/cv-cesarolvr.pdf";
@@ -23,14 +22,14 @@ const Recruiter = () => {
   }, []);
 
   return (
-    <Layout page="recruiter">
+    <div className="recruiter">
       <Loader isOpened={isOpened} />
       <Header hideShortcut={true} />
       <main>
         <Container>
           <ul className="actions-list">
             <li>
-              <a href={cesarolvrCV} download={true}>
+              <a href={cesarolvrCV} download={true} target="_blank">
                 download cv
               </a>
             </li>
@@ -55,12 +54,12 @@ const Recruiter = () => {
             </li>
             <li>
               <a href="https://www.instagram.com/cesarolvr/" target="_blank">
-                follow him on instagram <span>(only friends)</span>
+                follow him on instagram <span>only friends</span>
               </a>
             </li>
             <li>
               <a href="https://goodreads.com/cesarolvr" target="_blank">
-                his current readings <span>(only curious)</span>
+                his current readings <span>only curious</span>
               </a>
             </li>
             <li>
@@ -68,14 +67,14 @@ const Recruiter = () => {
                 href="https://github.com/cesarolvr/cesarolvr-www"
                 target="_blank"
               >
-                view source code of this website <span>(only devs)</span>
+                view source code of this website <span>only devs</span>
               </a>
             </li>
           </ul>
         </Container>
       </main>
       <Note />
-    </Layout>
+    </div>
   );
 };
 

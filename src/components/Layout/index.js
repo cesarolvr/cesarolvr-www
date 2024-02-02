@@ -4,14 +4,29 @@ import * as React from "react";
 import "./index.scss";
 import Modal from "../Modal";
 
-const Layout = ({ children, page, modalIsOpened }) => {
+// Contexts
+export const State = React.createContext(false);
+
+const Layout = ({ children }) => {
+  const [modalIsOpened, setModalIsOpened] = React.useState(false);
+
   return (
-    <div className={`layout ${page}`}>
-      <>
-        {children}
-        <Modal isOpened={modalIsOpened} />
-      </>
-    </div>
+    <State.Provider
+      value={{
+        modalIsOpened,
+        setModalIsOpened,
+      }}
+    >
+      <div className={`layout`}>
+        <>
+          {children}
+          <Modal
+            modalIsOpened={modalIsOpened}
+            setModalIsOpened={setModalIsOpened}
+          />
+        </>
+      </div>
+    </State.Provider>
   );
 };
 
