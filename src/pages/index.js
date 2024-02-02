@@ -14,13 +14,12 @@ import "./index.scss";
 
 const IndexPage = () => {
   const [isOpened, setIsOpened] = React.useState(true);
-  
+
   React.useEffect(() => {
     setTimeout(() => {
       setIsOpened(false);
     }, 3000);
   }, []);
-
 
   return (
     <Layout page="home">
@@ -30,7 +29,10 @@ const IndexPage = () => {
         <Container>
           <h1 className="banner-title">cesar oliveira</h1>
           <h2 className="banner-subtitle">
-            tech lead at <a href="https://itau.com.br">itaú</a>
+            tech lead at{" "}
+            <a target="_blank" href="https://itau.com.br">
+              itaú
+            </a>
           </h2>
           <p className="banner-description">
             and having fun creating cool digital experiences

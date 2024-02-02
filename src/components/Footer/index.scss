@@ -1,16 +1,37 @@
 .footer {
-  width: 100vw;
-  padding: 30px;
+  padding: 30px 0px;
+  width: 90vw;
+  margin: 0 auto;
+  
+  @media (min-width: 430px) {
+    padding: 30px;
+
+  }
 
   .list {
     display: flex;
     margin: 0;
+    justify-content: flex-end;
+    flex-direction: column;
 
     li {
-      margin: 0 20px 0 0;
+      margin: 10px 0;
+      text-align: right;
 
       a {
         cursor: pointer;
+      }
+    }
+  }
+
+  @media (min-width: 430px) {
+    .list {
+      justify-content: start;
+      flex-direction: row;
+
+      li {
+        margin: 0 20px 0 0;
+        text-align: left;
       }
     }
   }

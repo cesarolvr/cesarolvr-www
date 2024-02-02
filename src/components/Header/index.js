@@ -18,7 +18,7 @@ const Header = ({ hideShortcut }) => {
           <Link to="/">cesarolvr.com</Link>
         </div>
         {!hideShortcut && <Shortcut text="👀" />}
-        <ul className="header-list">
+        <ul className="header-list only-desktop">
           <li>
             <Link
               to="/about/"
