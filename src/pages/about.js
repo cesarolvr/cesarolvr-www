@@ -17,7 +17,7 @@ import { State } from "../components/Layout";
 import { bioDescription, careerPath } from "../data";
 
 // Images
-import headshot from "../images/headshot.png";
+import headshot from "../images/headshot.jpg";
 
 // Styles
 import "../styles/global.scss";

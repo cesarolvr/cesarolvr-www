@@ -28,8 +28,9 @@
       border-bottom: 1px solid #1c1d20;
 
       @media (min-width: 730px) {
-        margin-bottom: 45px;
-        line-height: 45px;
+        line-height: 55px;
+        border: none;
+        padding: 15px 0px;
       }
 
       a {
