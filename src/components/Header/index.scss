@@ -1,10 +1,14 @@
 .header {
-  padding: 30px;
+  padding: 20px;
   width: 100vw;
   margin: 0 auto;
   text-align: left;
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: 730px) {
+    padding: 30px;
+  }
   
 
   .header-control,
@@ -19,6 +23,8 @@
   }
 
   .header-logo {
+    display: flex;
+    align-items: center;
     a {
       color: #ffffff;
     }

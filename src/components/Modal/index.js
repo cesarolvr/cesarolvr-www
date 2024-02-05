@@ -61,7 +61,7 @@ const actionList = [
     target: "mailto:contact@cesarolvr.com",
   },
   {
-    text: "go to my instagram",
+    text: "follow me on instagram",
     nick: "g",
     icon: <FiInstagram />,
     target: "https://www.instagram.com/cesarolvr/",
