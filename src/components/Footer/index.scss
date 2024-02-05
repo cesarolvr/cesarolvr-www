@@ -1,24 +1,29 @@
 .footer {
-  padding: 30px 20px;
   width: 100vw;
   margin: 0 auto;
+  padding: 0 5px;
 
   @media (min-width: 730px) {
-    padding: 30px;
+    padding: 25px 20px;
   }
 
   .list {
     display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
     margin: 0;
-    flex-direction: column;
 
     li {
-      margin: 10px 0;
+      padding: 30px 15px;
       text-align: left;
-      justify-content: flex-start;
+      flex: none;
 
       a {
         cursor: pointer;
+      }
+
+      @media (min-width: 730px) {
+        padding: 10px 5px;
       }
     }
   }

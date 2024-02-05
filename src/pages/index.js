@@ -36,7 +36,7 @@ const IndexPage = () => {
           <p className="banner-description">
             and having fun creating cool digital experiences
           </p>
-          <Shortcut text="to find what you are looking for" onClick={f=>f} />
+          <Shortcut text="to find what you are looking for"/>
         </Container>
       </main>
       <Footer />

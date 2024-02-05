@@ -83,12 +83,13 @@ const actionList = [
 const Modal = () => {
   const [list, setList] = React.useState(actionList);
 
-  const { modalIsOpened, setModalIsOpened, setCopied } = React.useContext(State);
+  const { modalIsOpened, setModalIsOpened, setCopied } =
+    React.useContext(State);
 
   const copyLink = (link) => {
     navigator.clipboard.writeText(link).then(() => {
       setCopied(true);
-      console.log('copied')
+      console.log("copied");
       setTimeout(() => {
         setCopied(false);
       }, 1000);
@@ -106,7 +107,10 @@ const Modal = () => {
       setModalIsOpened(false);
     });
 
-    if (modalIsOpened) document.querySelector("#shortcutid").focus();
+    const isDesktop =
+      typeof window !== "undefined" ? window.innerWidth > 730 : true;
+
+    if (modalIsOpened && isDesktop) document.querySelector("#shortcutid").focus();
   }, [modalIsOpened]);
 
   const onSearch = (e) => {
