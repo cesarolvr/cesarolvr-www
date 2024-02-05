@@ -14,12 +14,12 @@ const Shortcut = ({ text }) => {
       : true;
 
   const isMobile =
-    typeof window !== "undefined" ? window.innerWidth < 430 : true;
+    typeof window !== "undefined" ? window.innerWidth < 730 : true;
 
   return isMobile ? (
     <div className="shortcut" onClick={() => setModalIsOpened(true)}>
       <p className="key">tap</p>
-      <p>to start</p>
+      <p>to shortcut</p>
     </div>
   ) : (
     <div className="shortcut">

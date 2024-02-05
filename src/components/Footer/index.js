@@ -24,10 +24,10 @@ const Footer = () => {
 
         <li className="only-mobile">
           <Link
-            to="/recruiter/"
-            className={pathname?.startsWith("/recruiter") ? `-active` : ``}
+            to="/actions/"
+            className={pathname?.startsWith("/actions") ? `-active` : ``}
           >
-            for recruiters
+            quick actions
           </Link>
         </li>
         <li>

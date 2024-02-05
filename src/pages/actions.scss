@@ -1,24 +1,33 @@
-.recruiter {
+.actions {
   height: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
+  .container {
+    padding: 0;
+
+    @media (min-width: 730px) {
+      padding: 0 20px;
+    }
+  }
 
   .actions-list {
     font-size: 30px;
     color: #abb2bf;
     font-weight: lighter;
 
-    @media (min-width: 430px) {
+    @media (min-width: 730px) {
       font-size: 45px;
     }
 
     li {
-      margin-bottom: 30px;
+      padding: 25px 20px;
       cursor: pointer;
       line-height: 35px;
+      border-bottom: 1px solid #1c1d20;
 
-      @media (min-width: 430px) {
+      @media (min-width: 730px) {
         margin-bottom: 45px;
         line-height: 45px;
       }
@@ -36,16 +45,6 @@
 
       span {
         font-size: 14px;
-        line-height: 20px;
-        background-color: #121417;
-        bottom: -30px;
-        left: 0;
-        right: auto;
-
-        @media (min-width: 430px) {
-          bottom: -20px;
-          right: 0%;
-        }
       }
     }
   }

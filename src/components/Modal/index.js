@@ -28,6 +28,7 @@ const actionList = [
     nick: "c",
     icon: <FiCopy />,
     type: 1,
+    textToCopy: "https://cesarolvr.com",
   },
   {
     text: "download cv",
@@ -82,7 +83,17 @@ const actionList = [
 const Modal = () => {
   const [list, setList] = React.useState(actionList);
 
-  const { modalIsOpened, setModalIsOpened } = React.useContext(State);
+  const { modalIsOpened, setModalIsOpened, setCopied } = React.useContext(State);
+
+  const copyLink = (link) => {
+    navigator.clipboard.writeText(link).then(() => {
+      setCopied(true);
+      console.log('copied')
+      setTimeout(() => {
+        setCopied(false);
+      }, 1000);
+    }, console.log);
+  };
 
   React.useEffect(() => {
     Mousetrap.bind(["command+enter", "ctrl+enter"], (e) => {
@@ -128,15 +139,30 @@ const Modal = () => {
         </div>
         <ul className="list" role="listbox">
           {list.length > 0 ? (
-            list.map(({ text, icon, target, type }, index) => {
-              return (
-                <li role="option" key={index}>
-                  <a href={target} className="description" target="_blank">
-                    {icon}
-                    <p>{text}</p>
-                  </a>
-                </li>
-              );
+            list.map(({ text, icon, target, type, textToCopy }, index) => {
+              if (type === 1) {
+                return (
+                  <li
+                    role="option"
+                    key={index}
+                    onClick={() => copyLink(textToCopy)}
+                  >
+                    <div className="description">
+                      {icon}
+                      <p>{text}</p>
+                    </div>
+                  </li>
+                );
+              } else {
+                return (
+                  <li role="option" key={index}>
+                    <a href={target} className="description" target="_blank">
+                      {icon}
+                      <p>{text}</p>
+                    </a>
+                  </li>
+                );
+              }
             })
           ) : (
             <div className="empty">

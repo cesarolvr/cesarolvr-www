@@ -26,10 +26,10 @@ const Header = ({ hideShortcut }) => {
 
         <li>
           <Link
-            to="/recruiter/"
-            className={pathname?.startsWith("/recruiter") ? `-active` : ``}
+            to="/actions/"
+            className={pathname?.startsWith("/actions") ? `-active` : ``}
           >
-            for recruiters
+            quick actions
           </Link>
         </li>
       </ul>

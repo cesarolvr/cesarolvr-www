@@ -10,6 +10,9 @@ import { FiDownload } from "@react-icons/all-files/fi/FiDownload";
 // Files
 import cesarolvrCV from "../files/cv-cesarolvr.pdf";
 
+// Context
+import { State } from "../components/Layout";
+
 // Data
 import { bioDescription, careerPath } from "../data";
 
@@ -21,9 +24,8 @@ import "../styles/global.scss";
 import "./about.scss";
 
 const About = () => {
-
-  console.log(careerPath)
-  const [copied, setCopied] = React.useState(false);
+  const { setCopied } = React.useContext(State);
+  
   const copyText = () => {
     navigator.clipboard.writeText(bioDescription).then(() => {
       setCopied(true);
@@ -39,11 +41,11 @@ const About = () => {
       setIsOpened(false);
     }, 2000);
   }, []);
+  
   return (
     <div className="about">
       <Loader isOpened={isOpened} />
       <Header />
-      {copied && <div className="copied">copied 👍🏾</div>}
       <main>
         <div className="headshot column">
           <img src={headshot} alt="headshot" />

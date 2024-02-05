@@ -1,4 +1,6 @@
 .about {
+  width: 100%;
+  overflow-x: hidden;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -7,14 +9,15 @@
   main {
     display: flex;
     justify-content: center;
-    padding-top: 20px;
     padding-bottom: 50px;
     font-size: 14px;
     flex-direction: column;
+    align-items: center;
 
-    @media (min-width: 430px) {
+    @media (min-width: 730px) {
       flex-direction: row;
       padding-top: 80px;
+      align-items: flex-start;
     }
   }
 
@@ -23,7 +26,7 @@
     max-width: 400px;
     position: relative;
 
-    @media (min-width: 430px) {
+    @media (min-width: 730px) {
       width: 20%;
     }
   }
@@ -33,7 +36,7 @@
     width: 100%;
     padding: 0 20px;
 
-    @media (min-width: 430px) {
+    @media (min-width: 730px) {
       max-width: 500px;
       padding: 20px 0 0 80px;
       width: 75%;
@@ -45,17 +48,23 @@
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 430px) {
+    @media (min-width: 730px) {
       align-items: flex-end;
     }
 
     img {
-      width: 500px;
-      height: 500px;
+      width: 110%;
+      height: 250px;
       object-fit: cover;
       right: 0;
       max-width: none;
       margin-bottom: 20px;
+      
+      @media (min-width: 730px) {
+        width: 500px;
+        height: 500px;
+      }
+      
     }
   }
 
@@ -81,20 +90,7 @@
     }
   }
 
-  .copied {
-    position: fixed;
-    background: white;
-    color: #282c32;
-    z-index: 10;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 50px;
-    margin: auto;
-    bottom: 30px;
-    right: 30px;
-  }
+ 
 }
 
 .about-career-experience {

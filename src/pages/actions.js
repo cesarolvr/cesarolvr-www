@@ -11,9 +11,9 @@ import cesarolvrCV from "../files/cv-cesarolvr.pdf";
 
 // Styles
 import "../styles/global.scss";
-import "./recruiter.scss";
+import "./actions.scss";
 
-const Recruiter = () => {
+const Actions = () => {
   const [isOpened, setIsOpened] = React.useState(true);
   React.useEffect(() => {
     setTimeout(() => {
@@ -22,7 +22,7 @@ const Recruiter = () => {
   }, []);
 
   return (
-    <div className="recruiter">
+    <div className="actions">
       <Loader isOpened={isOpened} />
       <Header hideShortcut={true} />
       <main>
@@ -35,31 +35,31 @@ const Recruiter = () => {
             </li>
             <li>
               <a href="https://www.linkedin.com/in/cesarolvr/" target="_blank">
-                go to his linkedin
+                go to my linkedin
               </a>
             </li>
             <li>
               <a href="https://meet.google.com/" target="_blank">
-                book a meeting <span>(invite to contact@cesarolvr.com)</span>
+                book a meeting <span>invite to -> contact@cesarolvr.com</span>
               </a>
             </li>
             <li>
               <a href="https://github.com/cesarolvr/" target="_blank">
-                see his github
+                see my github
               </a>
             </li>
             <li>
               {" "}
-              <a href="mailto:contact@cesarolvr.com">send an email</a>
+              <a href="mailto:contact@cesarolvr.com">send me an email</a>
             </li>
             <li>
               <a href="https://www.instagram.com/cesarolvr/" target="_blank">
-                follow him on instagram <span>only friends</span>
+                follow me on instagram <span>(only friends)</span>
               </a>
             </li>
             <li>
               <a href="https://goodreads.com/cesarolvr" target="_blank">
-                his current readings <span>only curious</span>
+                my current readings <span>(only curious)</span>
               </a>
             </li>
             <li>
@@ -67,7 +67,7 @@ const Recruiter = () => {
                 href="https://github.com/cesarolvr/cesarolvr-www"
                 target="_blank"
               >
-                view source code of this website <span>only devs</span>
+                view source code of this website <span>(only devs)</span>
               </a>
             </li>
           </ul>
@@ -78,6 +78,6 @@ const Recruiter = () => {
   );
 };
 
-export default Recruiter;
+export default Actions;
 
-export const Head = () => <title>for you, recruiter</title>;
+export const Head = () => <title>quick actions</title>;

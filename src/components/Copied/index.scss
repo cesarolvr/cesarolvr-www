@@ -1,0 +1,14 @@
+.copied {
+  position: fixed;
+  background: white;
+  color: #282c32;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+  margin: auto;
+  bottom: 30px;
+  right: 30px;
+}
