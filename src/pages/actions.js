@@ -80,4 +80,4 @@ const Actions = () => {
 
 export default Actions;
 
-export const Head = () => <title>quick actions</title>;
+export const Head = () => <title>quick actions | cesarolvr</title>;

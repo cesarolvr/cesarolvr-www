@@ -17,4 +17,6 @@ const NotFound = () => {
   );
 };
 
+export const Head = () => <title>nothing here | cesarolvr</title>;
+
 export default NotFound;

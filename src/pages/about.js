@@ -136,4 +136,4 @@ const About = () => {
 
 export default About;
 
-export const Head = () => <title>sobre | cesarolvr</title>;
+export const Head = () => <title>about | cesarolvr</title>;
