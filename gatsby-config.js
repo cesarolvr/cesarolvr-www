@@ -39,5 +39,11 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-RBL0Y5VB5K",
+      },
+    }
   ],
 };
