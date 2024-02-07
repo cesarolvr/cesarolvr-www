@@ -14,7 +14,7 @@ import cesarolvrCV from "../files/cv-cesarolvr.pdf";
 import { State } from "../components/Layout";
 
 // Data
-import { bioDescription, careerPath } from "../data";
+import { bioDescription, careerPath, academyPath } from "../data";
 
 // Images
 import headshot from "../images/headshot.jpg";
@@ -22,10 +22,12 @@ import headshot from "../images/headshot.jpg";
 // Styles
 import "../styles/global.scss";
 import "./about.scss";
+import classNames from "classnames";
 
 const About = () => {
+  const [activePanel, setActivePanel] = React.useState(1);
   const { setCopied } = React.useContext(State);
-  
+
   const copyText = () => {
     navigator.clipboard.writeText(bioDescription).then(() => {
       setCopied(true);
@@ -41,7 +43,7 @@ const About = () => {
       setIsOpened(false);
     }, 2000);
   }, []);
-  
+
   return (
     <div className="about">
       <Loader isOpened={isOpened} />
@@ -82,20 +84,49 @@ const About = () => {
             </li>
           </ul>
           <div className="toggle">
-            <button className="-toggle --active">career path</button>
-            <button className="-toggle">academy journey</button>
+            <button
+              className={classNames("-toggle", {
+                "--active": activePanel === 1,
+              })}
+              onClick={() => setActivePanel(1)}
+            >
+              career path
+            </button>
+            <button
+              className={classNames("-toggle", {
+                "--active": activePanel === 2,
+              })}
+              onClick={() => setActivePanel(2)}
+            >
+              academy journey
+            </button>
           </div>
-          <ol className="career-path">
-            {careerPath.map(({ role, details, description }, index) => {
-              return (
-                <li key={index} className="about-career-experience">
-                  <h4>{role}</h4>
-                  <h5>{details}</h5>
-                  <p>{description}</p>
-                </li>
-              );
-            })}
-          </ol>
+          {activePanel === 1 ? (
+            <ol className="career-path">
+              {careerPath.map(({ role, details, description }, index) => {
+                return (
+                  <li key={index} className="about-career-experience">
+                    <h4 className="role">{role}</h4>
+                    <br />
+                    <h5 className="infos">{details}</h5>
+                    <p className="description">{description}</p>
+                  </li>
+                );
+              })}
+            </ol>
+          ) : (
+            <ol className="career-path -academic">
+              {academyPath.map(({ role, details, description }, index) => {
+                return (
+                  <li key={index} className="about-career-experience">
+                    <h4 className="role">{role}</h4>
+                    <br />
+                    <h5 className="infos">{details}</h5>
+                  </li>
+                );
+              })}
+            </ol>
+          )}
         </div>
       </main>
       <Note />

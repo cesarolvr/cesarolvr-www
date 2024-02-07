@@ -18,12 +18,12 @@ const Actions = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setIsOpened(false);
-    }, 2000);
+    }, 1300);
   }, []);
 
   return (
     <div className="actions">
-      <Loader isOpened={isOpened} />
+      <Loader isOpened={isOpened} duration={0.8} />
       <Header hideShortcut={true} />
       <main>
         <Container>

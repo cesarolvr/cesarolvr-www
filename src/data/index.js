@@ -38,4 +38,23 @@ const careerPath = [
   },
 ];
 
-export { bioDescription, careerPath };
+const academyPath = [
+  {
+    role: "postgraduate diploma (pgdip) of leadership and innovation",
+    details: `getulio vargas foundation | são Paulo, brazil | 2023 -> 2024`,
+  },
+  {
+    role: "summer programm on usability engineering",
+    details: `university of são paulo | são Paulo, brazil | 2017 -> 2018`,
+  },
+  {
+    role: "bachelor of digital (ba) design",
+    details: `anhembi morumbi university | são Paulo, brazil | 2016 -> 2019`,
+  },
+  {
+    role: "career and technical education (cte) on information systems",
+    details: `são paulo state technical school | são Paulo, brazil | 2013 -> 2015`,
+  },
+];
+
+export { bioDescription, careerPath, academyPath };
