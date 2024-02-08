@@ -35,6 +35,7 @@ const Layout = ({ children }) => {
           {copied && <Copied />}
         </>
       </div>
+      
     </State.Provider>
   );
 };

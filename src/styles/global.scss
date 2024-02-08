@@ -109,7 +109,7 @@ button,
   line-height: 14px;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
     background-color: #3a3a3a;
   }
@@ -121,6 +121,7 @@ button,
 
     &:hover {
       background: none;
+      text-decoration: underline;
     }
   }
 
