@@ -6,6 +6,7 @@ import Container from "../components/Container";
 import Footer from "../components/Footer";
 import Shortcut from "../components/Shortcut";
 import Loader from "../components/Loader";
+import Cursor from "../components/Cursor";
 
 // Styles
 import "../styles/global.scss";
@@ -21,26 +22,30 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <div className="home">
-      <Loader isOpened={isOpened} />
-      <Header hideShortcut />
-      <main>
-        <Container>
-          <h1 className="banner-title">cesar oliveira</h1>
-          <h2 className="banner-subtitle">
-            tech lead at{" "}
-            <a target="_blank" href="https://itau.com.br">
-              itaú
-            </a>
-          </h2>
-          <p className="banner-description">
-            and having fun creating cool digital experiences
-          </p>
-          <Shortcut text="to find what you are looking for"/>
-        </Container>
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Cursor />
+
+      <div className="home">
+        <Loader isOpened={isOpened} />
+        <Header hideShortcut />
+        <main>
+          <Container>
+            <h1 className="banner-title">cesar oliveira</h1>
+            <h2 className="banner-subtitle">
+              tech lead at{" "}
+              <a target="_blank" href="https://itau.com.br">
+                itaú
+              </a>
+            </h2>
+            <p className="banner-description">
+              and having fun creating cool digital experiences
+            </p>
+            <Shortcut text="to find what you are looking for" />
+          </Container>
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
