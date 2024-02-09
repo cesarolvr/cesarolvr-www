@@ -1,4 +1,4 @@
-.ppk-dot,
+
 .ppk-dot-outline {
   z-index: 999;
   pointer-events: none;
@@ -10,31 +10,10 @@
   transform: translate(-50%, -50%);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
-.ppk-dot {
-  // width: 8px;
-  // height: 8px;
-  // background-color: white;
-}
 .ppk-dot-outline {
   width: 40px;
   height: 40px;
   border: 1px solid #3a3a3a;
 }
 
-.ppk-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
 
-  .ppk-6 {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1;
-    width: 100%;
-  }
-}

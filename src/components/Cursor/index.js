@@ -17,12 +17,9 @@ const Cursor = () => {
         endY: window.innerHeight / 2,
         cursorVisible: true,
         cursorEnlarged: false,
-        $dot: document.querySelector(".ppk-dot"),
         $outline: document.querySelector(".ppk-dot-outline"),
 
         init: function () {
-          // Set up element sizes
-          this.dotSize = this.$dot.offsetWidth;
           this.outlineSize = this.$outline.offsetWidth;
 
           this.setupEventListeners();
@@ -32,7 +29,6 @@ const Cursor = () => {
         setupEventListeners: function () {
           var self = this;
 
-          // Anchor hovering
           document.querySelectorAll("a, button").forEach(function (el) {
             el.addEventListener("mouseover", function () {
               self.cursorEnlarged = true;
@@ -44,7 +40,6 @@ const Cursor = () => {
             });
           });
 
-          // Click events
           document.addEventListener("mousedown", function () {
             self.cursorEnlarged = true;
             self.toggleCursorSize();
@@ -55,29 +50,22 @@ const Cursor = () => {
           });
 
           document.addEventListener("mousemove", function (e) {
-            // Show the cursor
             self.cursorVisible = true;
             self.toggleCursorVisibility();
 
-            // Position the dot
             self.endX = e.pageX;
             self.endY = e.pageY;
-            self.$dot.style.top = self.endY + "px";
-            self.$dot.style.left = self.endX + "px";
           });
 
-          // Hide/show cursor
           document.addEventListener("mouseenter", function (e) {
             self.cursorVisible = true;
             self.toggleCursorVisibility();
-            self.$dot.style.opacity = 1;
             self.$outline.style.opacity = 1;
           });
 
           document.addEventListener("mouseleave", function (e) {
             self.cursorVisible = true;
             self.toggleCursorVisibility();
-            self.$dot.style.opacity = 0;
             self.$outline.style.opacity = 0;
           });
         },
@@ -97,11 +85,9 @@ const Cursor = () => {
           var self = this;
 
           if (self.cursorEnlarged) {
-            self.$dot.style.transform = "translate(-50%, -50%) scale(0.75)";
             self.$outline.style.transform = "translate(-50%, -50%) scale(2)";
             self.$outline.style.borderColor = "white";
           } else {
-            self.$dot.style.transform = "translate(-50%, -50%) scale(1)";
             self.$outline.style.transform = "translate(-50%, -50%) scale(1)";
             self.$outline.style.borderColor = "#3a3a3a";
           }
@@ -111,10 +97,8 @@ const Cursor = () => {
           var self = this;
 
           if (self.cursorVisible) {
-            self.$dot.style.opacity = 1;
             self.$outline.style.opacity = 1;
           } else {
-            self.$dot.style.opacity = 0;
             self.$outline.style.opacity = 0;
           }
         },

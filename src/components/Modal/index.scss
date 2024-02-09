@@ -57,7 +57,7 @@
     ul {
       margin: 0;
       li {
-        padding: 3px 20px;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -65,7 +65,7 @@
         cursor: pointer;
         border-bottom: 1px solid #3b3b3b;
 
-        &:hover {
+        &:hover, &.-active {
           background: #474747;
 
           a {
@@ -80,6 +80,8 @@
         .description {
           display: flex;
           align-items: center;
+          width: 100%;
+          padding: 3px 20px;
         }
 
         svg {
