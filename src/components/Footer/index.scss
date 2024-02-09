@@ -12,7 +12,11 @@
     flex-direction: row;
     overflow-x: scroll;
     margin: 0;
-    padding-bottom: 5svh;
+    padding-bottom: 3svh;
+
+    @media (min-width: 730px) {
+      padding-bottom: 0;
+    }
 
     li {
       padding: 30px 15px;
