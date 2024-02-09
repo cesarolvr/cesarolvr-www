@@ -63,10 +63,12 @@
   }
 
   .-download {
-     position: relative;
-     z-index: 20;
-     top: 520px;
-     background-color: #222222;
+    @media (min-width: 1440px) {
+      position: relative;
+      z-index: 20;
+      top: 520px;
+      background-color: #222222;
+    }
   }
 
   .headshot {
