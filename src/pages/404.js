@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 
 // Styles
-import "./notfound.scss";
+import "../styles/notfound.scss";
 
 // Components
 import Loader from "../components/Loader";

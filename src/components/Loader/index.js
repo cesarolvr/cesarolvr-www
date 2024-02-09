@@ -28,7 +28,7 @@ const Loader = ({ isOpened = false, duration, linkBack, limit }) => {
       })}
     >
       <div className="value" id="value"></div>
-      {linkBack && <Link to="/">go back to cesarolvr.com</Link>}
+      {linkBack && <Link to="/">{`<-`} go back to home</Link>}
     </div>
   );
 };

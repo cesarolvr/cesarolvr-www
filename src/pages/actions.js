@@ -12,7 +12,7 @@ import cesarolvrCV from "../files/cv-cesarolvr.pdf";
 
 // Styles
 import "../styles/global.scss";
-import "./actions.scss";
+import "../styles/actions.scss";
 
 const Actions = () => {
   const [isOpened, setIsOpened] = React.useState(true);

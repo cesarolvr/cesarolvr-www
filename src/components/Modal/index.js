@@ -3,85 +3,19 @@ import classNames from "classnames";
 import Mousetrap from "mousetrap";
 
 // Components
-import { FiCopy } from "@react-icons/all-files/fi/FiCopy";
-import { FiDownload } from "@react-icons/all-files/fi/FiDownload";
-import { FiAward } from "@react-icons/all-files/fi/FiAward";
-import { FiGithub } from "@react-icons/all-files/fi/FiGithub";
-import { FiCalendar } from "@react-icons/all-files/fi/FiCalendar";
-import { FiInstagram } from "@react-icons/all-files/fi/FiInstagram";
-import { FiBook } from "@react-icons/all-files/fi/FiBook";
 import { FiCoffee } from "@react-icons/all-files/fi/FiCoffee";
-import { FiMail } from "@react-icons/all-files/fi/FiMail";
 
 // Context
 import { State } from "../Layout";
 
-// Files
-import cesarolvrCV from "../../files/cv-cesarolvr.pdf";
+// Data
+import { quickActionList } from "../../data";
 
 // Styles
 import "./index.scss";
 
-const actionList = [
-  {
-    text: "copy link",
-    nick: "c",
-    icon: <FiCopy />,
-    type: 1,
-    textToCopy: "https://cesarolvr.com",
-  },
-  {
-    text: "download cv",
-    nick: "d",
-    icon: <FiDownload />,
-    target: cesarolvrCV,
-  },
-  {
-    text: "know my career",
-    nick: "k",
-    icon: <FiAward />,
-    target: "https://www.linkedin.com/in/cesarolvr/",
-  },
-  {
-    text: "see my github",
-    nick: "g",
-    icon: <FiGithub />,
-    target: "https://github.com/cesarolvr/",
-  },
-  {
-    text: "book a meeting",
-    nick: "b",
-    icon: <FiCalendar />,
-    target: "https://meet.google.com/",
-  },
-  {
-    text: "send an email",
-    nick: "e",
-    icon: <FiMail />,
-    target: "mailto:contact@cesarolvr.com",
-  },
-  {
-    text: "follow me on instagram",
-    nick: "g",
-    icon: <FiInstagram />,
-    target: "https://www.instagram.com/cesarolvr/",
-  },
-  {
-    text: "see my current readings",
-    nick: "r",
-    icon: <FiBook />,
-    target: "https://goodreads.com/cesarolvr",
-  },
-  {
-    text: "view source code",
-    nick: "r",
-    icon: <FiCoffee />,
-    target: "https://github.com/cesarolvr/cesarolvr-www",
-  },
-];
-
 const Modal = () => {
-  const [list, setList] = React.useState(actionList);
+  const [list, setList] = React.useState(quickActionList);
   const [cursor, setCursor] = React.useState(0);
 
   const { modalIsOpened, setModalIsOpened, setCopied } =
@@ -141,7 +75,9 @@ const Modal = () => {
 
   const onSearch = (e) => {
     const value = e?.target?.value;
-    const newList = actionList.filter((item) => item?.text?.includes(value));
+    const newList = quickActionList.filter((item) =>
+      item?.text?.includes(value)
+    );
     setList(newList);
     setCursor(0);
   };

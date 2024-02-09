@@ -1,3 +1,18 @@
+import * as React from "react";
+
+import { FiCopy } from "@react-icons/all-files/fi/FiCopy";
+import { FiDownload } from "@react-icons/all-files/fi/FiDownload";
+import { FiAward } from "@react-icons/all-files/fi/FiAward";
+import { FiGithub } from "@react-icons/all-files/fi/FiGithub";
+import { FiCalendar } from "@react-icons/all-files/fi/FiCalendar";
+import { FiInstagram } from "@react-icons/all-files/fi/FiInstagram";
+import { FiBook } from "@react-icons/all-files/fi/FiBook";
+import { FiMail } from "@react-icons/all-files/fi/FiMail";
+import { FiCoffee } from "@react-icons/all-files/fi/FiCoffee";
+
+// Files
+import cesarolvrCV from "../files/cv-cesarolvr.pdf";
+
 const bioDescription = `8+ years of experience as a Software Engineer, working on
 large-scale and high-impact projects for digital companies, where I
 created digital acquisition experiences, dashboards, awwwards-like
@@ -57,4 +72,62 @@ const academyPath = [
   },
 ];
 
-export { bioDescription, careerPath, academyPath };
+const quickActionList = [
+  {
+    text: "copy link",
+    nick: "c",
+    icon: <FiCopy />,
+    type: 1,
+    textToCopy: "https://cesarolvr.com",
+  },
+  {
+    text: "download cv",
+    nick: "d",
+    icon: <FiDownload />,
+    target: cesarolvrCV,
+  },
+  {
+    text: "know my career",
+    nick: "k",
+    icon: <FiAward />,
+    target: "https://www.linkedin.com/in/cesarolvr/",
+  },
+  {
+    text: "see my github",
+    nick: "g",
+    icon: <FiGithub />,
+    target: "https://github.com/cesarolvr/",
+  },
+  {
+    text: "book a meeting",
+    nick: "b",
+    icon: <FiCalendar />,
+    target: "https://meet.google.com/",
+  },
+  {
+    text: "send an email",
+    nick: "e",
+    icon: <FiMail />,
+    target: "mailto:contact@cesarolvr.com",
+  },
+  {
+    text: "follow me on instagram",
+    nick: "g",
+    icon: <FiInstagram />,
+    target: "https://www.instagram.com/cesarolvr/",
+  },
+  {
+    text: "see my current readings",
+    nick: "r",
+    icon: <FiBook />,
+    target: "https://goodreads.com/cesarolvr",
+  },
+  {
+    text: "view source code",
+    nick: "r",
+    icon: <FiCoffee />,
+    target: "https://github.com/cesarolvr/cesarolvr-www",
+  },
+];
+
+export { bioDescription, careerPath, academyPath, quickActionList };

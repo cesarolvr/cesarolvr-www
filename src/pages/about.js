@@ -1,4 +1,5 @@
 import * as React from "react";
+import classNames from "classnames";
 
 // Components
 import Header from "../components/Header";
@@ -22,8 +23,7 @@ import headshot from "../images/headshot.jpg";
 
 // Styles
 import "../styles/global.scss";
-import "./about.scss";
-import classNames from "classnames";
+import "../styles/about.scss";
 
 const About = () => {
   const [activePanel, setActivePanel] = React.useState(1);

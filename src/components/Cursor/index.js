@@ -8,7 +8,6 @@ import "./index.scss";
 const Cursor = () => {
   useEffect(() => {
     const initCursor = () => {
-      // Custom Cursor
       var cursor = {
         delay: 8,
         _x: 0,
@@ -111,8 +110,8 @@ const Cursor = () => {
   }, []);
   return (
     <div className={classnames("cursor")}>
-      <div class="ppk-dot-outline"></div>
-      <div class="ppk-dot"></div>
+      <div className="ppk-dot-outline"></div>
+      <div className="ppk-dot"></div>
     </div>
   );
 };

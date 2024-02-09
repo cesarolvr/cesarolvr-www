@@ -10,7 +10,7 @@ import Cursor from "../components/Cursor";
 
 // Styles
 import "../styles/global.scss";
-import "./index.scss";
+import "../styles/index.scss";
 
 const IndexPage = () => {
   const [isOpened, setIsOpened] = React.useState(true);
@@ -24,7 +24,6 @@ const IndexPage = () => {
   return (
     <>
       <Cursor />
-
       <div className="home">
         <Loader isOpened={isOpened} />
         <Header hideShortcut />
