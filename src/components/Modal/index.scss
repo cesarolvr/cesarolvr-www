@@ -6,12 +6,12 @@
   opacity: 0;
   pointer-events: none;
   align-items: flex-start;
-  z-index: -1;
+  z-index: 0;
 
   &.-opened {
     opacity: 1;
     pointer-events: auto;
-    z-index: 15;
+    z-index: 75;
   }
 
   .layer {
