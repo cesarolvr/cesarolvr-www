@@ -7,6 +7,18 @@ module.exports = {
     siteUrl: `https://www.cesarolvr.com`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-RBL0Y5VB5K",
+        ],
+        pluginConfig: {
+          head: true,
+          // anonymize_ip: true,
+        },
+      },
+    },
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
@@ -39,11 +51,5 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "G-RBL0Y5VB5K",
-      },
-    }
   ],
 };
