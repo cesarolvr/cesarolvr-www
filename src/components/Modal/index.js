@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Mousetrap from "mousetrap";
 
 // Components
-import { FiCoffee } from "@react-icons/all-files/fi/FiCoffee";
+import { FiThumbsDown } from "@react-icons/all-files/fi/FiThumbsDown";
 
 // Context
 import { State } from "../Layout";
@@ -21,6 +21,7 @@ const Modal = () => {
   const [list, setList] = React.useState(quickActionList);
   const [cursor, setCursor] = React.useState(0);
   const [typeListener, setTypeListener] = React.useState(null);
+  const [sound, setSound] = React.useState(new Audio(keytype));
 
   const { modalIsOpened, setModalIsOpened, setCopied } =
     React.useContext(State);
@@ -65,7 +66,7 @@ const Modal = () => {
 
       Mousetrap.bind("enter", (e) => {
         e.preventDefault();
-        if (cursor === 0) {
+        if (cursor === 0 && list.length > 1) {
           return copyLink(list[0].textToCopy);
         } else {
           const link = document.querySelector(`#tablist-${cursor} a`);
@@ -79,6 +80,9 @@ const Modal = () => {
 
   const onSearch = (e) => {
     const value = e?.target?.value;
+    sound.currentTime = 0;
+    sound.volume = 0.05;
+    sound.play();
     const newList = quickActionList.filter((item) =>
       item?.text?.includes(value)
     );
@@ -108,27 +112,6 @@ const Modal = () => {
     }
     setCursor(cursor + 1);
   };
-
-  // React.useEffect(() => {
-  //   const sound = new Audio(keytype);
-  //   if (
-  //     modalIsOpened &&
-  //     document.activeElement.id === "shortcutid" &&
-  //     !typeListener
-  //   ) {
-  //     const listener = document.addEventListener("keydown", (e) => {
-  //       sound.currentTime = 0;
-  //       sound.volume = 0.2;
-  //       sound.play();
-  //     });
-
-  //     setTypeListener(listener);
-  //   }
-    
-  //   if (!modalIsOpened) {
-  //     document.removeEventListener("keydown", typeListener);
-  //   }
-  // }, [modalIsOpened, typeListener]);
 
   return (
     <div
@@ -198,7 +181,7 @@ const Modal = () => {
             })
           ) : (
             <div className="empty">
-              <FiCoffee /> nothing here, try again
+              <FiThumbsDown /> nothing here, try again
             </div>
           )}
         </ul>
