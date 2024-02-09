@@ -41,7 +41,7 @@
   .column {
     width: 100%;
     max-width: 400px;
-    position: relative;
+    // position: relative;
 
     @media (min-width: 730px) {
       width: 20%;
@@ -52,12 +52,21 @@
     line-height: 2.2em;
     width: 100%;
     padding: 0 20px;
+    position: relative;
+    z-index: 30;
 
     @media (min-width: 730px) {
-      max-width: 500px;
-      padding: 20px 0 0 80px;
+      max-width: 530px;
+      padding: 20px 0 0 100px;
       width: 75%;
     }
+  }
+
+  .-download {
+     position: relative;
+     z-index: 20;
+     top: 520px;
+     background-color: #222222;
   }
 
   .headshot {

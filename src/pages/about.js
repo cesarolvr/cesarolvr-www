@@ -24,6 +24,7 @@ import headshot from "../images/headshot.jpg";
 // Styles
 import "../styles/global.scss";
 import "../styles/about.scss";
+import Headshot from "../components/Headshot";
 
 const About = () => {
   const [activePanel, setActivePanel] = React.useState(1);
@@ -45,6 +46,9 @@ const About = () => {
     }, 2000);
   }, []);
 
+  const isMobile =
+    typeof window !== "undefined" ? window.innerWidth < 1440 : true;
+
   return (
     <>
       <Cursor />
@@ -54,8 +58,13 @@ const About = () => {
         <Header goBackToHome={true} />
         <main>
           <div className="headshot column">
-            <img src={headshot} alt="headshot" />
-            <a className="button -icon" href={headshot} download={true}>
+            {isMobile ? <img src={headshot} alt="headshot" /> : <Headshot />}
+
+            <a
+              className="button -download -icon"
+              href={headshot}
+              download={true}
+            >
               <FiDownload />
               <p>download photo</p>
             </a>

@@ -3,6 +3,8 @@
   width: 100vw;
   margin: 0 auto;
   text-align: left;
+  position: relative;
+  z-index: 40;
   display: flex;
   justify-content: space-between;
 

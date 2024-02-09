@@ -11,7 +11,7 @@ const Shortcut = ({ text }) => {
   const isMac =
     typeof window !== "undefined"
       ? !!navigator?.platform?.indexOf("Mac") > -1
-      : true;
+      : false;
 
   const isMobile =
     typeof window !== "undefined" ? window.innerWidth < 730 : true;
