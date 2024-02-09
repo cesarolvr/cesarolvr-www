@@ -56,19 +56,19 @@ const careerPath = [
 const academyPath = [
   {
     role: "postgraduate diploma (pgdip) of leadership and innovation",
-    details: `getulio vargas foundation | são Paulo, brazil | 2023 -> 2024`,
+    details: `getulio vargas foundation (fgv) | são Paulo, brazil | 2023 -> 2024`,
   },
   {
     role: "summer programm on usability engineering",
-    details: `university of são paulo | são Paulo, brazil | 2017 -> 2018`,
+    details: `university of são paulo (usp) | são Paulo, brazil | 2017 -> 2018`,
   },
   {
     role: "bachelor of digital (ba) design",
-    details: `anhembi morumbi university | são Paulo, brazil | 2016 -> 2019`,
+    details: `anhembi morumbi university (uam) | são Paulo, brazil | 2016 -> 2019`,
   },
   {
     role: "career and technical education (cte) on information systems",
-    details: `são paulo state technical school | são Paulo, brazil | 2013 -> 2015`,
+    details: `são paulo state technical school (etec) | são Paulo, brazil | 2013 -> 2015`,
   },
 ];
 

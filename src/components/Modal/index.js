@@ -11,12 +11,16 @@ import { State } from "../Layout";
 // Data
 import { quickActionList } from "../../data";
 
+// Files
+import keytype from "../../files/keytype.mp3";
+
 // Styles
 import "./index.scss";
 
 const Modal = () => {
   const [list, setList] = React.useState(quickActionList);
   const [cursor, setCursor] = React.useState(0);
+  const [typeListener, setTypeListener] = React.useState(null);
 
   const { modalIsOpened, setModalIsOpened, setCopied } =
     React.useContext(State);
@@ -104,6 +108,27 @@ const Modal = () => {
     }
     setCursor(cursor + 1);
   };
+
+  // React.useEffect(() => {
+  //   const sound = new Audio(keytype);
+  //   if (
+  //     modalIsOpened &&
+  //     document.activeElement.id === "shortcutid" &&
+  //     !typeListener
+  //   ) {
+  //     const listener = document.addEventListener("keydown", (e) => {
+  //       sound.currentTime = 0;
+  //       sound.volume = 0.2;
+  //       sound.play();
+  //     });
+
+  //     setTypeListener(listener);
+  //   }
+    
+  //   if (!modalIsOpened) {
+  //     document.removeEventListener("keydown", typeListener);
+  //   }
+  // }, [modalIsOpened, typeListener]);
 
   return (
     <div
