@@ -9,7 +9,7 @@ import "./index.scss";
 const Footer = () => {
   return (
     <div className="note">
-      <p>if you want one website like it or similar, let me know 👍🏾</p>
+      <p>if you want a website like this one, let me know here 👉🏾 <a href="mailto:contact@cesarolvr.com">contact@cesarolvr.com</a></p>
     </div>
   );
 };

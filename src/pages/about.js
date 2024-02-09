@@ -51,7 +51,7 @@ const About = () => {
 
       <div className="about">
         <Loader isOpened={isOpened} />
-        <Header />
+        <Header goBackToHome={true} />
         <main>
           <div className="headshot column">
             <img src={headshot} alt="headshot" />
@@ -142,4 +142,4 @@ const About = () => {
 
 export default About;
 
-export const Head = () => <title>about | cesarolvr</title>;
+export const Head = () => <title>me | cesarolvr</title>;

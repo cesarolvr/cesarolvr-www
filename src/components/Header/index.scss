@@ -6,8 +6,16 @@
   display: flex;
   justify-content: space-between;
 
+  .goback {
+    display: block;
+  }
+
   @media (min-width: 730px) {
     padding: 30px;
+
+    .goback {
+      display: none;
+    }
   }
   
 

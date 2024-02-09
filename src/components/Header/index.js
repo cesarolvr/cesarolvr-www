@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import "./index.scss";
 import Shortcut from "../Shortcut";
 
-const Header = ({ hideShortcut }) => {
+const Header = ({ goBackToHome }) => {
   const pathname =
     typeof window !== "undefined" ? window?.location?.pathname : "";
   return (
@@ -13,7 +13,9 @@ const Header = ({ hideShortcut }) => {
       <div className="header-logo">
         <Link to="/">cesarolvr.com</Link>
       </div>
-      {!hideShortcut && <Shortcut text="👀" />}
+      {goBackToHome && <Link className="goback" to="/">{"<-"} go back to home</Link>}
+
+      {/* {!hideShortcut && <Shortcut text="👀" />} */}
       <ul className="header-list only-desktop">
         <li>
           <Link

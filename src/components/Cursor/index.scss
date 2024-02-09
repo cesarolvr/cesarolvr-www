@@ -5,7 +5,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  border-radius: 0%;
+  border-radius: 50%;
   opacity: 0;
   transform: translate(-50%, -50%);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -13,7 +13,9 @@
 .ppk-dot-outline {
   width: 40px;
   height: 40px;
-  border: 1px solid #3a3a3a;
+  // border: 1px solid #3a3a3a;
+  background-color: #3a3a3a;
+  mix-blend-mode:plus-lighter;
 }
 
 
