@@ -109,10 +109,24 @@ button,
   font-weight: lighter;
   line-height: 14px;
 
+  svg {
+    transition: transform 0.3s ease;
+  }
+
   &:hover {
     text-decoration: none;
+
     cursor: pointer;
     background-color: #3a3a3a;
+
+    p {
+      color: white;
+    }
+
+    svg {
+      transform: scale(1.2);
+      stroke: white;
+    }
   }
 
   &.-toggle {
@@ -123,6 +137,7 @@ button,
     &:hover {
       background: none;
       text-decoration: underline;
+      color: white;
     }
   }
 

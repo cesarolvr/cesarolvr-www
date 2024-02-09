@@ -65,11 +65,20 @@
         cursor: pointer;
         border-bottom: 1px solid #3b3b3b;
 
+        svg {
+          transition: transform 0.3s ease;
+        }
+
         &:hover, &.-active {
           background: #474747;
 
           a {
             text-decoration: none;
+          }
+
+          svg {
+            transform: scale(1.5);
+            stroke: white;
           }
         }
 
