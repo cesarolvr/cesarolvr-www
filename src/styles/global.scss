@@ -5,6 +5,10 @@
   font-family: "Fira Code", monospace;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 ::selection {
   background: white;
   color: #222222;
