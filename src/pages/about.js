@@ -16,7 +16,7 @@ import cesarolvrCV from "../files/cesar-oliveira-resume.pdf";
 import { State } from "../components/Layout";
 
 // Data
-import { bioDescription, careerPath, academyPath, openSourcePath } from "../data";
+import { bioDescription, careerPath, academyPath, openSourcePath, volunteeringPath } from "../data";
 
 // Images
 import headshot from "../images/headshot.jpg";
@@ -57,12 +57,27 @@ const panelMap = (index) => {
     ),
     2: (
       <ol className="career-path -academic">
-        {openSourcePath.map(({ role, details }, index) => {
+        {openSourcePath.map(({ role, details, description }, index) => {
           return (
             <li key={index} className="about-career-experience">
               <h4 className="role">{role}</h4>
               <br />
               <h5 className="infos">{details}</h5>
+              <p className="description">{description}</p>
+            </li>
+          );
+        })}
+      </ol>
+    ),
+    3: (
+      <ol className="career-path -academic">
+        {volunteeringPath.map(({ role, details, description }, index) => {
+          return (
+            <li key={index} className="about-career-experience">
+              <h4 className="role">{role}</h4>
+              <br />
+              <h5 className="infos">{details}</h5>
+              <p className="description">{description}</p>
             </li>
           );
         })}
@@ -159,7 +174,7 @@ const About = () => {
                 },
                 {
                   title: "Volunteering",
-                  isBlocked: true,
+                  isBlocked: false,
                 },
                 {
                   title: "Skills",

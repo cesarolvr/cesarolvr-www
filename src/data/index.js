@@ -87,11 +87,27 @@ const academyPath = [
 
 const openSourcePath = [
   {
-    role: "Community Builder",
-    details: `Nerdzão | São Paulo, Brazil | 2017 -> 2018`,
-    description: `Nerdzão is one of the largest technology communities in Brazil. I could contribute to create dozens of these technology events in the town, and it helped me a lot with my career growth (besides it allow me to travel through Brazil).`,
+    role: "murphy.js",
+    details: `JavaScript | 2020`,
+    description: `A simple way to implement scroll based reveal animations in your site`,
   },
 ];
+
+const volunteeringPath = [
+  {
+    role: "Community Builder",
+    details: `Nerdzão | São Paulo, Brazil | 2017 -> 2018`,
+    description: `- Contribute to create +15 of technology events/meetup in the town
+    - Promoted +5 talks/meetup across the country`,
+  },
+  {
+    role: "Teaching Assistant",
+    details: `{reprograma} | São Paulo, Brazil | 2018`,
+    description: `- Contributed as a teacher's assistant, clearing up some tech student issues about web development
+    - +10 new developers (women) formed and inserted into the industry`,
+  },
+];
+
 
 const quickActionList = [
   {
@@ -151,4 +167,4 @@ const quickActionList = [
   },
 ];
 
-export { bioDescription, careerPath, academyPath, quickActionList, openSourcePath };
+export { bioDescription, careerPath, academyPath, quickActionList, openSourcePath, volunteeringPath };
