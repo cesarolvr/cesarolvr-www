@@ -65,7 +65,7 @@ const careerPath = [
 const academyPath = [
   {
     role: "MicroMaster® Program in Algorithms and Data Structures",
-    details: `Getulio Vargas Foundation (FGV) | São Paulo, Brazil | 2023 -> 2024`,
+    details: `University of California, San Diego (UCSD) | California, USA | 2024 -> 2025`,
   },
   {
     role: "Postgraduate Diploma (PgDip) in Leadership and Innovation",
