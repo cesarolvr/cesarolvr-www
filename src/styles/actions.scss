@@ -11,10 +11,17 @@
     }
   }
 
+  main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
   .actions-list {
     font-size: 30px;
     color: #bdbdbd;
     font-weight: lighter;
+    margin-bottom: 0;
 
     @media (min-width: 730px) {
       font-size: 45px;

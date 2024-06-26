@@ -11,17 +11,12 @@ import { State } from "../Layout";
 // Data
 import { quickActionList } from "../../data";
 
-// Files
-import keytype from "../../files/keytype.mp3";
-
 // Styles
 import "./index.scss";
 
 const Modal = () => {
   const [list, setList] = React.useState(quickActionList);
   const [cursor, setCursor] = React.useState(0);
-  const [typeListener, setTypeListener] = React.useState(null);
-  const [sound, setSound] = React.useState(new Audio(keytype));
 
   const { modalIsOpened, setModalIsOpened, setCopied } =
     React.useContext(State);
@@ -80,9 +75,6 @@ const Modal = () => {
 
   const onSearch = (e) => {
     const value = e?.target?.value;
-    sound.currentTime = 0;
-    sound.volume = 0.05;
-    sound.play();
     const newList = quickActionList.filter((item) =>
       item?.text?.includes(value)
     );

@@ -18,34 +18,42 @@ const Footer = () => {
             to="/about/"
             className={pathname?.startsWith("/about") ? `-active` : ``}
           >
-            about
+            About me
           </Link>
         </li>
 
         <li className="only-mobile">
           <Link
-            to="/actions/"
-            className={pathname?.startsWith("/actions") ? `-active` : ``}
+            to="/utilities/"
+            className={pathname?.startsWith("/utilities") ? `-active` : ``}
           >
-            quick actions
+            Utilities
           </Link>
         </li>
+
+        <li className="only-mobile -link-blocked">
+          <a href="/">My experiments</a>
+        </li>
+        <li className="only-mobile -link-blocked">
+          <a href="/">Blog</a>
+        </li>
+
         <li>
-          <a href="mailto:contact@cesarolvr.com">email</a>
+          <a href="mailto:contact@cesarolvr.com">Email</a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/cesarolvr/" target="_blank">
-            linkedin
+            Linkedin
           </a>
         </li>
         <li>
           <a href="https://github.com/cesarolvr/" target="_blank">
-            github
+            Github
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/cesarolvr/" target="_blank">
-            instagram
+            Instagram
           </a>
         </li>
       </ul>

@@ -1,8 +1,8 @@
 .banner-description {
   margin-top: 0px;
   margin-bottom: 30px;
-  max-width: 300px;
-  line-height: 1.5em;
+  max-width: 330px;
+  line-height: 1.8em;
   font-size: 14px;
 
   @media (min-width: 730px) {
@@ -26,6 +26,7 @@
   flex-direction: column;
 
   main {
+    padding: 0 20px;
     @media (min-width: 730px) {
       margin-top: -100px;
     }
@@ -39,4 +40,24 @@
 .home .header {
   display: flex;
   justify-content: space-between;
+}
+
+.-link-blocked {
+  a {
+    cursor: not-allowed;
+  }
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+.-button-blocked {
+  cursor: not-allowed !important;
+  opacity: 0.4 !important;
+  text-decoration: line-through;
+
+  &:hover {
+    text-decoration: line-through !important;
+    opacity: 0.4 !important;
+    color: #777777 !important;
+  }
 }

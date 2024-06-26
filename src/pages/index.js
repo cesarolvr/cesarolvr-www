@@ -28,19 +28,11 @@ const IndexPage = () => {
         <Loader isOpened={isOpened} />
         <Header hideShortcut />
         <main>
-          <Container>
-            <h1 className="banner-title">cesar oliveira</h1>
-            <h2 className="banner-subtitle">
-              tech lead at{" "}
-              <a target="_blank" href="https://itau.com.br">
-                itaú
-              </a>
-            </h2>
-            <p className="banner-description">
-              and having fun creating cool digital experiences
-            </p>
-            <Shortcut text="to find what you are looking for" />
-          </Container>
+          <h1 className="banner-title">Cesar Oliveira</h1>
+          <p className="banner-description">
+            A Software Engineer having fun crafting cool digital experiences
+          </p>
+          <Shortcut text="to start" />
         </main>
         <Footer />
       </div>

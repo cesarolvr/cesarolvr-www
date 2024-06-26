@@ -22,16 +22,36 @@ const Header = ({ goBackToHome }) => {
             to="/about/"
             className={pathname?.startsWith("/about") ? `-active` : ``}
           >
-            about
+            About me
           </Link>
         </li>
 
         <li>
           <Link
-            to="/actions/"
-            className={pathname?.startsWith("/actions") ? `-active` : ``}
+            to="/utilities/"
+            className={pathname?.startsWith("/utilities") ? `-active` : ``}
           >
-            quick actions
+            Utilities
+          </Link>
+        </li>
+
+        <li className="-link-blocked">
+          <Link
+            to="/"
+            title="soon"
+            className={pathname?.startsWith("/experiments") ? `-active` : ``}
+          >
+            My experiments
+          </Link>
+        </li>
+
+        <li className="-link-blocked">
+          <Link
+            to="/"
+            title="soon"
+            className={pathname?.startsWith("/blog") ? `-active` : ``}
+          >
+            Blog
           </Link>
         </li>
       </ul>

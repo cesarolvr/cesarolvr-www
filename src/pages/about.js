@@ -10,13 +10,13 @@ import { FiCopy } from "@react-icons/all-files/fi/FiCopy";
 import { FiDownload } from "@react-icons/all-files/fi/FiDownload";
 
 // Files
-import cesarolvrCV from "../files/cv-cesarolvr.pdf";
+import cesarolvrCV from "../files/cesar-oliveira-resume.pdf";
 
 // Context
 import { State } from "../components/Layout";
 
 // Data
-import { bioDescription, careerPath, academyPath } from "../data";
+import { bioDescription, careerPath, academyPath, openSourcePath } from "../data";
 
 // Images
 import headshot from "../images/headshot.jpg";
@@ -26,8 +26,55 @@ import "../styles/global.scss";
 import "../styles/about.scss";
 import Headshot from "../components/Headshot";
 
+const panelMap = (index) => {
+  const map = {
+    0: (
+      <ol className="career-path">
+        {careerPath.map(({ role, details, description }, index) => {
+          return (
+            <li key={index} className="about-career-experience">
+              <h4 className="role">{role}</h4>
+              <br />
+              <h5 className="infos">{details}</h5>
+              <p className="description">{description}</p>
+            </li>
+          );
+        })}
+      </ol>
+    ),
+    1: (
+      <ol className="career-path -academic">
+        {academyPath.map(({ role, details }, index) => {
+          return (
+            <li key={index} className="about-career-experience">
+              <h4 className="role">{role}</h4>
+              <br />
+              <h5 className="infos">{details}</h5>
+            </li>
+          );
+        })}
+      </ol>
+    ),
+    2: (
+      <ol className="career-path -academic">
+        {openSourcePath.map(({ role, details }, index) => {
+          return (
+            <li key={index} className="about-career-experience">
+              <h4 className="role">{role}</h4>
+              <br />
+              <h5 className="infos">{details}</h5>
+            </li>
+          );
+        })}
+      </ol>
+    ),
+  };
+
+  return map[index];
+};
+
 const About = () => {
-  const [activePanel, setActivePanel] = React.useState(1);
+  const [activePanel, setActivePanel] = React.useState(0);
   const { setCopied } = React.useContext(State);
 
   const copyText = () => {
@@ -66,81 +113,75 @@ const About = () => {
               download={true}
             >
               <FiDownload />
-              <p>download photo</p>
+              <p>Download photo</p>
             </a>
           </div>
           <div className="bio column">
-            <h3 className="about-title">bio</h3>
+            <h3 className="about-title">Bio</h3>
             <p className="paragraph">
-              8+ years of experience as a Software Engineer, working on
+              A decade of experience as a Software Engineer, working on
               large-scale and high-impact projects for digital companies, where
-              I created digital acquisition experiences, dashboards,
-              awwwards-like websites, design systems, mobile apps and email
-              marketing tools.
+              I've crafted digital acquisition experiences, dashboards,
+              awwwards-like websites, design systems, animations libraries,
+              mobile apps and email marketing tools.
             </p>
             <p className="paragraph">
               I'm really focused about resolve real problems through technology,
-              specifically web development, creative development, and usability
-              engineering.
+              specifically web development and creative development.
             </p>
             <ul className="control">
               <li>
                 <button className="-icon" onClick={copyText}>
                   <FiCopy />
-                  <p>copy bio</p>
+                  <p>Copy bio</p>
                 </button>
               </li>
               <li>
                 <a className="button -icon" href={cesarolvrCV} download={true}>
                   <FiDownload />
-                  <p>download cv</p>
+                  <p>Download CV</p>
                 </a>
               </li>
             </ul>
             <div className="toggle">
-              <button
-                className={classNames("-toggle", {
-                  "--active": activePanel === 1,
-                })}
-                onClick={() => setActivePanel(1)}
-              >
-                career path
-              </button>
-              <button
-                className={classNames("-toggle", {
-                  "--active": activePanel === 2,
-                })}
-                onClick={() => setActivePanel(2)}
-              >
-                academy journey
-              </button>
+              {[
+                {
+                  title: "Career",
+                  isBlocked: false,
+                },
+                {
+                  title: "Academy",
+                  isBlocked: false,
+                },
+                {
+                  title: "Open source",
+                  isBlocked: false,
+                },
+                {
+                  title: "Volunteering",
+                  isBlocked: true,
+                },
+                {
+                  title: "Skills",
+                  isBlocked: true,
+                },
+              ].map(({ title, isBlocked }, index) => {
+                return (
+                  <button
+                    className={classNames("-toggle", {
+                      "--active": activePanel === index,
+                      "-button-blocked": isBlocked,
+                    })}
+                    disabled={isBlocked}
+                    title={isBlocked ? `soon` : title}
+                    onClick={() => setActivePanel(index)}
+                  >
+                    {title}
+                  </button>
+                );
+              })}
             </div>
-            {activePanel === 1 ? (
-              <ol className="career-path">
-                {careerPath.map(({ role, details, description }, index) => {
-                  return (
-                    <li key={index} className="about-career-experience">
-                      <h4 className="role">{role}</h4>
-                      <br />
-                      <h5 className="infos">{details}</h5>
-                      <p className="description">{description}</p>
-                    </li>
-                  );
-                })}
-              </ol>
-            ) : (
-              <ol className="career-path -academic">
-                {academyPath.map(({ role, details, description }, index) => {
-                  return (
-                    <li key={index} className="about-career-experience">
-                      <h4 className="role">{role}</h4>
-                      <br />
-                      <h5 className="infos">{details}</h5>
-                    </li>
-                  );
-                })}
-              </ol>
-            )}
+            {panelMap(activePanel)}
           </div>
         </main>
         <Note />
@@ -151,4 +192,4 @@ const About = () => {
 
 export default About;
 
-export const Head = () => <title>me | cesarolvr</title>;
+export const Head = () => <title>Me | cesarolvr</title>;

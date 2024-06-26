@@ -7,13 +7,14 @@
   z-index: 40;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 
   .goback {
     display: block;
   }
 
   @media (min-width: 730px) {
-    padding: 30px;
+    padding: 20px;
 
     .goback {
       display: none;
@@ -24,6 +25,8 @@
   .header-control,
   .header-list {
     display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     margin: 0;
   }
 
@@ -45,11 +48,7 @@
     justify-content: flex-end;
 
     li {
-      margin: 0 15px;
-
-      &:last-of-type {
-        margin-right: 0;
-      }
+      margin-bottom: 10px;
 
       a {
         &.-active {

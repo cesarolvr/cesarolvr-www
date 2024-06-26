@@ -4,7 +4,7 @@
   padding: 0 5px;
 
   @media (min-width: 730px) {
-    padding: 25px 20px;
+    padding: 10px 20px;
   }
 
   .list {
@@ -28,7 +28,7 @@
       }
 
       @media (min-width: 730px) {
-        padding: 10px 5px;
+        padding: 10px 0px;
       }
     }
   }
@@ -39,7 +39,7 @@
       flex-direction: row;
 
       li {
-        margin: 0 20px 0 0;
+        margin: 0 25px 0 0;
         text-align: left;
       }
     }

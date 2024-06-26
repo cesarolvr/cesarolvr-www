@@ -8,7 +8,7 @@ import Loader from "../components/Loader";
 import Cursor from "../components/Cursor";
 
 // Files
-import cesarolvrCV from "../files/cv-cesarolvr.pdf";
+import cesarolvrCV from "../files/cesar-oliveira-resume.pdf";
 
 // Styles
 import "../styles/global.scss";
@@ -80,6 +80,10 @@ const Actions = () => {
             </ul>
           </Container>
         </main>
+        <br />
+        <br />
+        <br />
+        <br />
         <Note />
       </div>
     </>
@@ -88,4 +92,4 @@ const Actions = () => {
 
 export default Actions;
 
-export const Head = () => <title>quick actions | cesarolvr</title>;
+export const Head = () => <title>Utilities | cesarolvr</title>;
