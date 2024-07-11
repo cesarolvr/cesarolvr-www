@@ -34,7 +34,7 @@ const Actions = () => {
             <ul className="actions-list">
               <li>
                 <a href={cesarolvrCV} download={true} target="_blank">
-                  download cv
+                  Download CV
                 </a>
               </li>
               <li>
@@ -42,31 +42,36 @@ const Actions = () => {
                   href="https://www.linkedin.com/in/cesarolvr/"
                   target="_blank"
                 >
-                  go to my linkedin
+                  Go to my Linkedin
                 </a>
               </li>
               <li>
                 <a href="https://meet.google.com/" target="_blank">
-                  book a meeting <span>invite to -> contact@cesarolvr.com</span>
+                  Book a meeting <span>invite to -> contact@cesarolvr.com</span>
                 </a>
               </li>
               <li>
                 <a href="https://github.com/cesarolvr/" target="_blank">
-                  see my github
+                  See my Github
+                </a>
+              </li>
+              <li>
+                <a href="https://codepen.io/cesarolvr/" target="_blank">
+                  Star my Codepen
                 </a>
               </li>
               <li>
                 {" "}
-                <a href="mailto:contact@cesarolvr.com">send me an email</a>
+                <a href="mailto:contact@cesarolvr.com">Send me an e-mail</a>
               </li>
               <li>
                 <a href="https://www.instagram.com/cesarolvr/" target="_blank">
-                  follow me on instagram <span>(only friends)</span>
+                  Follow me on Instagram <span>(only friends)</span>
                 </a>
               </li>
               <li>
                 <a href="https://goodreads.com/cesarolvr" target="_blank">
-                  my current readings <span>(only curious)</span>
+                  My current readings <span>(only curious)</span>
                 </a>
               </li>
               <li>
@@ -74,7 +79,7 @@ const Actions = () => {
                   href="https://github.com/cesarolvr/cesarolvr-www"
                   target="_blank"
                 >
-                  view source code of this website <span>(only devs)</span>
+                  View source code of this website <span>(only devs)</span>
                 </a>
               </li>
             </ul>

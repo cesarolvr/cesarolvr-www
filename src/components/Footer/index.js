@@ -30,10 +30,6 @@ const Footer = () => {
             Utilities
           </Link>
         </li>
-
-        <li className="only-mobile -link-blocked">
-          <a href="/">My experiments</a>
-        </li>
         <li className="only-mobile -link-blocked">
           <a href="/">Blog</a>
         </li>

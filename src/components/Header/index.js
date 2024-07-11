@@ -13,7 +13,11 @@ const Header = ({ goBackToHome }) => {
       <div className="header-logo">
         <Link to="/">cesarolvr.com</Link>
       </div>
-      {goBackToHome && <Link className="goback" to="/">{"<-"} go back to home</Link>}
+      {goBackToHome && (
+        <Link className="goback" to="/">
+          {"<-"} go back to home
+        </Link>
+      )}
 
       {/* {!hideShortcut && <Shortcut text="👀" />} */}
       <ul className="header-list only-desktop">
@@ -32,16 +36,6 @@ const Header = ({ goBackToHome }) => {
             className={pathname?.startsWith("/utilities") ? `-active` : ``}
           >
             Utilities
-          </Link>
-        </li>
-
-        <li className="-link-blocked">
-          <Link
-            to="/"
-            title="soon"
-            className={pathname?.startsWith("/experiments") ? `-active` : ``}
-          >
-            My experiments
           </Link>
         </li>
 
