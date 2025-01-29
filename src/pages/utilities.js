@@ -19,7 +19,7 @@ const Actions = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setIsOpened(false);
-    }, 1300);
+    }, 800);
   }, []);
 
   return (
@@ -27,7 +27,7 @@ const Actions = () => {
       <Cursor />
 
       <div className="actions">
-        <Loader isOpened={isOpened} duration={0.8} />
+        <Loader isOpened={isOpened} duration={0.5} />
         <Header hideShortcut={true} goBackToHome={true} />
         <main>
           <Container>
@@ -58,6 +58,11 @@ const Actions = () => {
               <li>
                 <a href="https://codepen.io/cesarolvr/" target="_blank">
                   Star my Codepen
+                </a>
+              </li>
+              <li>
+                <a href="https://leetcode.com/u/cesarolvr/" target="_blank">
+                  Check my Leetcode
                 </a>
               </li>
               <li>

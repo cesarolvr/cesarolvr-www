@@ -18,14 +18,14 @@ const IndexPage = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setIsOpened(false);
-    }, 3000);
+    }, 1500);
   }, []);
 
   return (
     <>
       <Cursor />
       <div className="home">
-        <Loader isOpened={isOpened} />
+        <Loader isOpened={isOpened} duration={1} />
         <Header hideShortcut />
         <main>
           <h1 className="banner-title">Cesar Oliveira</h1>

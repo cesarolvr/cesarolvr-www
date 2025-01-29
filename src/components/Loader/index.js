@@ -17,7 +17,7 @@ const Loader = ({ isOpened = false, duration, linkBack, limit }) => {
         setValue(v);
         return `${v}`;
       },
-      duration: duration ?? 2
+      duration: duration ?? 1
     });
     countUp.start();
   }, []);

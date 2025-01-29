@@ -16,7 +16,7 @@ import cesarolvrCV from "../files/cesar-oliveira-resume.pdf";
 import { State } from "../components/Layout";
 
 // Data
-import { bioDescription, careerPath, academyPath, openSourcePath, volunteeringPath } from "../data";
+import { bioDescription, careerPath, academyPath, openSourcePath, volunteeringPath, hackingPath } from "../data";
 
 // Images
 import headshot from "../images/headshot.jpg";
@@ -83,6 +83,20 @@ const panelMap = (index) => {
         })}
       </ol>
     ),
+    4: (
+      <ol className="career-path -academic">
+        {hackingPath.map(({ role, details, description }, index) => {
+          return (
+            <li key={index} className="about-career-experience">
+              <h4 className="role">{role}</h4>
+              <br />
+              <h5 className="infos">{details}</h5>
+              <p className="description">{description}</p>
+            </li>
+          );
+        })}
+      </ol>
+    ),
   };
 
   return map[index];
@@ -105,7 +119,7 @@ const About = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setIsOpened(false);
-    }, 2000);
+    }, 800);
   }, []);
 
   const isMobile =
@@ -116,7 +130,7 @@ const About = () => {
       <Cursor />
 
       <div className="about">
-        <Loader isOpened={isOpened} />
+        <Loader isOpened={isOpened} duration={0.5} />
         <Header goBackToHome={true} />
         <main>
           <div className="headshot column">
@@ -174,6 +188,10 @@ const About = () => {
                 },
                 {
                   title: "Volunteering",
+                  isBlocked: false,
+                },
+                {
+                  title: "Hacking",
                   isBlocked: false,
                 },
                 {

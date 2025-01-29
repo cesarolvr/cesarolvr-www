@@ -53,7 +53,7 @@
   .bio {
     line-height: 2.2em;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 15px;
     position: relative;
     z-index: 30;
 
@@ -114,6 +114,11 @@
   .toggle {
     display: flex;
     margin: 40px 0;
+    overflow: scroll;
+
+    @media (min-width: 730px) {
+      overflow: visible;
+    }
 
     button {
       margin-right: 30px;

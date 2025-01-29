@@ -108,6 +108,13 @@ const volunteeringPath = [
   },
 ];
 
+const hackingPath = [
+  {
+    role: "journeylog.app",
+    details: `Habit tracker app | 2025`,
+    description: `- React, Next.js, Supabase, Deno, TailwindCSS, Serverless functions, Figma and Vercel`,
+  },
+];
 
 const quickActionList = [
   {
@@ -167,4 +174,12 @@ const quickActionList = [
   },
 ];
 
-export { bioDescription, careerPath, academyPath, quickActionList, openSourcePath, volunteeringPath };
+export {
+  bioDescription,
+  careerPath,
+  academyPath,
+  quickActionList,
+  openSourcePath,
+  volunteeringPath,
+  hackingPath,
+};
