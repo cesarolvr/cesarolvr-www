@@ -87,9 +87,22 @@ const academyPath = [
 
 const openSourcePath = [
   {
-    role: "murphy.js",
+    role: "NextJS + GSAP Timeline template",
+    details: `JavaScript | 2024`,
+    description: `A slider component using NextJS + 🥦 GSAP Timeline:`,
+    link: `https://xyzphotography.vercel.app`,
+  },
+  {
+    role: "Gatsby + Github API template",
+    details: `JavaScript | 2022`,
+    description: `A simple frontend template that integrates with Github's API:`,
+    link: `https://cesar-oliveira-web.vercel.app/`,
+  },
+  {
+    role: "A scroll based animation library",
     details: `JavaScript | 2020`,
-    description: `A simple way to implement scroll based reveal animations in your site`,
+    description: `Murphy.js - A simple way to implement scroll based reveal animations in your site:`,
+    link: `https://cesarolvr.github.io/murphyjs-lib/index.html`,
   },
 ];
 
