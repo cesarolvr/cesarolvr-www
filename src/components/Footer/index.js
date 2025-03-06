@@ -1,9 +1,6 @@
 import { Link } from "gatsby";
 import * as React from "react";
 
-// Components
-import Container from "../Container";
-
 // Styles
 import "./index.scss";
 
@@ -30,8 +27,8 @@ const Footer = () => {
             Utilities
           </Link>
         </li>
-        <li className="only-mobile -link-blocked">
-          <a href="/">Blog</a>
+        <li className="only-mobile">
+          <a href="/blog">Blog</a>
         </li>
 
         <li>

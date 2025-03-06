@@ -28,7 +28,7 @@ const IndexPage = () => {
         <Loader isOpened={isOpened} duration={1} />
         <Header hideShortcut />
         <main>
-          <h1 className="banner-title">Cesar Oliveira</h1>
+          <h1 className="banner-title font-black">Cesar Oliveira</h1>
           <p className="banner-description">
             A Software Engineer having fun crafting cool digital experiences
           </p>

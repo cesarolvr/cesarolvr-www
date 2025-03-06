@@ -7,6 +7,7 @@ module.exports = {
     siteUrl: `https://www.cesarolvr.com`,
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

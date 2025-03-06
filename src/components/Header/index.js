@@ -39,9 +39,9 @@ const Header = ({ goBackToHome }) => {
           </Link>
         </li>
 
-        <li className="-link-blocked">
+        <li>
           <Link
-            to="/"
+            to="/blog"
             title="soon"
             className={pathname?.startsWith("/blog") ? `-active` : ``}
           >
