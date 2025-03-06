@@ -39,7 +39,7 @@ const Header = ({ goBackToHome }) => {
           </Link>
         </li>
 
-        <li>
+        <li className="-link-blocked">
           <Link
             to="/blog"
             title="soon"
