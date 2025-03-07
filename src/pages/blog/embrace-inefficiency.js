@@ -25,11 +25,11 @@ const Post = () => {
         <Header goBackToHome={true} />
         <main className="flex flex-col mb-10 max-w-full">
           <p className="px-[5%] mb-3 text-[80px]">🐢</p>
-          <h3 className="about-title px-[5%] text-[30px] md:text-[50px] mb-3 font-black w-full md:mt-0">
+          <h3 className="about-title px-[5%] text-[35px] md:text-[50px] mb-4 font-black w-full md:mt-0">
             Embrace inefficiency
           </h3>
           <div className="text-[#fff] max-w-full w-full px-[5%] leading-10 ">
-            <p className=" mb-14 text-[18px] md:text-[20px] max-w-[750px] pr-10 w-full leading-8 md:leading-10">
+            <p className=" mb-12 text-[18px] md:text-[20px] max-w-[750px] pr-10 w-full leading-8 md:leading-10">
               Written in first-person by me, to myself. You will find here a
               honest view of front-end.
             </p>
