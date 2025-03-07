@@ -66,7 +66,7 @@ const Post = () => {
           <br />
           <br />
 
-          <a href={""} className="px-[5%] text-[18px]">
+          <a href={"/blog/"} className="px-[5%] text-[18px]">
             {'<- '} Back to blog
           </a>
           <br />
