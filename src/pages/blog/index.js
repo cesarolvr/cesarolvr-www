@@ -48,9 +48,9 @@ const Blog = () => {
             Ideas. Opinions. Daydreams.
           </h3>
           <p className="paragraph md:w-[750px] mb-12 text-[20px] px-[5%] w-full">
-            Written in first-person by me, to myself. You will find here a
-            honest view of front-end, algorithms, creative development, study
-            strategies and technical leadership.
+            Written by me, for my future self. You will find here an
+            honest (and sometimes wrong) view of front-end, tech career, algorithms, creative
+            development, study strategies and technical leadership.
           </p>
           <p className="px-[5%] mb-8 text-[25px] text-[#555555] font-bold">
             2013
