@@ -28,7 +28,7 @@ const Blog = () => {
     },
     {
       id: "002",
-      emoji: "🚀",
+      emoji: "💻",
       title: "First contact with code",
       description:
         "I just don't know what I'm doing. Everything that I write sucks.",

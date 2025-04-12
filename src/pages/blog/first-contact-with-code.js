@@ -26,7 +26,7 @@ const Post = () => {
         <main className="flex flex-col mb-10 max-w-[900px]">
           <article class="blog-intro">
             <header className="px-[5%] mb-4">
-              <p className="mb-3 text-[80px]">🚀</p>
+              <p className="mb-3 text-[80px]">💻</p>
               <h3 className="about-title text-[35px] md:text-[50px] mb-5 font-black w-full leading-[60px] md:mt-0">
                 First contact with code
               </h3>
