@@ -17,51 +17,23 @@ const Blog = () => {
     }, 800);
   }, []);
 
-  const techArticles = [
+  const articles2013 = [
     {
       id: "001",
-      emoji: "🐢",
-      title: "Embrace inefficiency",
-      description:
-        "An unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      readTime: "5 min read",
-      link: "/blog/embrace-inefficiency",
+      emoji: "🚀",
+      title: "Starting...",
+      description: "Describing my purpose and goals for this blog.",
+      readTime: "2 min read",
+      link: "/blog/starting",
     },
     {
       id: "002",
       emoji: "🚀",
-      title: "The future of JavaScript",
+      title: "First contact with code",
       description:
-        "Exploring the upcoming features and improvements in the JavaScript language.",
-      readTime: "8 min read",
-      link: "/blog/the-future-of-javascript",
-    },
-    {
-      id: "003",
-      emoji: "💡",
-      title: "Creative coding techniques",
-      description:
-        "A deep dive into creative coding and how to make your projects stand out.",
-      readTime: "7 min read",
-      link: "/blog/creative-coding-techniques",
-    },
-    {
-      id: "004",
-      emoji: "📚",
-      title: "Study strategies for developers",
-      description:
-        "Effective study strategies to help you learn and retain programming concepts.",
-      readTime: "6 min read",
-      link: "/blog/study-strategies-for-developers",
-    },
-    {
-      id: "005",
-      emoji: "🧠",
-      title: "Understanding algorithms",
-      description:
-        "Breaking down complex algorithms into simple, understandable steps.",
-      readTime: "10 min read",
-      link: "/blog/understanding-algorithms",
+        "I just don't know what I'm doing. Everything that I write sucks.",
+      readTime: "3 min read",
+      link: "/blog/first-contact-with-code",
     },
   ];
 
@@ -80,15 +52,18 @@ const Blog = () => {
             honest view of front-end, algorithms, creative development, study
             strategies and technical leadership.
           </p>
+          <p className="px-[5%] mb-8 text-[25px] text-[#555555] font-bold">
+            2013
+          </p>
           <ul className="text-[18px] w-full">
-            {techArticles.reverse().map((article) => (
+            {articles2013.reverse().map((article) => (
               <li
                 key={article.id}
-                className="flex flex-col items-start group px-[5%] mb-10 pb-7 pt-2 w-full text-white hover:bg-[#fff]"
+                className="flex flex-col items-start group px-[5%] mb-7 pb-5 pt-2 w-full text-white hover:bg-[#fff]"
               >
                 <a href={article.link}>
                   <div className="flex flex-row items-center mb-3 md:mb-0">
-                    <p className="pl-0 md:pr-7 pr-5 md:pl-0 text-[54px]">
+                    <p className="pl-0 md:pr-7 pr-5 md:pl-0 text-[50px] h-[65px]">
                       {article.emoji}
                     </p>
                     <p className="font-bold break-words text-[22px] md:text-[24px] group-hover:text-[#222]">
@@ -96,38 +71,7 @@ const Blog = () => {
                     </p>
                   </div>
                   <div className="md:pl-20">
-                    <p className="text-[#777777] mb-4 text-[18px] group-hover:text-[#222] max-w-[700px] block">
-                      {article.description}
-                    </p>
-                    <p className="text-[16px] group-hover:text-[#666] group-hover:hidden">
-                      {article.readTime}
-                    </p>
-                    <p className="text-[16px] hidden group-hover:block group-hover:text-[#222] font-bold">
-                      Read ->
-                    </p>
-                  </div>
-                </a>
-              </li>
-            ))}
-          </ul>
-          <p className="px-[5%] mb-8 text-[25px] text-[#555555] font-bold">2024</p>
-          <ul className="text-[18px] w-full">
-            {techArticles.reverse().map((article) => (
-              <li
-                key={article.id}
-                className="flex flex-col items-start group px-[5%] mb-10 pb-7 pt-2 w-full text-white hover:bg-[#fff]"
-              >
-                <a href={article.link}>
-                  <div className="flex flex-row items-center mb-3 md:mb-0">
-                    <p className="pl-0 md:pr-7 pr-5 md:pl-0 text-[54px]">
-                      {article.emoji}
-                    </p>
-                    <p className="font-bold break-words text-[22px] md:text-[24px] group-hover:text-[#222]">
-                      <span className="">{article.id}.</span> {article.title}
-                    </p>
-                  </div>
-                  <div className="md:pl-20">
-                    <p className="text-[#777777] mb-4 text-[18px] group-hover:text-[#222] max-w-[700px] block">
+                    <p className="text-[#777777] mb-6 text-[18px] group-hover:text-[#222] max-w-[700px] block">
                       {article.description}
                     </p>
                     <p className="text-[16px] group-hover:text-[#666] group-hover:hidden">

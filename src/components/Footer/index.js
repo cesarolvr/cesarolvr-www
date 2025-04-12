@@ -27,7 +27,7 @@ const Footer = () => {
             Utilities
           </Link>
         </li>
-        <li className="only-mobile -link-blocked">
+        <li className="only-mobile">
           <a href="/blog">Blog</a>
         </li>
 

@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 
 // Styles
 import "./index.scss";
-import Shortcut from "../Shortcut";
 
 const Header = ({ goBackToHome }) => {
   const pathname =
@@ -19,7 +18,6 @@ const Header = ({ goBackToHome }) => {
         </Link>
       )}
 
-      {/* {!hideShortcut && <Shortcut text="👀" />} */}
       <ul className="header-list only-desktop">
         <li>
           <Link
@@ -39,7 +37,7 @@ const Header = ({ goBackToHome }) => {
           </Link>
         </li>
 
-        <li className="-link-blocked">
+        <li>
           <Link
             to="/blog"
             title="soon"
