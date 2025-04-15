@@ -699,17 +699,17 @@ const Blog = () => {
         <Loader isOpened={isOpened} duration={0.5} />
         <Header goBackToHome={true} />
         <main className="flex flex-col mb-10 max-w-full">
-          <h3 className="about-title text-[50px] mb-6 font-black px-[5%] w-full mt-10 md:mt-0">
+          <h3 className="about-title text-[40px] mb-6 font-black px-[5%] w-full mt-10 md:mt-0">
             Ideas. Opinions. Daydreams.
           </h3>
-          <p className="paragraph md:w-[880px] mb-12 text-[20px] px-[5%] w-full">
+          <p className="paragraph md:w-[880px] text-[18px] px-[5%] w-full">
             Written by me, for my future self. You will find here an honest (and
             sometimes wrong) view of front-end, tech career, algorithms,
             creative development, study strategies and technical leadership.
           </p>
           {articles?.slice().reverse().map((yearGroup) => (
             <React.Fragment key={yearGroup.year}>
-              <p className="px-[5%] mb-8 text-[25px] text-[#555555] font-bold">
+              <p className="px-[5%] mb-8 mt-16 text-[20px] text-[#555555] font-bold">
                 {yearGroup.year}
               </p>
               <ul className="text-[18px] w-full">
@@ -717,18 +717,18 @@ const Blog = () => {
                   <li
                     key={article.id}
                     id={article.id}
-                    className="flex flex-col items-start group px-[5%] mb-7 pb-5 pt-2 w-full text-white hover:bg-[#fff]"
+                    className="flex border-b-[1px] border-[#494949] flex-col items-start group px-[5%] pb-8 pt-5 w-full text-white hover:bg-[#fff]"
                   >
                     <a href={article.active ? article.link : `#${lastPublished}`}>
                       <div className="flex flex-row items-center mb-3 md:mb-0">
-                        <p className="pl-0 md:pr-7 pr-5 md:pl-0 text-[50px] h-[65px]">
+                        <p className="pl-0 md:pr-4 pr-2 md:pl-0 text-[30px] w-[50px] inline-block shrink-0 text-center">
                           {article.emoji}
                         </p>
-                        <p className="font-bold break-words text-[22px] md:text-[24px] group-hover:text-[#222]">
+                        <p className="font-bold break-words text-[18px] md:text-[20px] group-hover:text-[#222]">
                           <span className="">{article.id}.</span> {article.title}
                         </p>
                       </div>
-                      <div className="md:pl-20">
+                      <div className="md:pl-[50px]">
                         <p className="text-[#777777] mb-6 text-[18px] group-hover:text-[#222] max-w-[700px] block">
                           {article.active ? article.description : "Will be published soon..."}
                         </p>
