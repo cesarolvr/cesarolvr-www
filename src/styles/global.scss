@@ -160,6 +160,13 @@ button,
   }
 }
 
+blockquote {
+  font-style: italic;
+  color: #ddd;
+  text-decoration: overline;
+  margin: 10px 0;
+}
+
 .only-desktop.only-desktop {
   display: none;
   @media (min-width: 730px) {

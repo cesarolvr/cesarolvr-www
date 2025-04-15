@@ -75,6 +75,10 @@ const Post = () => {
                 <p>
                   I will continue studying, even if I do not fully understand the whole and the purpose of programming.
                 </p>
+                <br />
+                <p>
+                  Wish me luck!
+                </p>
               </section>
             </div>
             <br />
