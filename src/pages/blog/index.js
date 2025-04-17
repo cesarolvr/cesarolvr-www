@@ -28,10 +28,10 @@ const Blog = () => {
         {
           id: "002",
           emoji: "💻",
-          title: "First contact with programming",
+          title: "First contact with code",
           description: "I just don't know what I'm doing. Everything that I write sucks.",
           readTime: "3 min read",
-          link: "/blog/first-contact-with-programming",
+          link: "/blog/first-contact-with-code",
           active: true
         },
         {
@@ -40,7 +40,7 @@ const Blog = () => {
           title: "The analogy of the Tower of Hanoi to programming",
           description: "Understanding programming concepts through the famous puzzle.",
           readTime: "4 min read",
-          link: "/blog/tower-of-hanoi",
+          link: "/blog/the-analogy-of-the-tower-of-hanoi-to-programming",
           active: false
         },
         {
