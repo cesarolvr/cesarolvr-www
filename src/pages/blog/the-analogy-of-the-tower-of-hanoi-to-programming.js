@@ -66,7 +66,7 @@ const Post = () => {
                 </div>
                 <br />
                 <p>In Java:</p>
-                <SyntaxHighlighter language="java" style={darcula}>
+                <SyntaxHighlighter className="overflow-scroll rounded-3xl" language="java" style={darcula}>
                   {`public class TowerOfHanoi {
 
     // Recursive function to solve Tower of Hanoi

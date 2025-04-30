@@ -8,8 +8,35 @@
   font-family: "Fira Code", monospace;
 }
 
+// ::-webkit-scrollbar {
+//   display: none;
+// }
+
+/* Mac-style scrollbar for Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255,0.18);
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255,0.35);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255,0.18) transparent;
 }
 
 ::selection {
