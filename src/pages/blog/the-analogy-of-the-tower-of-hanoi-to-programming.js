@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // Components
 import Header from "../../components/Header";
@@ -8,6 +10,9 @@ import Cursor from "../../components/Cursor";
 
 // Styles
 import "../../styles/global.scss";
+
+// Images
+import towerOfHanoi from "../../images/blog-tower-of-hanoi/tower-of-hanoi.gif";
 
 const Post = () => {
   const [isOpened, setIsOpened] = React.useState(true);
@@ -52,8 +57,73 @@ const Post = () => {
                 <br />
                 <p>Let's see:</p>
                 <br />
+                <div className="flex justify-center rounded-3xl overflow-hidden">
+                  <img
+                    src={towerOfHanoi}
+                    alt="Tower of Hanoi"
+                    className="w-full"
+                  />
+                </div>
                 <br />
-                <p>Now in Golang:</p>
+                <p>In Java:</p>
+                <SyntaxHighlighter language="java" style={darcula}>
+                  {`public class TowerOfHanoi {
+
+    // Recursive function to solve Tower of Hanoi
+    public static void solveHanoi(int n, char source, char destination, char auxiliary) {
+        // Base case: If there's only one disk, move it directly
+        if (n == 1) {
+            System.out.println("Move disk 1 from " + source + " to " + destination);
+            return;
+        }
+
+        // Step 1: Move n-1 disks from source to auxiliary using destination
+        solveHanoi(n - 1, source, auxiliary, destination);
+
+        // Step 2: Move the nth disk from source to destination
+        System.out.println("Move disk " + n + " from " + source + " to " + destination);
+
+        // Step 3: Move n-1 disks from auxiliary to destination using source
+        solveHanoi(n - 1, auxiliary, destination, source);
+    }
+
+    public static void main(String[] args) {
+        int numberOfDisks = 4; // With 4 disks
+        System.out.println("Tower of Hanoi solution for " + numberOfDisks + " disks:");
+        solveHanoi(numberOfDisks, 'A', 'C', 'B'); // A = source, C = destination, B = auxiliary
+    }
+}
+`}
+                </SyntaxHighlighter>
+                <br />
+                <p>The steps are:</p>
+                <br />
+                <ul className="space-y-6 list-decimal list-inside dark:text-[#bdbdbd]">
+                  <li>
+                    <strong className="font-semibold dark:text-white">
+                      Base case:
+                    </strong>{" "}
+                    If I have only one disk, I move it directly from the source peg to the destination peg.
+                  </li>
+                  <li>
+                    <strong className="font-semibold dark:text-white">
+                      Recursive step 1:
+                    </strong>{" "}
+                    I move the top <code>n-1</code> disks from the source peg to the auxiliary peg, using the destination peg as a helper.
+                  </li>
+                  <li>
+                    <strong className="font-semibold dark:text-white">
+                      Move largest disk:
+                    </strong>{" "}
+                    I move the remaining (largest) disk from the source peg to the destination peg.
+                  </li>
+                  <li>
+                    <strong className="font-semibold dark:text-white">
+                      Recursive step 2:
+                    </strong>{" "}
+                    Then, I move the <code>n-1</code> disks from the auxiliary peg to the destination peg, using the source peg as a helper.
+                  </li>
+                </ul>
                 <br />
                 <p>
                   Our routine is already quite abstract, making it difficult to

@@ -41,7 +41,7 @@ const Blog = () => {
           description: "Understanding programming concepts through the famous puzzle.",
           readTime: "4 min read",
           link: "/blog/the-analogy-of-the-tower-of-hanoi-to-programming",
-          active: false
+          active: true
         },
         {
           id: "004",
