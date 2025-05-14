@@ -28,7 +28,7 @@ const Post = () => {
             <header className="px-[5%] mb-4">
               <p className="mb-3 text-[80px]">🚀</p>
               <h3 className="about-title text-[35px] md:text-[50px] mb-4 font-black w-full md:mt-0 leading-[60px]">
-                Starting...
+                001. Starting...
               </h3>
               <time datetime="2013-02-03" className="text-[18px] text-[#bbb]">
                 February 3, 2013
@@ -97,4 +97,4 @@ const Post = () => {
 
 export default Post;
 
-export const Head = () => <title>Starting... | cesarolvr</title>;
+export const Head = () => <title>001. Starting... | cesarolvr</title>;

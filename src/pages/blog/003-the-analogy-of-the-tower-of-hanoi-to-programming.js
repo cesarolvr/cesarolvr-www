@@ -33,7 +33,7 @@ const Post = () => {
             <header className="px-[5%] mb-4">
               <p className="mb-3 text-[80px]">🗼</p>
               <h3 className="about-title text-[35px] md:text-[50px] mb-5 font-black w-full leading-[60px] md:mt-0">
-                The analogy of the tower of Hanoi to programming
+                003. The analogy of the tower of Hanoi to programming
               </h3>
               <time datetime="2013-03-03" className="text-[18px] text-[#bbb]">
                 June 10, 2013
@@ -42,6 +42,27 @@ const Post = () => {
             <br />
             <br />
             <div className="text-[#fff] max-w-full w-full mb-16 px-[5%] leading-[50px] text-[26px]">
+              <section class="tldr text-[25px] leading-[45px]">
+                <p className="mb-4">
+                  <strong>TL;DR</strong>
+                </p>
+                <ul className="list-disc pl-8">
+                  <li className="mb-4">
+                    Learned about sequential instructions through the Tower of
+                    Hanoi analogy in logic class.
+                  </li>
+                  <li className="mb-4">
+                    Adopted a "step-by-step and explain-to-a-kid" mindset to
+                    simplify abstract concepts.
+                  </li>
+                  <li className="mb-4">
+                    Reminder: Computers are fast, not smart. They just follow
+                    instructions.
+                  </li>
+                </ul>
+                <br />
+                <br />
+              </section>
               <section class="intro-text">
                 <p>
                   Last week, my math teacher, who is also my logic teacher,
@@ -66,7 +87,11 @@ const Post = () => {
                 </div>
                 <br />
                 <p>In Java:</p>
-                <SyntaxHighlighter className="overflow-scroll rounded-3xl" language="java" style={darcula}>
+                <SyntaxHighlighter
+                  className="overflow-scroll rounded-3xl"
+                  language="java"
+                  style={darcula}
+                >
                   {`public class TowerOfHanoi {
 
     // Recursive function to solve Tower of Hanoi
@@ -103,25 +128,30 @@ const Post = () => {
                     <strong className="font-semibold dark:text-white">
                       Base case:
                     </strong>{" "}
-                    If I have only one disk, I move it directly from the source peg to the destination peg.
+                    If I have only one disk, I move it directly from the source
+                    peg to the destination peg.
                   </li>
                   <li>
                     <strong className="font-semibold dark:text-white">
                       Recursive step 1:
                     </strong>{" "}
-                    I move the top <code>n-1</code> disks from the source peg to the auxiliary peg, using the destination peg as a helper.
+                    I move the top <code>n-1</code> disks from the source peg to
+                    the auxiliary peg, using the destination peg as a helper.
                   </li>
                   <li>
                     <strong className="font-semibold dark:text-white">
                       Move largest disk:
                     </strong>{" "}
-                    I move the remaining (largest) disk from the source peg to the destination peg.
+                    I move the remaining (largest) disk from the source peg to
+                    the destination peg.
                   </li>
                   <li>
                     <strong className="font-semibold dark:text-white">
                       Recursive step 2:
                     </strong>{" "}
-                    Then, I move the <code>n-1</code> disks from the auxiliary peg to the destination peg, using the source peg as a helper.
+                    Then, I move the <code>n-1</code> disks from the auxiliary
+                    peg to the destination peg, using the source peg as a
+                    helper.
                   </li>
                 </ul>
                 <br />
@@ -158,5 +188,5 @@ const Post = () => {
 export default Post;
 
 export const Head = () => (
-  <title>First Contact with Programming | cesarolvr</title>
+  <title>003. The analogy of the tower of Hanoi to programming | cesarolvr</title>
 );

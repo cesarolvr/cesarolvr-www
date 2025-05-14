@@ -22,7 +22,7 @@ const Blog = () => {
           title: "Starting...",
           description: "Describing my purpose and goals for this blog.",
           readTime: "2 min read",
-          link: "/blog/starting",
+          link: "/blog/001-starting",
           active: true
         },
         {
@@ -31,7 +31,7 @@ const Blog = () => {
           title: "First contact with code",
           description: "I just don't know what I'm doing. Everything that I write sucks.",
           readTime: "3 min read",
-          link: "/blog/first-contact-with-code",
+          link: "/blog/002-first-contact-with-code",
           active: true
         },
         {
@@ -40,31 +40,33 @@ const Blog = () => {
           title: "The analogy of the Tower of Hanoi to programming",
           description: "Understanding programming concepts through the famous puzzle.",
           readTime: "4 min read",
-          link: "/blog/the-analogy-of-the-tower-of-hanoi-to-programming",
+          link: "/blog/003-the-analogy-of-the-tower-of-hanoi-to-programming",
           active: true
         },
         {
           id: "004",
           emoji: "➡️",
-          title: "Even with fear or confusion, keep going",
+          title: "Go for it anyway",
+          description: "Even with fear or confusion, keep going",
           readTime: "3 min read",
-          link: "/blog/keep-going",
-          active: false
+          link: "/blog/004-go-for-it-anyway",
+          active: true
         },
         {
           id: "005",
           emoji: "☕",
-          title: "Why start with Java?",
+          title: "Why (not) start with Java?",
+          description: "It's the best language to start with? Out of my control.",
           readTime: "4 min read",
-          link: "/blog/why-java",
-          active: false
+          link: "/blog/005-why-not-start-with-java",
+          active: true
         },
         {
           id: "006",
           emoji: "🗄️",
           title: "The boring rules of modeling a DB",
           readTime: "5 min read",
-          link: "/blog/db-modeling",
+          link: "/blog/006-the-boring-rules-of-modeling-a-db",
           active: false
         }
       ]
