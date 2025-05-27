@@ -97,13 +97,18 @@ const panelMap = (index) => {
     ),
     4: (
       <ol className="career-path -academic">
-        {hackingPath.map(({ role, details, description }, index) => {
+        {hackingPath.map(({ role, details, description, link }, index) => {
           return (
             <li key={index} className="about-career-experience">
               <h4 className="role">{role}</h4>
               <br />
               <h5 className="infos">{details}</h5>
               <p className="description">{description}</p>
+              {link && (
+                <a href={link} target="_blank" className="link">
+                  {link}
+                </a>
+              )}
             </li>
           );
         })}
@@ -160,7 +165,7 @@ const About = () => {
           <div className="bio column">
             <h3 className="about-title">Bio</h3>
             <p className="paragraph">
-              A decade of experience as a Software Engineer, working on
+              A decade of experience as a Software Engineer (Front-end focused), working on
               large-scale and high-impact projects for digital companies, where
               I've crafted digital acquisition experiences, dashboards,
               awwwards-like websites, design systems, animations libraries,
@@ -205,10 +210,6 @@ const About = () => {
                 {
                   title: "Hacking",
                   isBlocked: false,
-                },
-                {
-                  title: "Skills",
-                  isBlocked: true,
                 },
               ].map(({ title, isBlocked }, index) => {
                 return (

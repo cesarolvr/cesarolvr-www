@@ -57,17 +57,18 @@ const Blog = () => {
           emoji: "☕",
           title: "Why (not) start with Java?",
           description: "It's the best language to start with? Out of my control.",
-          readTime: "4 min read",
+          readTime: "6 min read",
           link: "/blog/005-why-not-start-with-java",
           active: true
         },
         {
           id: "006",
           emoji: "🗄️",
-          title: "The boring rules of modeling a DB",
-          readTime: "5 min read",
-          link: "/blog/006-the-boring-rules-of-modeling-a-db",
-          active: false
+          title: "The boring side of modeling a database",
+          description: "Translate an abstract object and its properties into objects in the real world is not that easy.",
+          readTime: "4 min read",
+          link: "/blog/006-the-boring-side-of-modeling-databases/",
+          active: true
         }
       ]
     },

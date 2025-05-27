@@ -13,7 +13,7 @@ import { FiCoffee } from "@react-icons/all-files/fi/FiCoffee";
 // Files
 import cesarolvrCV from "../files/cesar-oliveira-resume.pdf";
 
-const bioDescription = `A decade of experience as a Software Engineer, working on
+const bioDescription = `A decade of experience as a Software Engineer (Front-end focused), working on
 large-scale and high-impact projects for digital companies, where
 I've crafted digital acquisition experiences, dashboards,
 awwwards-like websites, design systems, animations libraries,
@@ -22,7 +22,7 @@ specifically web development and creative development.`;
 
 const careerPath = [
   {
-    role: "Tech Lead",
+    role: "Tech Lead | Senior Front-end Engineer",
     details: `Itaú Unibanco | São Paulo, Brazil | 2023 -> current`,
     description: `- Led multiple squads of 4-5 experienced developers to create digital acquisition funnels
     - Generated +100k deals (contracts) through mortgage, vehicles sales and real estate finance businesses, making +1M in revenue and increasing market shares
@@ -30,7 +30,7 @@ const careerPath = [
     - Rewarded by Itaú for being a high-performer employee already in the first quarter working`,
   },
   {
-    role: "Senior Software Engineer",
+    role: "Senior Front-end Engineer",
     details: `Red Ventures | Charlotte, USA | 2018 -> 2023`,
     description: `- Created +10 apps as a individual contributor and being core committer in all those projects
     - Generated +5MM hot leads from toll tags, mortgage, vehicles leasing to real state sector, resulted in +500k new customers
@@ -87,22 +87,9 @@ const academyPath = [
 
 const openSourcePath = [
   {
-    role: "NextJS + GSAP Timeline template",
-    details: `JavaScript | 2024`,
-    description: `A slider component using NextJS + 🥦 GSAP Timeline:`,
-    link: `https://xyzphotography.vercel.app`,
-  },
-  {
-    role: "Gatsby + Github API template",
-    details: `JavaScript | 2022`,
-    description: `A simple frontend template that integrates with Github's API:`,
-    link: `https://cesar-oliveira-web.vercel.app/`,
-  },
-  {
-    role: "A scroll based animation library",
-    details: `JavaScript | 2020`,
-    description: `Murphy.js - A simple way to implement scroll based reveal animations in your site:`,
-    link: `https://cesarolvr.github.io/murphyjs-lib/index.html`,
+    role: "Github profile",
+    details: `Go check it out:`,
+    link: `https://github.com/cesarolvr`,
   },
 ];
 
@@ -125,7 +112,14 @@ const hackingPath = [
   {
     role: "journeylog.app",
     details: `Habit tracker app | 2025`,
-    description: `- React, Next.js, Supabase, Deno, TailwindCSS, Serverless functions, Figma and Vercel`,
+    description: `-> React, Next.js, Supabase, Deno, TailwindCSS, Serverless functions, Figma and Vercel`,
+    link: `https://www.journeylog.app/`,
+  },
+  {
+    role: "murphy.js",
+    details: `A scroll based animation library | 2022`,
+    description: `-> VanillaJS, Intersection Observer API, Web Animations API and Nextra`,
+    link: `https://www.murphyjs.org/`,
   },
 ];
 
