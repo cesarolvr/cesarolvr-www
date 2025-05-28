@@ -52,8 +52,9 @@ const IndexPage = () => {
                       <a
                         key={`${post.id}-${index}`}
                         href={post.link}
+                        disabled={!post.active}
                         className={`blog-ticker-item ${
-                          post.active ? "" : "-link-blocked"
+                          post.active ? "" : "-link-blocked cursor-not-allowed pointer-events-none"
                         }`}
                         title={post.active ? "Read now" : "Coming soon"}
                       >
