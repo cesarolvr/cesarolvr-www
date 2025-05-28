@@ -4,32 +4,47 @@
   max-width: 330px;
   line-height: 1.8em;
   font-size: 14px;
+  width: 100%;
+  text-align: center;
 
   @media (min-width: 730px) {
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 40px;
+    max-width: 400px;
   }
 }
 
 .banner-title {
-  margin-bottom: 8px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  line-height: 0.9;
+
+  @media (min-width: 730px) {
+    font-size: 7rem;
+  }
 }
 
 .banner-subtitle {
   margin-bottom: 22px;
+  width: 100%;
+  text-align: center;
 }
 
 .home {
   height: 100svh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
+  align-items: center;
 
   main {
-    padding: 0 20px;
-    @media (min-width: 730px) {
-      margin-top: -100px;
-    }
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -40,9 +55,16 @@
 .home .header {
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  width: 100svw;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
 }
 
 .-link-blocked {
+  cursor: not-allowed;
   a {
     cursor: not-allowed;
   }
@@ -66,5 +88,77 @@
   strong {
     color: #eee;
     font-weight: 500;
+  }
+}
+
+.blog-ticker {
+  margin-top: 2rem;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  display: flex;
+  animation: ticker 100s linear infinite alternate;
+  gap: 10px;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.blog-ticker-wrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.blog-ticker-item {
+  flex: 0 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.2s ease;
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  // opacity: 1;
+
+  &:nth-child(even) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    background: #383838;
+    border: 1px solid white;
+    font-weight: bold;
+  }
+
+  .emoji {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+    display: block;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+.blog-ticker-title {
+  position: fixed;
+  bottom: 80px;
+  color:rgba(255, 255, 255, 0.4)
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-98%);
   }
 }

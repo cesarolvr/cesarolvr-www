@@ -163,7 +163,7 @@ const About = () => {
             </a>
           </div>
           <div className="bio column">
-            <h3 className="about-title">Bio</h3>
+            <h3 className="about-title mb-2 font-bold text-[18px]">Bio</h3>
             <p className="paragraph">
               A decade of experience as a Software Engineer (Front-end focused), working on
               large-scale and high-impact projects for digital companies, where
@@ -215,7 +215,7 @@ const About = () => {
                 return (
                   <button
                     className={classNames("-toggle", {
-                      "--active": activePanel === index,
+                      "--active font-bold": activePanel === index,
                       "-button-blocked": isBlocked,
                     })}
                     disabled={isBlocked}

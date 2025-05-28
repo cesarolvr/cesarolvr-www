@@ -18,22 +18,13 @@ const Header = ({ goBackToHome }) => {
         </Link>
       )}
 
-      <ul className="header-list only-desktop">
+      <ul className="header-list">
         <li>
           <Link
             to="/about/"
             className={pathname?.startsWith("/about") ? `-active` : ``}
           >
-            About me
-          </Link>
-        </li>
-
-        <li>
-          <Link
-            to="/utilities/"
-            className={pathname?.startsWith("/utilities") ? `-active` : ``}
-          >
-            Utilities
+            About
           </Link>
         </li>
 
@@ -43,7 +34,21 @@ const Header = ({ goBackToHome }) => {
             title="soon"
             className={pathname?.startsWith("/blog") ? `-active` : ``}
           >
-            Blog
+            Read my blog
+          </Link>
+        </li>
+
+        <li>
+          <a href="https://github.com/cesarolvr/" target="_blank">
+            See my code
+          </a>
+        </li>
+        <li>
+          <Link
+            to="/utilities/"
+            className={pathname?.startsWith("/utilities") ? `-active` : ``}
+          >
+            More utilities
           </Link>
         </li>
       </ul>

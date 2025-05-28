@@ -9,7 +9,7 @@ const Footer = () => {
     typeof window !== "undefined" ? window?.location?.pathname : "";
   return (
     <footer className="footer">
-      <ul className="list">
+      {/* <ul className="list">
         <li className="only-mobile">
           <Link
             to="/about/"
@@ -27,29 +27,8 @@ const Footer = () => {
             Utilities
           </Link>
         </li>
-        <li className="only-mobile">
-          <a href="/blog">Blog</a>
-        </li>
-
-        <li>
-          <a href="mailto:contact@cesarolvr.com">Email</a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/cesarolvr/" target="_blank">
-            Linkedin
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/cesarolvr/" target="_blank">
-            Github
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/cesarolvr/" target="_blank">
-            Instagram
-          </a>
-        </li>
-      </ul>
+       
+      </ul> */}
     </footer>
   );
 };

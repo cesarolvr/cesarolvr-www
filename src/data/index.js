@@ -87,8 +87,7 @@ const academyPath = [
 
 const openSourcePath = [
   {
-    role: "Github profile",
-    details: `Go check it out:`,
+    role: "My Github",
     link: `https://github.com/cesarolvr`,
   },
 ];

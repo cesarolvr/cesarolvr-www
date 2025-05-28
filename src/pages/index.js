@@ -12,6 +12,9 @@ import Cursor from "../components/Cursor";
 import "../styles/global.scss";
 import "../styles/index.scss";
 
+// Content
+import { articles } from "../data/blog";
+
 const IndexPage = () => {
   const [isOpened, setIsOpened] = React.useState(true);
 
@@ -28,11 +31,41 @@ const IndexPage = () => {
         <Loader isOpened={isOpened} duration={1} />
         <Header hideShortcut />
         <main>
-          <h1 className="banner-title font-black">Cesar Oliveira</h1>
+          <h1 className="banner-title font-black">
+            Cesar <br /> Oliveira
+          </h1>
           <p className="banner-description">
             A Front-end Engineer having fun crafting cool digital experiences
           </p>
           <Shortcut text="to start" />
+
+          <p className="blog-ticker-title">And check my last posts ↓</p>
+          <div className="blog-ticker">
+            {articles.map((article, index) => {
+              return (
+                <div
+                  className="blog-ticker-wrapper"
+                  key={`${article.id}-${index}`}
+                >
+                  {article.posts.map((post, index) => {
+                    return (
+                      <a
+                        key={`${post.id}-${index}`}
+                        href={post.link}
+                        className={`blog-ticker-item ${
+                          post.active ? "" : "-link-blocked"
+                        }`}
+                        title={post.active ? "Read now" : "Coming soon"}
+                      >
+                        <span className="emoji">{post.emoji}</span>
+                        <h3>{post.title} -></h3>
+                      </a>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
         </main>
         <Footer />
       </div>

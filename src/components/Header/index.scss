@@ -1,6 +1,5 @@
 .header {
   padding: 20px;
-  width: 100vw;
   margin: 0 auto;
   text-align: left;
   position: relative;
@@ -8,6 +7,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  width: 100svw;
+  
 
   .goback {
     display: block;
@@ -20,7 +21,6 @@
       display: none;
     }
   }
-  
 
   .header-control,
   .header-list {
@@ -38,6 +38,10 @@
   .header-logo {
     display: flex;
     align-items: center;
+    font-size: 14px;
+    @media (min-width: 730px) {
+      font-size: 18px;
+    }
     a {
       color: #ffffff;
     }
@@ -49,6 +53,11 @@
 
     li {
       margin-bottom: 10px;
+      font-size: 14px;
+
+      @media (min-width: 730px) {
+        font-size: 18px;
+      }
 
       a {
         &.-active {
