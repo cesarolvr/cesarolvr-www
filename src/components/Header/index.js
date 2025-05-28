@@ -12,11 +12,11 @@ const Header = ({ goBackToHome }) => {
       <div className="header-logo">
         <Link to="/">cesarolvr.com</Link>
       </div>
-      {goBackToHome && (
+      {/* {goBackToHome && (
         <Link className="goback" to="/">
           {"<-"} go back to home
         </Link>
-      )}
+      )} */}
 
       <ul className="header-list">
         <li>
