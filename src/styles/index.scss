@@ -1,36 +1,24 @@
 .banner-description {
-  margin-top: 0px;
-  margin-bottom: 30px;
-  max-width: 330px;
   line-height: 1.8em;
   font-size: 14px;
-  width: 100%;
-  text-align: center;
 
   @media (min-width: 730px) {
     font-size: 20px;
-    margin-bottom: 40px;
-    max-width: 400px;
   }
 }
 
 .banner-title {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 30px;
   font-size: 3rem;
   line-height: 0.9;
   margin-top: -50px;
 
   @media (min-width: 730px) {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 }
 
 .banner-subtitle {
   margin-bottom: 22px;
-  width: 100%;
-  text-align: center;
 }
 
 .home {
@@ -46,6 +34,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+    position: relative;
   }
 }
 
@@ -62,6 +54,12 @@
   left: 0;
   right: 0;
   padding: 20px;
+  height: 0;
+
+  .header-list {
+    position: relative;
+    z-index: 100;
+  }
 }
 
 .-link-blocked {
@@ -96,6 +94,7 @@
   margin-top: 2rem;
   position: fixed;
   bottom: 5px;
+  z-index: 30;
   left: 0;
   display: flex;
   animation: ticker 100s linear infinite alternate;
@@ -115,7 +114,7 @@
 
 .blog-ticker-item {
   flex: 0 0 auto;
-  background: rgba(255, 255, 255, 0.1);
+  background: #222222;
   padding: 0.5rem 2rem;
   text-decoration: none;
   color: white;
@@ -124,11 +123,6 @@
   text-align: left;
   justify-content: center;
   align-items: center;
-  // opacity: 1;
-
-  &:nth-child(even) {
-    background: rgba(255, 255, 255, 0.1);
-  }
 
   &:hover {
     transform: translateY(-4px);

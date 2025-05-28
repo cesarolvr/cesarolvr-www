@@ -14,6 +14,7 @@ import "../styles/index.scss";
 
 // Content
 import { articles } from "../data/blog";
+import Avatar from "../components/Avatar";
 
 const IndexPage = () => {
   const [isOpened, setIsOpened] = React.useState(true);
@@ -28,16 +29,23 @@ const IndexPage = () => {
     <>
       <Cursor />
       <div className="home">
-        <Loader isOpened={isOpened} duration={1} />
+        {/* <Loader isOpened={isOpened} duration={1} /> */}
         <Header hideShortcut />
         <main>
-          <h1 className="banner-title font-black">
-            Cesar <br /> Oliveira
-          </h1>
-          <p className="banner-description">
-            A Front-end Engineer having fun crafting cool digital experiences
-          </p>
-          <Shortcut text="to start" />
+          <div className="avatar-section">
+            <Avatar />
+          </div>
+          <div className="w-[90svw] z-10 pt-[100px] pointer-events-none fixed flex justify-center items-center">
+            <h1 className="banner-title flex flex-col items-end h-full text-right font-bold w-[300px] flex-shrink-0">
+              Cesar
+              <span >Oliveira</span>
+            </h1>
+            <span className="w-[420px]"> </span>
+            <div className="banner-description w-[350px] pr-[30px] text-right flex-shrink-0 flex justify-end flex-col items-end">
+              <p className="mb-9">A <strong className="text-white">Front-end Engineer</strong> having fun crafting digital experiences</p> 
+              <Shortcut text="to start" />
+            </div>
+          </div>
 
           <p className="blog-ticker-title">Last posts ↓</p>
           <div className="blog-ticker">
@@ -54,7 +62,9 @@ const IndexPage = () => {
                         href={post.link}
                         disabled={!post.active}
                         className={`blog-ticker-item ${
-                          post.active ? "" : "-link-blocked cursor-not-allowed pointer-events-none"
+                          post.active
+                            ? ""
+                            : "-link-blocked cursor-not-allowed pointer-events-none"
                         }`}
                         title={post.active ? "Read now" : "Coming soon"}
                       >
