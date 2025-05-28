@@ -40,7 +40,7 @@ const Header = ({ goBackToHome }) => {
 
         <li>
           <a href="https://github.com/cesarolvr/" target="_blank">
-            See my code
+            See my codes
           </a>
         </li>
         <li>

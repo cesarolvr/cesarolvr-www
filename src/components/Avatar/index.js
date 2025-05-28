@@ -20,10 +20,13 @@ const Avatar = () => {
   };
 
   const getModelScale = () => {
-    if (isMobile()) {
-      return baseScaleRef.current * 0.6; // 60% of original size on mobile
+    if (window.innerWidth <= 768) {
+      return baseScaleRef.current * 0.4; // 60% of original size on mobile
     }
-    return baseScaleRef.current;
+    if (window.innerWidth <= 1368) {
+      return baseScaleRef.current * 0.5; // 80% of original size for mid screens
+    }
+    return baseScaleRef.current; // 100% for large screens
   };
 
   const updateModelScale = (model) => {
@@ -60,6 +63,17 @@ const Avatar = () => {
       center.y + size.y * 3.85, // Move up to the head area
       center.z * 2
     );
+
+    // Adjust headCenter.y based on viewport width
+    let yOffset = 0;
+    if (window.innerWidth <= 768) {
+      yOffset = 0.4;
+    } else if (window.innerWidth <= 1368) {
+      yOffset = 0.5;
+    } else {
+      yOffset = -0.1;
+    }
+    headCenter.y += yOffset;
 
     // Set camera position for a headshot
     const camera = controlsRef.current.object;
@@ -196,6 +210,7 @@ const Avatar = () => {
         updateModelScale(model);
         // Center the model at the origin, then offset so the head is at the center
         model.position.sub(center); // Center the model at the origin
+        // Move model down based on viewport width
 
         scene.add(model);
         modelRef.current = model;
@@ -258,12 +273,12 @@ const Avatar = () => {
         const t = (Date.now() - idleStartTime) / 1000; // seconds
         // Even more subtle breathing and swaying on multiple axes
         // modelRef.current.position.y += Math.sin(t * 0.2) * 0.0002;
-        modelRef.current.position.x += Math.sin(t * 0.3) * 0.0003;
-        modelRef.current.position.z += Math.cos(t * 0.9) * 0.0005;
+        modelRef.current.position.x += Math.sin(t * 0.2) * 0.00003;
+        modelRef.current.position.z += Math.cos(t * 0.9) * 0.0004;
         // Even more subtle rotations
         modelRef.current.rotation.y = Math.sin(t * 0.5) * 0.005;
-        modelRef.current.rotation.x = Math.sin(t * 0.3) * 0.0010;
-        modelRef.current.rotation.z = Math.cos(t * 0.4) * 0.0015;
+        modelRef.current.rotation.x = Math.sin(t * 0.1) * 0.00010;
+        modelRef.current.rotation.z = Math.cos(t * 0.4) * 0.00015;
       }
 
       renderer.render(scene, camera);

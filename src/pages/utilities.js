@@ -31,7 +31,7 @@ const Actions = () => {
         <Header hideShortcut={true} goBackToHome={true} />
         <main>
           <Container>
-            <ul className="actions-list">
+            <ul className="actions-list pl-5">
               <li>
                 <a href={cesarolvrCV} download={true} target="_blank">
                   Download CV
