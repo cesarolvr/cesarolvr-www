@@ -29,7 +29,7 @@ const IndexPage = () => {
     <>
       <Cursor />
       <div className="home">
-        {/* <Loader isOpened={isOpened} duration={1} /> */}
+        <Loader isOpened={isOpened} duration={1} />
         <Header hideShortcut />
         <main>
           <div className="avatar-section">
