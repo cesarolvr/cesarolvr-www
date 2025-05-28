@@ -20,6 +20,7 @@
   margin-bottom: 30px;
   font-size: 3rem;
   line-height: 0.9;
+  margin-top: -50px;
 
   @media (min-width: 730px) {
     font-size: 7rem;
@@ -94,11 +95,11 @@
 .blog-ticker {
   margin-top: 2rem;
   position: fixed;
-  bottom: 10px;
+  bottom: 5px;
   left: 0;
   display: flex;
   animation: ticker 100s linear infinite alternate;
-  gap: 10px;
+  gap: 5px;
 
   &:hover {
     animation-play-state: paused;
@@ -109,14 +110,13 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  gap: 10px;
+  gap: 5px;
 }
 
 .blog-ticker-item {
   flex: 0 0 auto;
   background: rgba(255, 255, 255, 0.1);
   padding: 0.5rem 2rem;
-  border-radius: 10px;
   text-decoration: none;
   color: white;
   transition: transform 0.2s ease;
@@ -150,7 +150,7 @@
 
 .blog-ticker-title {
   position: fixed;
-  bottom: 80px;
+  bottom: 65px;
   color:rgba(255, 255, 255, 0.4)
 }
 

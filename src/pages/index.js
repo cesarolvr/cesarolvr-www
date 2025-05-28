@@ -39,7 +39,7 @@ const IndexPage = () => {
           </p>
           <Shortcut text="to start" />
 
-          <p className="blog-ticker-title">And check my last posts ↓</p>
+          <p className="blog-ticker-title">Last posts ↓</p>
           <div className="blog-ticker">
             {articles.map((article, index) => {
               return (
