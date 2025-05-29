@@ -15,10 +15,6 @@ const Avatar = () => {
   const baseScaleRef = useRef(2);
   const headBoneRef = useRef(null);
 
-  const isMobile = () => {
-    return window.innerWidth <= 768;
-  };
-
   const getModelScale = () => {
     if (window.innerWidth <= 768) {
       return baseScaleRef.current * 0.4;
@@ -72,11 +68,7 @@ const Avatar = () => {
     headCenter.y += yOffset;
     const camera = controlsRef.current.object;
     camera.fov = 25;
-    camera.position.set(
-      headCenter.x,
-      headCenter.y + size.y * 0.2,
-      15
-    );
+    camera.position.set(headCenter.x, headCenter.y + size.y * 0.2, 15);
     camera.lookAt(headCenter);
     controlsRef.current.target.copy(headCenter);
     controlsRef.current.update();
@@ -99,7 +91,7 @@ const Avatar = () => {
       } else {
         rotationX = -y * maxDown;
       }
-      const rotationY = x * Math.PI / 6;
+      const rotationY = (x * Math.PI) / 6;
       headBoneRef.current.rotation.y = rotationY;
       headBoneRef.current.rotation.x = rotationX;
     }
@@ -123,7 +115,7 @@ const Avatar = () => {
       } else {
         rotationX = -y * maxDown;
       }
-      const rotationY = x * Math.PI / 6;
+      const rotationY = (x * Math.PI) / 6;
       headBoneRef.current.rotation.y = rotationY;
       headBoneRef.current.rotation.x = rotationX;
     }
@@ -196,8 +188,10 @@ const Avatar = () => {
         let blinkIndex = null;
         model.traverse((node) => {
           if (node.isMesh && node.morphTargetDictionary) {
-            for (const [name, idx] of Object.entries(node.morphTargetDictionary)) {
-              if (name.toLowerCase().includes('blink')) {
+            for (const [name, idx] of Object.entries(
+              node.morphTargetDictionary
+            )) {
+              if (name.toLowerCase().includes("blink")) {
                 blinkMesh = node;
                 blinkIndex = idx;
                 break;
@@ -233,7 +227,7 @@ const Avatar = () => {
         modelRef.current.position.x += Math.sin(t * 0.2) * 0.00003;
         modelRef.current.position.z += Math.cos(t * 0.9) * 0.0004;
         modelRef.current.rotation.y = Math.sin(t * 0.5) * 0.005;
-        modelRef.current.rotation.x = Math.sin(t * 0.1) * 0.00010;
+        modelRef.current.rotation.x = Math.sin(t * 0.1) * 0.0001;
         modelRef.current.rotation.z = Math.cos(t * 0.4) * 0.00015;
       }
       renderer.render(scene, camera);

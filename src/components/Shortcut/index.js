@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 // Styles
 import "./index.scss";
@@ -8,10 +8,7 @@ import { State } from "../Layout";
 
 const Shortcut = ({ text }) => {
   const { setModalIsOpened } = React.useContext(State);
-  const isMac =
-    typeof window !== "undefined"
-      ? !!navigator?.platform?.indexOf("Mac") > -1
-      : false;
+  const isMac = typeof window !== "undefined" && /Mac|iPhone|iPad|iPod/.test(navigator.platform);
 
   const isMobile =
     typeof window !== "undefined" ? window.innerWidth < 730 : true;
@@ -23,7 +20,7 @@ const Shortcut = ({ text }) => {
     </div>
   ) : (
     <div className="shortcut">
-      <p className="key">command</p>
+      <p className="key">{isMac ? "command" : "ctrl"}</p>
       <p>+</p>
       <p className="key">{isMac ? "return" : "enter"}</p>
       <p>{text}</p>

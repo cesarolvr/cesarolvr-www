@@ -38,17 +38,27 @@ const IndexPage = () => {
           <div className="w-[90svw] banner-holder z-10 pt-[100px] pointer-events-none fixed flex justify-center items-center">
             <h1 className="banner-title flex flex-col items-end h-full text-right font-bold w-[300px] flex-shrink-0">
               Cesar
-              <span >Oliveira</span>
+              <span>Oliveira</span>
             </h1>
             <span className="w-[420px]"> </span>
             <div className="banner-description w-[350px] mt-[0px] text-left sm:mt-[-30px] flex justify-end flex-col pl-[80px] items-start">
-              <p className="mb-4 sm:mb-9">A <strong className="text-white">Front-end Engineer</strong> having fun crafting digital experiences</p> 
+              <p className="mb-4 sm:mb-9">
+                A <strong className="text-white">Front-end Engineer</strong>{" "}
+                having fun crafting digital experiences
+              </p>
               <Shortcut text="to start" />
             </div>
           </div>
 
-          <p className="blog-ticker-title fixed z-[100] left-[20px]">My latest posts ↓</p>
-          <a className="fixed z-[100] sm:text-[16px] text-underline sm:bottom-[60px] text-[14px] right-[20px] text-[#bdbdbd] bottom-[65px]" href="mailto:contact@cesarolvr.com">Want to hire me?</a>
+          <p className="blog-ticker-title fixed z-[100] left-[20px]">
+            My latest posts ↓
+          </p>
+          <a
+            className="fixed z-[100] sm:text-[16px] text-underline sm:bottom-[60px] text-[14px] right-[20px] text-[#bdbdbd] bottom-[65px]"
+            href="mailto:contact@cesarolvr.com"
+          >
+            Want to hire me?
+          </a>
           <div className="blog-ticker">
             {articles.map((article, index) => {
               return (
