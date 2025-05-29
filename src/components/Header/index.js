@@ -29,7 +29,7 @@ const Header = ({ onThemeChange, theme }) => {
           <Link to="/">{`<-`} back to home</Link>
         </p>
       )}
-      <div className="header-logo text-[var(--tw-text-gray-primary)] w-[100px] sm:w-[33%] flex justify-center">
+      <div className="header-logo text-[var(--tw-text-gray-primary)] font-bold w-[100px] sm:w-[33%] flex justify-center">
         <Link to="/">cesarolvr.com</Link>
       </div>
 

@@ -39,7 +39,7 @@ const IndexPage = () => {
             <Avatar theme={theme} />
           </div>
           <div className="w-[90svw] banner-holder z-50 pt-[100px] sm:pointer-events-none fixed flex justify-center items-center">
-            <h1 className="banner-title flex flex-col items-end h-full text-right font-bold w-[300px] flex-shrink-0">
+            <h1 className="banner-title flex text-[var(--tw-text-gray-primary)] flex-col items-end h-full text-right font-bold w-[300px] flex-shrink-0">
               Cesar
               <span>Oliveira</span>
             </h1>
@@ -63,10 +63,10 @@ const IndexPage = () => {
           >
             Latest posts ↓
           </Link>
-          <p className="fixed z-[100] bg-[var(--bg-primary)] sm:bg-transparent sm:text-[18px] text-right text-underline sm:bottom-[60px] text-[14px] right-[20px] text-[var(--tw-text-gray-secondary)] bottom-[65px]">
-            Want to hire me?
+          <p className="fixed z-[100] sm:text-[18px] text-right text-underline sm:bottom-[60px] text-[14px] right-[20px] text-[var(--tw-text-gray-secondary)] bottom-[65px]">
+            <span className="bg-[var(--bg-primary)] sm:bg-transparent">Want to hire me?</span>
             <br />
-            <a className="underline" href="mailto:contact@cesarolvr.com">
+            <a className="underline bg-[var(--bg-primary)] sm:bg-transparent" href="mailto:contact@cesarolvr.com">
               contact@cesarolvr.com
             </a>
           </p>
