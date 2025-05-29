@@ -1,27 +1,46 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useImperativeHandle, forwardRef } from "react";
 import * as THREE from "three";
 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import "./styles.scss";
 
-const Avatar = () => {
+const Avatar = forwardRef(({ theme }, ref) => {
   const mountRef = useRef(null);
   const sceneRef = useRef(null);
   const rendererRef = useRef(null);
   const controlsRef = useRef(null);
   const modelRef = useRef(null);
   const mouseLightRef = useRef(null);
+  const ambientLightRef = useRef(null);
+  const directionalLightRef = useRef(null);
   const [error, setError] = useState(false);
   const baseScaleRef = useRef(2);
   const headBoneRef = useRef(null);
+  const targetIntensitiesRef = useRef({
+    ambient: theme === 'light' ? 3.9 : 0.8,
+    directional: theme === 'light' ? 1.3 : 0.8,
+    mouse: theme === 'light' ? 4 : 2
+  });
+
+  // Update target intensities when theme changes
+  useEffect(() => {
+    targetIntensitiesRef.current = {
+      ambient: theme === 'light' ? 2.5 : 1,
+      directional: theme === 'light' ? 1.3 : 0.8,
+      mouse: theme === 'light' ? 4 : 2
+    };
+  }, [theme]);
 
   const getModelScale = () => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 480) {
       return baseScaleRef.current * 0.4;
     }
+    if (window.innerWidth <= 768) {
+      return baseScaleRef.current * 0.6;
+    }
     if (window.innerWidth <= 1368) {
-      return baseScaleRef.current * 0.5;
+      return baseScaleRef.current * 0.6;
     }
     if (window.innerWidth >= 1920) {
       return baseScaleRef.current * 0.9;
@@ -135,15 +154,21 @@ const Avatar = () => {
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, targetIntensitiesRef.current.ambient);
     scene.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.3);
+    ambientLightRef.current = ambientLight;
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, targetIntensitiesRef.current.directional);
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight);
-    const mouseLight = new THREE.PointLight(0xffffff, 4, 5);
+    directionalLightRef.current = directionalLight;
+
+    const mouseLight = new THREE.PointLight(0xffffff, targetIntensitiesRef.current.mouse, 5);
     mouseLight.position.set(5, 0, 2);
     scene.add(mouseLight);
     mouseLightRef.current = mouseLight;
+
     mountRef.current.addEventListener("mousemove", handleMouseMove);
     mountRef.current.addEventListener("touchmove", handleTouchMove);
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -231,6 +256,30 @@ const Avatar = () => {
         modelRef.current.rotation.x = Math.sin(t * 0.1) * 0.0001;
         modelRef.current.rotation.z = Math.cos(t * 0.4) * 0.00015;
       }
+
+      // Smoothly interpolate light intensities
+      if (ambientLightRef.current) {
+        ambientLightRef.current.intensity = THREE.MathUtils.lerp(
+          ambientLightRef.current.intensity,
+          targetIntensitiesRef.current.ambient,
+          0.05
+        );
+      }
+      if (directionalLightRef.current) {
+        directionalLightRef.current.intensity = THREE.MathUtils.lerp(
+          directionalLightRef.current.intensity,
+          targetIntensitiesRef.current.directional,
+          0.05
+        );
+      }
+      if (mouseLightRef.current) {
+        mouseLightRef.current.intensity = THREE.MathUtils.lerp(
+          mouseLightRef.current.intensity,
+          targetIntensitiesRef.current.mouse,
+          0.05
+        );
+      }
+
       renderer.render(scene, camera);
     };
     animate();
@@ -256,7 +305,7 @@ const Avatar = () => {
       }
       renderer.dispose();
     };
-  }, []);
+  }, []); // Remove theme dependency since we're using refs
 
   return (
     <div className="avatar-container" ref={mountRef}>
@@ -270,6 +319,6 @@ const Avatar = () => {
       ) : null}
     </div>
   );
-};
+});
 
 export default Avatar;

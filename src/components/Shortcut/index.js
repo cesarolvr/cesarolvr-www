@@ -15,7 +15,7 @@ const Shortcut = ({ text }) => {
 
   return isMobile ? (
     <div className="shortcut" onClick={() => setModalIsOpened(true)}>
-      <p className="key">tap</p>
+      <p className="key text-[var(--tw-text-gray-primary)] bg-[var(--bg-secondary)]">tap</p>
       <p>to start</p>
     </div>
   ) : (

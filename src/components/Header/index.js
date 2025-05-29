@@ -4,24 +4,36 @@ import { Link } from "gatsby";
 // Styles
 import "./index.scss";
 
-const Header = ({ goBackToHome }) => {
+const Header = ({ onThemeChange, theme }) => {
   const pathname =
     typeof window !== "undefined" ? window?.location?.pathname : "";
+
   return (
     <header className="header">
-      {pathname === "/" && (
-        <div className="header-holder hidden sm:block">
-          <p className="text-[#bdbdbd] sm:text-[18px] text-[14px]">
+      {pathname === "/" ? (
+        <div className="header-holder w-[100px] sm:w-[33%]">
+          <p className="text-[var(--tw-text-gray-secondary)] sm:text-[18px] text-[14px]">
             Based in <br />
-            São Paulo, Brazil
+            <strong className="underline"><small className="hidden sm:inline sm:text-[18px] text-[14px]">São Paulo, </small> Brazil</strong>
+          </p>
+          <br />
+          <p className="text-[var(--tw-text-gray-secondary)] sm:text-[18px] text-[14px]">
+            Switch to <br />{" "}
+            <span onClick={onThemeChange} className="underline cursor-pointer">
+              <strong>{theme === "dark" ? "Light" : "Dark"} mode</strong>
+            </span>
           </p>
         </div>
+      ) : (
+        <p className="w-[100px] sm:w-[33%]">
+          <Link to="/">{`<-`} back to home</Link>
+        </p>
       )}
-      <div className="header-logo">
+      <div className="header-logo text-[var(--tw-text-gray-primary)] w-[100px] sm:w-[33%] flex justify-center">
         <Link to="/">cesarolvr.com</Link>
       </div>
 
-      <ul className="header-list">
+      <ul className="header-list w-[100px] sm:w-[33%]">
         <li>
           <Link
             to="/about/"
@@ -37,13 +49,13 @@ const Header = ({ goBackToHome }) => {
             title="soon"
             className={pathname?.startsWith("/blog") ? `-active` : ``}
           >
-            Read my blog
+            Blog
           </Link>
         </li>
 
         <li>
           <a href="https://github.com/cesarolvr/" target="_blank">
-            Some experiments &gt;
+            Experiments
           </a>
         </li>
         <li>
@@ -51,7 +63,7 @@ const Header = ({ goBackToHome }) => {
             to="/utilities/"
             className={pathname?.startsWith("/utilities") ? `-active` : ``}
           >
-            More utilities
+            Utilities
           </Link>
         </li>
       </ul>

@@ -38,7 +38,7 @@ const Post = () => {
             </header>
             <br />
             <br />
-            <div className="text-[#fff] max-w-full w-full mb-16 px-[5%] leading-[50px] text-[26px]">
+            <div className="text-[var(--color-total)] max-w-full w-full mb-16 px-[5%] leading-[50px] text-[26px]">
               <section class="tldr text-[25px] leading-[45px]">
                 <p className="mb-4">
                   <strong>TL;DR</strong>

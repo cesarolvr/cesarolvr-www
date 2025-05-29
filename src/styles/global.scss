@@ -3,6 +3,15 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap");
 
+:root {
+  --bg-primary: #222222;
+  --text-primary: #ffffff;
+  --text-secondary: #bdbdbd;
+  --hover-bg: #3a3a3a;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.18);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.35);
+}
+
 * {
   box-sizing: border-box;
   font-family: "Fira Code", monospace;
@@ -20,13 +29,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255,0.18);
+  background: var(--scrollbar-thumb);
   border-radius: 8px;
   transition: background 0.2s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255,0.35);
+  background: var(--scrollbar-thumb-hover);
 }
 
 ::-webkit-scrollbar-corner {
@@ -45,8 +54,8 @@
 }
 
 body {
-  background-color: #222222;
-  color: white;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   width: 100dvw;
   height: 100svh;
   overflow-x: hidden;
@@ -78,13 +87,13 @@ ol {
 
 p,
 a {
-  color: #bdbdbd;
+  color: var(--text-secondary);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: white;
+  color: var(--text-primary);
 }
 
 h1 {
@@ -106,13 +115,13 @@ h2 {
   }
 
   a {
-    color: white;
+    color: var(--tw-text-gray-primary);
     text-decoration: underline;
   }
 }
 
 h4 {
-  color: #bdbdbd;
+  color: var(--tw-text-gray-secondary);
   font-size: 16px;
   margin: 10px 0;
   line-height: 16px;
@@ -120,7 +129,7 @@ h4 {
 }
 
 h5 {
-  color: #bdbdbd;
+  color: var(--tw-text-gray-secondary);
   font-size: 14px;
   font-weight: lighter;
   margin: 10px 0;
@@ -135,7 +144,7 @@ button,
   align-items: center;
   box-shadow: none;
   border: none;
-  color: #bdbdbd;
+  color: var(--text-secondary);
   font-size: 14px;
   padding: 9px 12px;
   border-radius: 0px;
@@ -149,29 +158,28 @@ button,
 
   &:hover {
     text-decoration: none;
-
     cursor: pointer;
-    background-color: #3a3a3a;
+    background-color: var(--hover-bg);
 
     p {
-      color: white;
+      color: var(--text-primary);
     }
 
     svg {
       transform: scale(1.2);
-      stroke: white;
+      stroke: var(--text-primary);
     }
   }
 
   &.-toggle {
     padding: 0;
     font-size: 16px;
-    color: #777777;
+    color: var(--tw-text-gray-secondary);
 
     &:hover {
       background: none;
       text-decoration: underline;
-      color: white;
+      color: var(--tw-text-gray-primary);
     }
   }
 
@@ -182,14 +190,14 @@ button,
   }
 
   &.--active {
-    color: white;
+    color: var(--tw-text-gray-primary);
     text-decoration: underline;
   }
 }
 
 blockquote {
   font-style: italic;
-  color: #ddd;
+  color: var(--tw-text-gray-secondary);
   text-decoration: overline;
   margin: 10px 0;
 }

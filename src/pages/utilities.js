@@ -33,7 +33,12 @@ const Actions = () => {
           <Container>
             <ul className="actions-list pl-5">
               <li>
-                <a href={cesarolvrCV} download={true} target="_blank">
+                <a
+                  className="hover:text-[var(--tw-text-gray-primary)]"
+                  href={cesarolvrCV}
+                  download={true}
+                  target="_blank"
+                >
                   Download CV
                 </a>
               </li>
@@ -41,41 +46,71 @@ const Actions = () => {
                 <a
                   href="https://www.linkedin.com/in/cesarolvr/"
                   target="_blank"
+                  className="hover:text-[var(--tw-text-gray-primary)]"
                 >
                   Go to my Linkedin
                 </a>
               </li>
               <li>
-                <a href="https://meet.google.com/" target="_blank">
+                <a
+                  href="https://meet.google.com/"
+                  target="_blank"
+                  className="hover:text-[var(--tw-text-gray-primary)]"
+                >
                   Book a meeting <span>invite to -> contact@cesarolvr.com</span>
                 </a>
               </li>
               <li>
-                <a href="https://github.com/cesarolvr/" target="_blank">
+                <a
+                  href="https://github.com/cesarolvr/"
+                  target="_blank"
+                  className="hover:text-[var(--tw-text-gray-primary)]"
+                >
                   See my Github
                 </a>
               </li>
               <li>
-                <a href="https://codepen.io/cesarolvr/" target="_blank">
+                <a
+                  href="https://codepen.io/cesarolvr/"
+                  target="_blank"
+                  className="hover:text-[var(--tw-text-gray-primary)]"
+                >
                   Star my Codepen
                 </a>
               </li>
               <li>
-                <a href="https://leetcode.com/u/cesarolvr/" target="_blank">
+                <a
+                  href="https://leetcode.com/u/cesarolvr/"
+                  target="_blank"
+                  className="hover:text-[var(--tw-text-gray-primary)]"
+                >
                   Check my Leetcode
                 </a>
               </li>
               <li>
                 {" "}
-                <a href="mailto:contact@cesarolvr.com">Send me an e-mail</a>
+                <a
+                  href="mailto:contact@cesarolvr.com"
+                  className="hover:text-[var(--tw-text-gray-primary)]"
+                >
+                  Send me an e-mail
+                </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/cesarolvr/" target="_blank">
+                <a
+                  href="https://www.instagram.com/cesarolvr/"
+                  target="_blank"
+                  className="hover:text-[var(--tw-text-gray-primary)]"
+                >
                   Follow me on Instagram <span>(only friends)</span>
                 </a>
               </li>
               <li>
-                <a href="https://goodreads.com/cesarolvr" target="_blank">
+                <a
+                  href="https://goodreads.com/cesarolvr"
+                  target="_blank"
+                  className="hover:text-[var(--tw-text-gray-primary)]"
+                >
                   My current readings <span>(only curious)</span>
                 </a>
               </li>
@@ -83,6 +118,7 @@ const Actions = () => {
                 <a
                   href="https://github.com/cesarolvr/cesarolvr-www"
                   target="_blank"
+                  className="hover:text-[var(--tw-text-gray-primary)]"
                 >
                   View source code of this website <span>(only devs)</span>
                 </a>

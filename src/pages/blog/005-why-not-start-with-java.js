@@ -32,13 +32,16 @@ const Post = () => {
               <h3 className="about-title text-[35px] md:text-[50px] mb-5 font-black w-full leading-[60px] md:mt-0">
                 Why (not) start with Java?
               </h3>
-              <time datetime="2013-03-03" className="text-[18px] text-[#bbb]">
+              <time
+                datetime="2013-03-03"
+                className="text-[18px] text-[var(--tw-text-gray-secondary)]"
+              >
                 November 12, 2013
               </time>
             </header>
             <br />
             <br />
-            <div className="text-[#fff] max-w-full w-full mb-16 px-[5%] leading-[50px] text-[26px]">
+            <div className="text-[var(--color-total)] max-w-full w-full mb-16 px-[5%] leading-[50px] text-[26px]">
               <section class="tldr text-[25px] leading-[45px]">
                 <p className="mb-4">
                   <strong>TL;DR</strong>

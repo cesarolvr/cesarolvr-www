@@ -15,9 +15,12 @@ import "../styles/index.scss";
 // Content
 import { articles } from "../data/blog";
 import Avatar from "../components/Avatar";
+import { State } from "../components/Layout";
 
 const IndexPage = () => {
   const [isOpened, setIsOpened] = React.useState(true);
+
+  const { theme, onThemeChange } = React.useContext(State);
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -30,10 +33,10 @@ const IndexPage = () => {
       <Cursor />
       <div className="home overflow-hidden">
         <Loader isOpened={isOpened} duration={1} />
-        <Header hideShortcut />
+        <Header hideShortcut onThemeChange={onThemeChange} theme={theme} />
         <main className="overflow-hidden">
           <div className="avatar-section">
-            <Avatar />
+            <Avatar theme={theme} />
           </div>
           <div className="w-[90svw] banner-holder z-50 pt-[100px] sm:pointer-events-none fixed flex justify-center items-center">
             <h1 className="banner-title flex flex-col items-end h-full text-right font-bold w-[300px] flex-shrink-0">
@@ -41,9 +44,12 @@ const IndexPage = () => {
               <span>Oliveira</span>
             </h1>
             <span className="w-[420px]"> </span>
-            <div className="banner-description w-[350px] mt-[0px] text-left sm:mt-[-30px] flex justify-end flex-col pl-[80px] items-start">
+            <div className="banner-description w-[350px] mt-[0px] text-left xl:mt-[-30px] flex justify-end flex-col pl-[80px] items-start">
               <p className="mb-4 sm:mb-9">
-                A <strong className="text-white">Front-end Engineer</strong>{" "}
+                A{" "}
+                <strong className="text-[var(--tw-text-gray-primary)] font-bold">
+                  Front-end Engineer
+                </strong>{" "}
                 having fun crafting digital experiences
               </p>
               <Shortcut text="to start" />
@@ -53,16 +59,17 @@ const IndexPage = () => {
           <Link
             to="/blog"
             title="soon"
-            className="blog-ticker-title fixed z-[100] left-[20px] sm:text-[18px] text-[14px]"
+            className="blog-ticker-title bg-[var(--bg-primary)] sm:bg-transparent text-[var(--tw-text-gray-secondary)] fixed z-[100] left-[20px] sm:text-[18px] text-[14px]"
           >
             Latest posts ↓
           </Link>
-          <a
-            className="fixed z-[100] sm:text-[18px] text-underline sm:bottom-[60px] text-[14px] right-[20px] text-[#bdbdbd] bottom-[65px]"
-            href="mailto:contact@cesarolvr.com"
-          >
+          <p className="fixed z-[100] bg-[var(--bg-primary)] sm:bg-transparent sm:text-[18px] text-right text-underline sm:bottom-[60px] text-[14px] right-[20px] text-[var(--tw-text-gray-secondary)] bottom-[65px]">
             Want to hire me?
-          </a>
+            <br />
+            <a className="underline" href="mailto:contact@cesarolvr.com">
+              contact@cesarolvr.com
+            </a>
+          </p>
           <div className="blog-ticker">
             {articles.map((article, index) => {
               return (
@@ -79,7 +86,7 @@ const IndexPage = () => {
                           key={`${post.id}-${index}`}
                           href={post.link}
                           disabled={!post.active}
-                          className={`blog-ticker-item relative ${
+                          className={`blog-ticker-item relative text-[var(--tw-text-gray-secondary)] bg-[var(--bg-primary)] border-[1px] border-[var(--border-primary)] hover:border-[var(--border-primary)] ${
                             post.active
                               ? ""
                               : "-link-blocked cursor-not-allowed pointer-events-none"

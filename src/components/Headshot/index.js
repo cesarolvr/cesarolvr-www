@@ -4,6 +4,7 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+import { State } from "../Layout";
 
 // Images
 import headshot from "../../images/headshot.jpg";
@@ -12,6 +13,7 @@ import headshot from "../../images/headshot.jpg";
 import "./index.scss";
 
 const Headshot = () => {
+  const { theme } = React.useContext(State);
   const initWaves = () => {
     // var capturer = new CCapture({ format: "webm" });
 
@@ -308,7 +310,7 @@ const Headshot = () => {
     camera.position.z = 10;
     scene.add(camera);
 
-    scene.background = new THREE.Color(0x222222);
+    scene.background = new THREE.Color(theme === "dark" ? 0x222222 : 0xffffff);
 
     // Controls
     const controls = new OrbitControls(camera, canvas);

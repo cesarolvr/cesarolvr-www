@@ -42,9 +42,6 @@
     @media (min-width: 730px) {
       font-size: 18px;
     }
-    a {
-      color: #ffffff;
-    }
   }
 
   .header-list {
@@ -61,7 +58,7 @@
 
       a {
         &.-active {
-          color: white;
+          color: var(--tw-text-gray-primary);
           text-decoration: underline;
         }
       }

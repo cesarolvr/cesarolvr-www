@@ -37,17 +37,17 @@ const panelMap = (index) => {
   const map = {
     0: (
       <ol className="career-path">
-        <>
-          <br />
-          -> Check out my{" "}
+        <br />
+        <div className="border-l-2 border-[var(--border-secondary)] pl-4">
+          Check out my{" "}
           <a
-            className="underline text-white"
+            className="underline text-[var(--tw-text-gray-primary)] font-bold"
             href="https://www.linkedin.com/in/cesarolvr/#experience"
           >
             LinkedIn experience section
           </a>{" "}
           for more details
-        </>
+        </div>
         {careerPath.map(({ role, details, description }, index) => {
           return (
             <li key={index} className="about-career-experience">

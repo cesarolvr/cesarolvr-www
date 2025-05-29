@@ -25,32 +25,31 @@
   }
 
   .link {
-    color: #fff;
+    color: var(--tw-text-gray-primary);
     text-decoration: none;
     display: inline;
     text-decoration: underline;
   }
 
   .role {
-    color: #222222;
+    color: var(--tw-text-gray-primary);
     display: inline-flex;
     padding: 5px 0px;
-    background-color: #ffffff;
+    background-color: var(--bg-secondary);
     line-height: 22px;
   }
 
   .infos {
     font-size: 16px;
     text-decoration: none;
-    background-color: red;
-    background-color: #2e2e2e;
+    background-color: var(--bg-primary);
+    color: var(--tw-text-gray-primary);
     display: inline;
   }
 
   .column {
     width: 100%;
     max-width: 400px;
-    // position: relative;
 
     @media (min-width: 730px) {
       width: 20%;
@@ -76,7 +75,7 @@
       position: relative;
       z-index: 20;
       top: 520px;
-      background-color: #222222;
+      background-color: var(--bg-primary);
     }
   }
 
@@ -142,8 +141,8 @@
 
     .role {
       display: inline;
-      background-color: white;
-      color: #141414;
+      background-color: var(--bg-secondary);
+      color: var(--tw-text-gray-primary);
       font-weight: bold;
     }
 

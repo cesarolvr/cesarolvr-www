@@ -126,8 +126,9 @@
 }
 
 .post {
+  color: var(--tw-text-gray-primary);
   strong {
-    color: #eee;
+    color: var(--tw-text-gray-primary);
     font-weight: 500;
   }
 }
@@ -156,11 +157,9 @@
 
 .blog-ticker-item {
   flex: 0 0 auto;
-  background: #222222;
   padding: 0.5rem 2rem;
   text-decoration: none;
-  color: white;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   display: flex;
   text-align: left;
   justify-content: center;
@@ -168,8 +167,7 @@
 
   &:hover {
     transform: translateY(-4px);
-    background: #383838;
-    border: 1px solid white;
+    // border: 1px solid white;
     font-weight: bold;
   }
 
@@ -187,7 +185,6 @@
 .blog-ticker-title {
   position: fixed;
   bottom: 65px;
-  color:#bdbdbd;
 }
 
 @keyframes ticker {

@@ -35,13 +35,16 @@ const Post = () => {
               <h3 className="about-title text-[35px] md:text-[50px] mb-5 font-black w-full leading-[60px] md:mt-0">
                 003. The analogy of the tower of Hanoi to programming
               </h3>
-              <time datetime="2013-03-03" className="text-[18px] text-[#bbb]">
+              <time
+                datetime="2013-06-10"
+                className="text-[18px] text-[var(--tw-text-gray-secondary)]"
+              >
                 June 10, 2013
               </time>
             </header>
             <br />
             <br />
-            <div className="text-[#fff] max-w-full w-full mb-16 px-[5%] leading-[50px] text-[26px]">
+            <div className="text-[var(--color-total)] max-w-full w-full mb-16 px-[5%] leading-[50px] text-[26px]">
               <section class="tldr text-[25px] leading-[45px]">
                 <p className="mb-4">
                   <strong>TL;DR</strong>
@@ -123,9 +126,9 @@ const Post = () => {
                 <br />
                 <p>The steps are:</p>
                 <br />
-                <ul className="space-y-6 list-decimal list-inside dark:text-[#bdbdbd]">
+                <ul className="space-y-6 list-decimal list-inside dark:text-[var(--tw-text-gray-secondary)]">
                   <li>
-                    <strong className="font-semibold dark:text-white">
+                    <strong className="font-semibold dark:text-[var(--tw-text-gray-primary)]">
                       Base case:
                     </strong>{" "}
                     If I have only one disk, I move it directly from the source

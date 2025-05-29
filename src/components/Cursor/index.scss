@@ -13,9 +13,8 @@
 .ppk-dot-outline {
   width: 40px;
   height: 40px;
-  // border: 1px solid #3a3a3a;
-  background-color: #3a3a3a;
-  mix-blend-mode:plus-lighter;
+  background-color: var(--cursor-bg);
+  mix-blend-mode: var(--blend-mode);
 }
 
 
