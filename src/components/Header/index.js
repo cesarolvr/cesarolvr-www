@@ -8,13 +8,21 @@ const Header = ({ onThemeChange, theme }) => {
   const pathname =
     typeof window !== "undefined" ? window?.location?.pathname : "";
 
+  const isMobile =
+    typeof window !== "undefined" ? window.innerWidth < 730 : true;
+
   return (
     <header className="header">
       {pathname === "/" ? (
         <div className="header-holder w-[100px] sm:w-[33%]">
           <p className="text-[var(--tw-text-gray-secondary)] sm:text-[18px] text-[14px]">
             Based in <br />
-            <strong className="underline"><small className="hidden sm:inline sm:text-[18px] text-[14px]">São Paulo, </small> Brazil</strong>
+            <strong className="underline">
+              <small className="hidden sm:inline sm:text-[18px] text-[14px]">
+                São Paulo,{" "}
+              </small>{" "}
+              Brazil
+            </strong>
           </p>
           <br />
           <p className="text-[var(--tw-text-gray-secondary)] sm:text-[18px] text-[14px]">
@@ -26,7 +34,11 @@ const Header = ({ onThemeChange, theme }) => {
         </div>
       ) : (
         <p className="w-[100px] sm:w-[33%]">
-          <Link to="/">{`<-`} back to home</Link>
+          {isMobile ? (
+            <Link to="/">{`<-`} back to home</Link>
+          ) : (
+            <Link to="/">{`<-`} back</Link>
+          )}
         </p>
       )}
       <div className="header-logo text-[var(--color-total)] font-bold w-[100px] sm:w-[33%] flex justify-center">
