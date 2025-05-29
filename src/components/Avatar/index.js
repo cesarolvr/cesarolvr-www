@@ -198,6 +198,11 @@ const Avatar = forwardRef(({ theme }, ref) => {
     controls.maxPolarAngle = Math.PI * 0.7;
     controls.minPolarAngle = Math.PI * 0.1;
     controls.enableRotate = false;
+    controls.touches = {
+      ONE: THREE.TOUCH.ROTATE,
+      TWO: THREE.TOUCH.NONE,
+      THREE: THREE.TOUCH.NONE
+    };
     controlsRef.current = controls;
     const geometry = new THREE.BoxGeometry(2, 2, 2);
     const material = new THREE.MeshPhongMaterial({
