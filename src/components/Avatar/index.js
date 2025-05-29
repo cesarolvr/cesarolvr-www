@@ -26,6 +26,12 @@ const Avatar = () => {
     if (window.innerWidth <= 1368) {
       return baseScaleRef.current * 0.5;
     }
+    if (window.innerWidth >= 1920) {
+      return baseScaleRef.current * 0.9;
+    }
+    if (window.innerWidth >= 2560) {
+      return baseScaleRef.current * 0.7;
+    }
     return baseScaleRef.current;
   };
 
