@@ -41,7 +41,7 @@ const IndexPage = () => {
               <span >Oliveira</span>
             </h1>
             <span className="w-[420px]"> </span>
-            <div className="banner-description w-[350px] pr-[30px] text-right flex-shrink-0 flex justify-end flex-col items-end">
+            <div className="banner-description w-[350px] mt-[0px] text-left sm:mt-[-30px] flex justify-end flex-col pl-[80px] items-start">
               <p className="mb-4 sm:mb-9">A <strong className="text-white">Front-end Engineer</strong> having fun crafting digital experiences</p> 
               <Shortcut text="to start" />
             </div>
