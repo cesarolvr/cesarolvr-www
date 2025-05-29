@@ -29,6 +29,12 @@ const Avatar = forwardRef(({ theme }, ref) => {
     directional: theme === "light" ? 1.3 : 0.8,
     mouse: theme === "light" ? 4 : 2,
   });
+  const surprisedMeshRef = useRef(null);
+  const surprisedIndexRef = useRef(null);
+  const surprisedValueRef = useRef(0);
+  const surprisedTargetRef = useRef(0);
+
+  const [surprisedTarget, setSurprisedTarget] = useState(0);
 
   // Update target intensities when theme changes
   useEffect(() => {
@@ -201,7 +207,7 @@ const Avatar = forwardRef(({ theme }, ref) => {
     controls.touches = {
       ONE: THREE.TOUCH.ROTATE,
       TWO: THREE.TOUCH.NONE,
-      THREE: THREE.TOUCH.NONE
+      THREE: THREE.TOUCH.NONE,
     };
     controlsRef.current = controls;
     const geometry = new THREE.BoxGeometry(2, 2, 2);
@@ -228,6 +234,16 @@ const Avatar = forwardRef(({ theme }, ref) => {
         scene.add(model);
         modelRef.current = model;
         model.traverse((node) => {
+          if (node.isMesh && node.morphTargetDictionary) {
+            const surprisedIndex = node.morphTargetDictionary["Surprised"];
+            if (
+              typeof surprisedIndex === "number" &&
+              node.morphTargetInfluences
+            ) {
+              surprisedMeshRef.current = node;
+              surprisedIndexRef.current = surprisedIndex;
+            }
+          }
           if (
             node.isMesh &&
             node.material &&
@@ -292,6 +308,25 @@ const Avatar = forwardRef(({ theme }, ref) => {
         modelRef.current.rotation.y = Math.sin(t * 0.5) * 0.005;
         modelRef.current.rotation.x = Math.sin(t * 0.1) * 0.0001;
         modelRef.current.rotation.z = Math.cos(t * 0.4) * 0.00015;
+
+        
+        if (
+          surprisedMeshRef.current &&
+          typeof surprisedIndexRef.current === "number"
+        ) {
+          // Smoothly lerp the Surprised morph target value
+          surprisedValueRef.current = THREE.MathUtils.lerp(
+            surprisedValueRef.current,
+            surprisedTargetRef.current,
+            0.1 // Adjust for speed
+          );
+          surprisedMeshRef.current.morphTargetInfluences[
+            surprisedIndexRef.current
+          ] = surprisedValueRef.current;
+          surprisedMeshRef.current.needsUpdate = true;
+          if (surprisedMeshRef.current.material)
+            surprisedMeshRef.current.material.needsUpdate = true;
+        }
       }
 
       // Smoothly interpolate light intensities
@@ -367,6 +402,26 @@ const Avatar = forwardRef(({ theme }, ref) => {
       }
     });
   }, [theme, modelRef.current]);
+
+  // Listen for hover events on all <a> elements
+  useEffect(() => {
+    function handleLinkEnter(e) {
+      if (e.target.tagName === "A") {
+        surprisedTargetRef.current = 1;
+      }
+    }
+    function handleLinkLeave(e) {
+      if (e.target.tagName === "A") {
+        surprisedTargetRef.current = 0;
+      }
+    }
+    document.addEventListener("mouseenter", handleLinkEnter, true);
+    document.addEventListener("mouseleave", handleLinkLeave, true);
+    return () => {
+      document.removeEventListener("mouseenter", handleLinkEnter, true);
+      document.removeEventListener("mouseleave", handleLinkLeave, true);
+    };
+  }, []);
 
   return (
     <div className="avatar-container" ref={mountRef}>

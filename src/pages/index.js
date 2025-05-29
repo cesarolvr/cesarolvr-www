@@ -19,7 +19,7 @@ import { State } from "../components/Layout";
 
 const IndexPage = () => {
   const [isOpened, setIsOpened] = React.useState(true);
-
+  const avatarRef = React.useRef(null);
   const { theme, onThemeChange } = React.useContext(State);
 
   React.useEffect(() => {
