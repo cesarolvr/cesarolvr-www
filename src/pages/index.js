@@ -2,7 +2,7 @@ import * as React from "react";
 
 // Components
 import Header from "../components/Header";
-import Container from "../components/Container";
+import { Link } from "gatsby";
 import Footer from "../components/Footer";
 import Shortcut from "../components/Shortcut";
 import Loader from "../components/Loader";
@@ -28,14 +28,14 @@ const IndexPage = () => {
   return (
     <>
       <Cursor />
-      <div className="home">
+      <div className="home overflow-hidden">
         <Loader isOpened={isOpened} duration={1} />
         <Header hideShortcut />
-        <main>
+        <main className="overflow-hidden">
           <div className="avatar-section">
             <Avatar />
           </div>
-          <div className="w-[90svw] banner-holder z-10 pt-[100px] pointer-events-none fixed flex justify-center items-center">
+          <div className="w-[90svw] banner-holder z-50 pt-[100px] sm:pointer-events-none fixed flex justify-center items-center">
             <h1 className="banner-title flex flex-col items-end h-full text-right font-bold w-[300px] flex-shrink-0">
               Cesar
               <span>Oliveira</span>
@@ -50,11 +50,15 @@ const IndexPage = () => {
             </div>
           </div>
 
-          <p className="blog-ticker-title fixed z-[100] left-[20px]">
-            My latest posts ↓
-          </p>
+          <Link
+            to="/blog"
+            title="soon"
+            className="blog-ticker-title fixed z-[100] left-[20px] sm:text-[18px] text-[14px]"
+          >
+            Latest posts ↓
+          </Link>
           <a
-            className="fixed z-[100] sm:text-[16px] text-underline sm:bottom-[60px] text-[14px] right-[20px] text-[#bdbdbd] bottom-[65px]"
+            className="fixed z-[100] sm:text-[18px] text-underline sm:bottom-[60px] text-[14px] right-[20px] text-[#bdbdbd] bottom-[65px]"
             href="mailto:contact@cesarolvr.com"
           >
             Want to hire me?
@@ -66,24 +70,32 @@ const IndexPage = () => {
                   className="blog-ticker-wrapper"
                   key={`${article.id}-${index}`}
                 >
-                  {article.posts.map((post, index) => {
-                    return (
-                      <a
-                        key={`${post.id}-${index}`}
-                        href={post.link}
-                        disabled={!post.active}
-                        className={`blog-ticker-item ${
-                          post.active
-                            ? ""
-                            : "-link-blocked cursor-not-allowed pointer-events-none"
-                        }`}
-                        title={post.active ? "Read now" : "Coming soon"}
-                      >
-                        <span className="emoji">{post.emoji}</span>
-                        <h3>{post.title} -></h3>
-                      </a>
-                    );
-                  })}
+                  {article.posts
+                    .filter((post) => post.active)
+                    .reverse()
+                    .map((post, index) => {
+                      return (
+                        <a
+                          key={`${post.id}-${index}`}
+                          href={post.link}
+                          disabled={!post.active}
+                          className={`blog-ticker-item relative ${
+                            post.active
+                              ? ""
+                              : "-link-blocked cursor-not-allowed pointer-events-none"
+                          }`}
+                          title={post.active ? "Read now" : "Coming soon"}
+                        >
+                          <span className="emoji">{post.emoji}</span>
+                          {!post.active ? (
+                            <span className="absolute top-0 right-0 bg-white text-black px-2 py-1 font-bold text-xs">
+                              soon
+                            </span>
+                          ) : null}
+                          <h3>{post.title} -></h3>
+                        </a>
+                      );
+                    })}
                 </div>
               );
             })}

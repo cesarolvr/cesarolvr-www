@@ -139,7 +139,7 @@
   z-index: 30;
   left: 0;
   display: flex;
-  animation: ticker 100s linear infinite alternate;
+  animation: ticker 30s linear infinite alternate;
   gap: 5px;
 
   &:hover {
@@ -188,10 +188,6 @@
   position: fixed;
   bottom: 65px;
   color:#bdbdbd;
-  font-size: 14px;
-  @media (min-width: 730px) {
-    font-size: 16px;
-  }
 }
 
 @keyframes ticker {
@@ -199,6 +195,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-98%);
+    transform: translateX(-50%);
   }
 }
