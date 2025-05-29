@@ -44,7 +44,7 @@ const IndexPage = () => {
               <span>Oliveira</span>
             </h1>
             <span className="w-[420px]"> </span>
-            <div className="banner-description w-[350px] mt-[0px] text-left xl:mt-[-30px] flex justify-end flex-col pl-[80px] items-start">
+            <div className="banner-description w-[350px] mt-[0px] text-left 2xl:mt-[-30px] flex justify-end flex-col pl-[80px] items-start">
               <p className="mb-4 sm:mb-9">
                 A{" "}
                 <strong className="text-[var(--tw-text-gray-primary)] font-bold">
@@ -59,14 +59,14 @@ const IndexPage = () => {
           <Link
             to="/blog"
             title="soon"
-            className="blog-ticker-title bg-[var(--bg-primary)] sm:bg-transparent text-[var(--tw-text-gray-secondary)] fixed z-[100] left-[20px] sm:text-[18px] text-[14px]"
+            className="blog-ticker-title  text-[var(--tw-text-gray-secondary)] fixed z-[100] left-[20px] sm:text-[18px] text-[14px]"
           >
             Latest posts ↓
           </Link>
           <p className="fixed z-[100] sm:text-[18px] text-right text-underline sm:bottom-[60px] text-[14px] right-[20px] text-[var(--tw-text-gray-secondary)] bottom-[65px]">
-            <span className="bg-[var(--bg-primary)] sm:bg-transparent">Want to hire me?</span>
+            <span className="">Want to hire me?</span>
             <br />
-            <a className="underline bg-[var(--bg-primary)] sm:bg-transparent" href="mailto:contact@cesarolvr.com">
+            <a className="underline " href="mailto:contact@cesarolvr.com">
               contact@cesarolvr.com
             </a>
           </p>

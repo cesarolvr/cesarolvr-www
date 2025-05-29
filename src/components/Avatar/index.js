@@ -1,4 +1,10 @@
-import React, { useEffect, useRef, useState, useImperativeHandle, forwardRef } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useImperativeHandle,
+  forwardRef,
+} from "react";
 import * as THREE from "three";
 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -14,21 +20,22 @@ const Avatar = forwardRef(({ theme }, ref) => {
   const mouseLightRef = useRef(null);
   const ambientLightRef = useRef(null);
   const directionalLightRef = useRef(null);
+  const originalMaterialRef = useRef({});
   const [error, setError] = useState(false);
   const baseScaleRef = useRef(2);
   const headBoneRef = useRef(null);
   const targetIntensitiesRef = useRef({
-    ambient: theme === 'light' ? 3.9 : 0.8,
-    directional: theme === 'light' ? 1.3 : 0.8,
-    mouse: theme === 'light' ? 4 : 2
+    ambient: theme === "light" ? 3.9 : 0.8,
+    directional: theme === "light" ? 1.3 : 0.8,
+    mouse: theme === "light" ? 4 : 2,
   });
 
   // Update target intensities when theme changes
   useEffect(() => {
     targetIntensitiesRef.current = {
-      ambient: theme === 'light' ? 2.5 : 1,
-      directional: theme === 'light' ? 1.3 : 0.8,
-      mouse: theme === 'light' ? 4 : 2
+      ambient: theme === "light" ? 2.5 : 1,
+      directional: theme === "light" ? 1.3 : 0.8,
+      mouse: theme === "light" ? 4 : 2,
     };
   }, [theme]);
 
@@ -155,16 +162,26 @@ const Avatar = forwardRef(({ theme }, ref) => {
     mountRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, targetIntensitiesRef.current.ambient);
+    const ambientLight = new THREE.AmbientLight(
+      0xffffff,
+      targetIntensitiesRef.current.ambient
+    );
     scene.add(ambientLight);
     ambientLightRef.current = ambientLight;
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, targetIntensitiesRef.current.directional);
+    const directionalLight = new THREE.DirectionalLight(
+      0xffffff,
+      targetIntensitiesRef.current.directional
+    );
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight);
     directionalLightRef.current = directionalLight;
 
-    const mouseLight = new THREE.PointLight(0xffffff, targetIntensitiesRef.current.mouse, 5);
+    const mouseLight = new THREE.PointLight(
+      0xffffff,
+      targetIntensitiesRef.current.mouse,
+      5
+    );
     mouseLight.position.set(5, 0, 2);
     scene.add(mouseLight);
     mouseLightRef.current = mouseLight;
@@ -206,10 +223,25 @@ const Avatar = forwardRef(({ theme }, ref) => {
         scene.add(model);
         modelRef.current = model;
         model.traverse((node) => {
+          if (
+            node.isMesh &&
+            node.material &&
+            node.material.name === "avaturn_look_0_material"
+          ) {
+            // Save original properties only once
+            if (!originalMaterialRef.current.saved) {
+              originalMaterialRef.current = {
+                color: node.material.color.clone(),
+                map: node.material.map,
+                saved: true,
+              };
+            }
+          }
           if (node.isBone && node.name.toLowerCase().includes("head")) {
             headBoneRef.current = node;
           }
         });
+
         let blinkMesh = null;
         let blinkIndex = null;
         model.traverse((node) => {
@@ -306,6 +338,30 @@ const Avatar = forwardRef(({ theme }, ref) => {
       renderer.dispose();
     };
   }, []); // Remove theme dependency since we're using refs
+
+  // Apply white color and remove texture only when theme changes
+  useEffect(() => {
+    if (!modelRef.current) return;
+    modelRef.current.traverse((node) => {
+      if (
+        node.isMesh &&
+        node.material &&
+        node.material.name === "avaturn_look_0_material"
+      ) {
+        if (theme === "light") {
+          if (node.material.map) {
+            node.material.map = null;
+          }
+          node.material.color.set("#ffffff");
+          node.material.needsUpdate = true;
+        } else if (theme === "dark" && originalMaterialRef.current.saved) {
+          node.material.color.copy(originalMaterialRef.current.color);
+          node.material.map = originalMaterialRef.current.map;
+          node.material.needsUpdate = true;
+        }
+      }
+    });
+  }, [theme, modelRef.current]);
 
   return (
     <div className="avatar-container" ref={mountRef}>
