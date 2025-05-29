@@ -20,10 +20,10 @@ const Shortcut = ({ text }) => {
     </div>
   ) : (
     <div className="shortcut">
-      <p className="key">{isMac ? "command" : "ctrl"}</p>
-      <p>+</p>
-      <p className="key">{isMac ? "return" : "enter"}</p>
-      <p>{text}</p>
+      <p className="key text-[var(--tw-text-gray-primary)] bg-[var(--bg-secondary)]">{isMac ? "command" : "ctrl"}</p>
+      <p className="text-[var(--tw-text-gray-secondary)]">+</p>
+      <p className="key text-[var(--tw-text-gray-primary)] bg-[var(--bg-secondary)]">{isMac ? "return" : "enter"}</p>
+      <p className="text-[var(--tw-text-gray-primary)]">{text}</p>
     </div>
   );
 };
