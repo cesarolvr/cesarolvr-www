@@ -9,12 +9,14 @@ const Header = ({ goBackToHome }) => {
     typeof window !== "undefined" ? window?.location?.pathname : "";
   return (
     <header className="header">
-      <div className="header-holder hidden sm:block">
-        <p className="text-[#bdbdbd] sm:text-[18px] text-[14px]">
-          Based in <br />
-          São Paulo, Brazil
-        </p>
-      </div>
+      {pathname === "/" && (
+        <div className="header-holder hidden sm:block">
+          <p className="text-[#bdbdbd] sm:text-[18px] text-[14px]">
+            Based in <br />
+            São Paulo, Brazil
+          </p>
+        </div>
+      )}
       <div className="header-logo">
         <Link to="/">cesarolvr.com</Link>
       </div>
@@ -41,7 +43,7 @@ const Header = ({ goBackToHome }) => {
 
         <li>
           <a href="https://github.com/cesarolvr/" target="_blank">
-            Some experiments ->
+            Some experiments &gt;
           </a>
         </li>
         <li>

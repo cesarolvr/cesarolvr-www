@@ -136,11 +136,15 @@
 
 .career-path {
   &.-academic {
+    .about-career-experience {
+      margin-top: 40px;
+    }
+
     .role {
       display: inline;
-      background-color: #141414;
-      color: white;
-      font-weight: 400;
+      background-color: white;
+      color: #141414;
+      font-weight: bold;
     }
 
     .infos {
@@ -150,12 +154,12 @@
 }
 
 .about-career-experience {
-  margin: 60px 0;
+  margin: 15px 0;
 
   &:first-child {
     margin-top: 30px;
   }
-  
+
   p {
     font-size: 16px;
   }

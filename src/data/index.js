@@ -24,41 +24,23 @@ const careerPath = [
   {
     role: "Tech Lead | Senior Front-end Engineer",
     details: `Itaú Unibanco | São Paulo, Brazil | 2023 -> current`,
-    description: `- Led multiple squads of 4-5 experienced developers to create digital acquisition funnels
-    - Generated +100k deals (contracts) through mortgage, vehicles sales and real estate finance businesses, making +1M in revenue and increasing market shares
-    - Led with strong 1-1s, technical and non-technical mentoring, internal talks and POCs developed
-    - Rewarded by Itaú for being a high-performer employee already in the first quarter working`,
   },
   {
     role: "Senior Front-end Engineer",
     details: `Red Ventures | Charlotte, USA | 2018 -> 2023`,
-    description: `- Created +10 apps as a individual contributor and being core committer in all those projects
-    - Generated +5MM hot leads from toll tags, mortgage, vehicles leasing to real state sector, resulted in +500k new customers
-    - Given +10 of talks about Front-end related content, React tutorials, animation tips, automated tests and also soft skills
-    - Optimized +10 web vitals metrics in the 5 businesses built, directly affecting thousands of users daily at scale just with improvements in the React applications served.
-    - Awarded by RV for being a top-performer and representing the value "Red Ventures believe in being the change to see in the world"
-    - Designed a new versioning process, reducing by 50% the time to release new website versions
-    - Coordinated 1 project helping Brazilian non-profit organizations, aligned with the company's BlackLivesMatter (BLM) campaigns. Donated more than USD 6k.`,
   },
 
   {
     role: "Front-end Engineer",
     details: `Shawee | São Paulo, Brazil | 2017 -> 2018`,
-    description: `- Implemented +10 products (in-company and tech community hackathons) using React and React Native, boosting that current OKRs
-    - Built a robust suite of automated tests to front-end features across the products using Cypress and Testing Library
-    - Enhanced front-end feature reliability, cutting by around 50% the amount of time during QA process
-    - Created +20 Tech Meetups in São Paulo, promoting Front-end related discussions and growth`,
   },
   {
     role: "Front-end Engineer",
     details: `Horizon Four | São Paulo, Brazil | 2017 -> 2018`,
-    description: `- Delivered +6 projects for startups in different sectors like finance services, private rental and entertainment
-    - Travelled across 5 states in Brazil during in company implementations, negotiating deadlines and expectations with stakeholders`,
   },
   {
     role: "A ”Handyman Engineer”",
     details: `Ag. Empreendora | São Paulo, Brazil | 2016 -> 2017`,
-    description: `- Made +15 websites for different small business like schools, stores and bakeries. Mostly using jQuery, AngularJS, Wordpress and VanillaJS`,
   },
 ];
 

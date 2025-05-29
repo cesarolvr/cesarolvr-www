@@ -37,6 +37,17 @@ const panelMap = (index) => {
   const map = {
     0: (
       <ol className="career-path">
+        <>
+          <br />
+          -> Check out my{" "}
+          <a
+            className="underline text-white"
+            href="https://www.linkedin.com/in/cesarolvr/#experience"
+          >
+            LinkedIn experience section
+          </a>{" "}
+          for more details
+        </>
         {careerPath.map(({ role, details, description }, index) => {
           return (
             <li key={index} className="about-career-experience">
@@ -165,11 +176,11 @@ const About = () => {
           <div className="bio column">
             <h3 className="about-title mb-2 font-bold text-[18px]">Bio</h3>
             <p className="paragraph">
-              A decade of experience as a Software Engineer (Front-end focused), working on
-              large-scale and high-impact projects for digital companies, where
-              I've crafted digital acquisition experiences, dashboards,
-              awwwards-like websites, design systems, animations libraries,
-              mobile apps and email marketing tools.
+              A decade of experience as a Software Engineer (Front-end focused),
+              working on large-scale and high-impact projects for digital
+              companies, where I've crafted digital acquisition experiences,
+              dashboards, awwwards-like websites, design systems, animations
+              libraries, mobile apps and email marketing tools.
             </p>
             <p className="paragraph">
               I'm really focused about resolve real problems through technology,
