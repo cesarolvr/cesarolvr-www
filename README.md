@@ -1,6 +1,6 @@
 # Cesarolvr's Personal Website
 
-![Home Page Preview](home.png)
+<img src="home.png" alt="Home Page Preview" width="600"/>
 
 A modern, responsive personal website built with Gatsby.js, featuring a sleek design and interactive elements.
 
@@ -75,8 +75,8 @@ The project uses several Gatsby plugins and configurations:
 
 ## 📄 License
 
-This project is private and proprietary.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## �� Author
+## 👤 Author
 
 Cesarolvr
