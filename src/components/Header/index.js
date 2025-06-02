@@ -34,7 +34,7 @@ const Header = ({ onThemeChange, theme }) => {
         </div>
       ) : (
         <p className="w-[100px] sm:w-[33%]">
-          {isMobile ? (
+          {!isMobile ? (
             <Link to="/">{`<-`} back to home</Link>
           ) : (
             <Link to="/">{`<-`} back</Link>
