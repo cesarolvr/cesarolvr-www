@@ -258,9 +258,15 @@ const Headshot = () => {
 
               // displacement = random(modalPosition.xy) * 0.5;
               vec2 rotateXY = rotate2d(1.5) * modalPosition.xy * 1.5;
-              displacement = noise(rotateXY + (vec2(uTime * 1.))) * 0.5;
+              // Add stronger flagging effect with multiple wave frequencies
+              float flagEffect = sin(modalPosition.x * 3.0 + uTime * 3.0) * 0.2; // Primary wave
+              float secondaryWave = sin(modalPosition.x * 1.5 + uTime * 2.0) * 0.15; // Secondary wave
+              float tertiaryWave = cos(modalPosition.x * 4.0 + uTime * 4.0) * 0.1; // Tertiary wave for detail
+              displacement = noise(rotateXY + (vec2(uTime * 1.))) * 0.5 + flagEffect + secondaryWave + tertiaryWave;
 
               modalPosition.z += displacement;
+              // Add 20 pixel offset to the right (converted to WebGL coordinates)
+              modalPosition.x += 0.6; // 20 pixels converted to WebGL space
 
               gl_Position = projectionMatrix * viewMatrix * modalPosition;
             }
@@ -299,6 +305,14 @@ const Headshot = () => {
     const sphere2 = new THREE.Mesh(geometry2, shaderMaterial);
     scene.add(sphere2);
 
+    // Set initial rotation - focus on Y axis
+    sphere.rotation.x = 0;
+    sphere.rotation.y = Math.PI / 2; // 45 degrees
+    sphere.rotation.z = 0;
+    sphere2.rotation.x = 0;
+    sphere2.rotation.y = Math.PI / 2; // 45 degrees
+    sphere2.rotation.z = 0;
+
     // Sizes
     const sizes = {
       width: window.innerWidth / 2.1,
@@ -315,6 +329,8 @@ const Headshot = () => {
     // Controls
     const controls = new OrbitControls(camera, canvas);
     controls.enableDamping = true;
+    controls.enableZoom = false; // Disable zoom/scroll
+    controls.enablePan = false; // Also disable panning for better UX
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({
@@ -368,9 +384,9 @@ const Headshot = () => {
       // update material
       shaderMaterial.uniforms.uTime.value = elapsedTime;
 
-      sphere.rotation.x = -0.1;
-      sphere.rotation.y = -0.1;
-      sphere.rotation.z = 0;
+      // Rotate primarily around Y axis with subtle movement
+      sphere.rotation.y = Math.PI / 4 + Math.sin(elapsedTime * 0.3) * 0.1;
+      sphere2.rotation.y = Math.PI / 4 + Math.sin(elapsedTime * 0.3) * 0.1;
 
       // Update controls
       controls.update();
