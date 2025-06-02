@@ -1,8 +1,10 @@
-# Cesarolvr's Personal Website
-
-<img src="home.png" alt="Home Page Preview" width="600"/>
-
 A modern, responsive personal website built with Gatsby.js, featuring a sleek design and interactive elements.
+
+<div align="center">
+  <img src="home.png" alt="Home Page Preview" width="600"/>
+</div>
+
+
 
 ## 🚀 Features
 
