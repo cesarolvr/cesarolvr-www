@@ -13,6 +13,7 @@ import cesarolvrCV from "../files/cesar-oliveira-resume.pdf";
 // Styles
 import "../styles/global.scss";
 import "../styles/actions.scss";
+import ScrambleText from "../components/ScrambleText";
 
 const Actions = () => {
   const [isOpened, setIsOpened] = React.useState(true);
@@ -39,7 +40,12 @@ const Actions = () => {
                   download={true}
                   target="_blank"
                 >
-                  Download CV
+                  <ScrambleText
+                    text="Download CV"
+                    className="scramble-text"
+                    duration={1}
+                    placeholder=".:"
+                  />
                 </a>
               </li>
               <li>
@@ -48,7 +54,12 @@ const Actions = () => {
                   target="_blank"
                   className="hover:text-[var(--tw-text-gray-primary)]"
                 >
-                  Go to my Linkedin
+                  <ScrambleText
+                    text="Go to my Linkedin"
+                    className="scramble-text"
+                    duration={1.2}
+                    placeholder=".:"
+                  />
                 </a>
               </li>
               <li>
@@ -57,7 +68,20 @@ const Actions = () => {
                   target="_blank"
                   className="hover:text-[var(--tw-text-gray-primary)]"
                 >
-                  Book a meeting <span>invite to -> contact@cesarolvr.com</span>
+                  <ScrambleText
+                    text="Book a meeting"
+                    className="scramble-text inline-block"
+                    duration={1.4}
+                    placeholder=".:"
+                  />
+                  <span className="inline-block ml-5">
+                    <ScrambleText
+                      text="invite to -> contact@cesarolvr.com"
+                      className="scramble-text"
+                      duration={1.4}
+                      placeholder="__"
+                    />
+                  </span>
                 </a>
               </li>
               <li>
@@ -66,7 +90,12 @@ const Actions = () => {
                   target="_blank"
                   className="hover:text-[var(--tw-text-gray-primary)]"
                 >
-                  See my Github
+                  <ScrambleText
+                    text="See my Github"
+                    className="scramble-text"
+                    duration={1.6}
+                    placeholder=".:"
+                  />
                 </a>
               </li>
               <li>
@@ -75,7 +104,12 @@ const Actions = () => {
                   target="_blank"
                   className="hover:text-[var(--tw-text-gray-primary)]"
                 >
-                  Star my Codepen
+                  <ScrambleText
+                    text="Star my Codepen"
+                    className="scramble-text"
+                    duration={1.8}
+                    placeholder=".:"
+                  />
                 </a>
               </li>
               <li>
@@ -84,7 +118,12 @@ const Actions = () => {
                   target="_blank"
                   className="hover:text-[var(--tw-text-gray-primary)]"
                 >
-                  Check my Leetcode
+                  <ScrambleText
+                    text="Check my Leetcode"
+                    className="scramble-text"
+                    duration={2}
+                    placeholder=".:"
+                  />
                 </a>
               </li>
               <li>
@@ -93,7 +132,12 @@ const Actions = () => {
                   href="mailto:contact@cesarolvr.com"
                   className="hover:text-[var(--tw-text-gray-primary)]"
                 >
-                  Send me an e-mail
+                  <ScrambleText
+                    text="Send me an e-mail"
+                    className="scramble-text"
+                    duration={2.2}
+                    placeholder=".:"
+                  />
                 </a>
               </li>
               <li>
@@ -102,7 +146,20 @@ const Actions = () => {
                   target="_blank"
                   className="hover:text-[var(--tw-text-gray-primary)]"
                 >
-                  Follow me on Instagram <span>(only friends)</span>
+                  <ScrambleText
+                    text="Follow me on Instagram"
+                    className="scramble-text inline-block"
+                    duration={2.4}
+                    placeholder=".:"
+                  />
+                  <span className="inline-block ml-5">
+                    <ScrambleText
+                      text="(only friends)"
+                      className="scramble-text"
+                      duration={2.4}
+                      placeholder="__"
+                    />
+                  </span>
                 </a>
               </li>
               <li>
@@ -111,7 +168,20 @@ const Actions = () => {
                   target="_blank"
                   className="hover:text-[var(--tw-text-gray-primary)]"
                 >
-                  My current readings <span>(only curious)</span>
+                  <ScrambleText
+                    text="My current readings"
+                    className="scramble-text inline-block"
+                    duration={2.6}
+                    placeholder=".:"
+                  />
+                  <span className="inline-block ml-5">
+                    <ScrambleText
+                      text="(only curious)"
+                      className="scramble-text"
+                      duration={1}
+                      placeholder="__"
+                    />
+                  </span>
                 </a>
               </li>
               <li>
@@ -120,7 +190,20 @@ const Actions = () => {
                   target="_blank"
                   className="hover:text-[var(--tw-text-gray-primary)]"
                 >
-                  View source code of this website <span>(only devs)</span>
+                  <ScrambleText
+                    text="View source code of this website"
+                    className="scramble-text inline-block"
+                    duration={1}
+                    placeholder=".:"
+                  />
+                  <span className="inline-block ml-5">
+                    <ScrambleText
+                      text="(only devs)"
+                      className="scramble-text"
+                        duration={2.8}
+                      placeholder="__"
+                    />
+                  </span>
                 </a>
               </li>
             </ul>

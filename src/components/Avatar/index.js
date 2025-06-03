@@ -6,6 +6,7 @@ import React, {
   forwardRef,
 } from "react";
 import * as THREE from "three";
+import gsap from "gsap";
 
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -24,6 +25,8 @@ const Avatar = forwardRef(({ theme }, ref) => {
   const [error, setError] = useState(false);
   const baseScaleRef = useRef(2);
   const headBoneRef = useRef(null);
+  const targetRotationRef = useRef({ x: 0, y: 0 });
+  const currentRotationRef = useRef({ x: 0, y: 0 });
   const targetIntensitiesRef = useRef({
     ambient: theme === "light" ? 3.9 : 0.8,
     directional: theme === "light" ? 1.3 : 0.8,
@@ -115,6 +118,7 @@ const Avatar = forwardRef(({ theme }, ref) => {
     const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
     mouseLightRef.current.position.x = x * 5;
     mouseLightRef.current.position.y = -y * 5;
+
     if (headBoneRef.current) {
       let maxUp = Math.PI / 9;
       let maxDown = Math.PI / 4;
@@ -125,8 +129,12 @@ const Avatar = forwardRef(({ theme }, ref) => {
         rotationX = -y * maxDown;
       }
       const rotationY = (x * Math.PI) / 6;
-      headBoneRef.current.rotation.y = rotationY;
-      headBoneRef.current.rotation.x = rotationX;
+
+      // Update target rotation
+      targetRotationRef.current = {
+        x: rotationX,
+        y: rotationY,
+      };
     }
   };
 
@@ -139,6 +147,7 @@ const Avatar = forwardRef(({ theme }, ref) => {
     const y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
     mouseLightRef.current.position.x = x * 5;
     mouseLightRef.current.position.y = -y * 5;
+
     if (headBoneRef.current) {
       let maxUp = Math.PI / 9;
       let maxDown = Math.PI / 4;
@@ -149,8 +158,12 @@ const Avatar = forwardRef(({ theme }, ref) => {
         rotationX = -y * maxDown;
       }
       const rotationY = (x * Math.PI) / 6;
-      headBoneRef.current.rotation.y = rotationY;
-      headBoneRef.current.rotation.x = rotationX;
+
+      // Update target rotation
+      targetRotationRef.current = {
+        x: rotationX,
+        y: rotationY,
+      };
     }
   };
 
@@ -309,7 +322,6 @@ const Avatar = forwardRef(({ theme }, ref) => {
         modelRef.current.rotation.x = Math.sin(t * 0.1) * 0.0001;
         modelRef.current.rotation.z = Math.cos(t * 0.4) * 0.00015;
 
-        
         if (
           surprisedMeshRef.current &&
           typeof surprisedIndexRef.current === "number"
@@ -350,6 +362,25 @@ const Avatar = forwardRef(({ theme }, ref) => {
           targetIntensitiesRef.current.mouse,
           0.05
         );
+      }
+
+      // Smooth head rotation
+      if (headBoneRef.current) {
+        // Interpolate current rotation towards target rotation
+        currentRotationRef.current.x = gsap.utils.interpolate(
+          currentRotationRef.current.x,
+          targetRotationRef.current.x,
+          0.2
+        );
+        currentRotationRef.current.y = gsap.utils.interpolate(
+          currentRotationRef.current.y,
+          targetRotationRef.current.y,
+          0.2
+        );
+
+        // Apply interpolated rotation
+        headBoneRef.current.rotation.x = currentRotationRef.current.x;
+        headBoneRef.current.rotation.y = currentRotationRef.current.y;
       }
 
       renderer.render(scene, camera);

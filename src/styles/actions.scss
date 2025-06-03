@@ -47,6 +47,10 @@
         &:hover {
           // color: white;
           text-decoration: underline;
+
+          .scramble-text {
+            text-decoration: underline;
+          }
         }
       }
 

@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import PropTypes from "prop-types";
 
-const ScrambleText = ({ text, className, delay = 0, duration = 1 }) => {
+const ScrambleText = ({ text, className, delay = 0, duration = 1, placeholder = "." }) => {
   const textRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
-  const chars = "01100011";
+  const chars = placeholder;
 
   const scramble = (element, originalText, isHover = false) => {
     let frame = 0;

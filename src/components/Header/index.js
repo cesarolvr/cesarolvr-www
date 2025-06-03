@@ -61,13 +61,25 @@ const Header = ({ onThemeChange, theme }) => {
       ) : (
         <p className="w-[100px] sm:w-[33%]">
           {!isMobile ? (
-            <Link to="/">{`<-`} back to home</Link>
+            <Link to="/">
+              <ScrambleText
+                text={`<- back to home`}
+                className="scramble-text sm:text-[18px] text-[14px]"
+                duration={2}
+              />
+            </Link>
           ) : (
-            <Link to="/">{`<-`} back</Link>
+            <Link to="/">
+              <ScrambleText
+                text={`<- back`}
+                className="scramble-text sm:text-[18px] text-[14px]"
+                duration={2}
+              />
+            </Link>
           )}
         </p>
       )}
-      <div className="header-logo text-[var(--color-total)] font-bold w-[100px] sm:w-[33%] flex justify-center">
+      <div className="header-logo text-[var(--color-total)] w-[100px] sm:w-[33%] flex justify-center">
         <Link to="/">
           <ScrambleText
             text="cesarolvr.com"
@@ -83,11 +95,7 @@ const Header = ({ onThemeChange, theme }) => {
             to="/about/"
             className={pathname?.startsWith("/about") ? `-active` : ``}
           >
-            <ScrambleText
-              text="About"
-              className="scramble-text"
-              duration={3}
-            />
+            <ScrambleText text="About" className="scramble-text" duration={3} />
           </Link>
         </li>
 
@@ -97,7 +105,7 @@ const Header = ({ onThemeChange, theme }) => {
             title="soon"
             className={pathname?.startsWith("/blog") ? `-active` : ``}
           >
-            <ScrambleText text="Blog" className="scramble-text" duration={4} />
+            <ScrambleText text="Blog" className="scramble-text" duration={3} />
           </Link>
         </li>
 
@@ -106,7 +114,7 @@ const Header = ({ onThemeChange, theme }) => {
             <ScrambleText
               text="Experiments"
               className="scramble-text"
-              duration={5}
+              duration={3}
             />
           </a>
         </li>
@@ -118,7 +126,7 @@ const Header = ({ onThemeChange, theme }) => {
             <ScrambleText
               text="Utilities"
               className="scramble-text"
-              duration={6}
+              duration={3}
             />
           </Link>
         </li>

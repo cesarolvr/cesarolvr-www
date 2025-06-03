@@ -49,8 +49,8 @@
 }
 
 ::selection {
-  background: white;
-  color: #222222;
+  background: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 body {

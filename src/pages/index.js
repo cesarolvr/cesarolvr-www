@@ -45,13 +45,13 @@ const IndexPage = () => {
               <ScrambleText
                 text="Cesar"
                 className="scramble-text min-w-[400px]"
-                duration={4}
+                duration={3}
               />
 
               <ScrambleText
                 text="Oliveira"
                 className="scramble-text min-w-[400px]"
-                duration={5}
+                duration={3}
               />
             </h1>
             <span className="w-[420px]"> </span>
@@ -62,7 +62,7 @@ const IndexPage = () => {
                   <ScrambleText
                     text="Front-end Engineer"
                     className="scramble-text inline-block"
-                    duration={6}
+                    duration={2}
                   />
                 </strong>{" "}
                 having fun crafting digital experiences
@@ -79,20 +79,20 @@ const IndexPage = () => {
             <ScrambleText
               text={`Latest posts ↓`}
               className="scramble-text"
-              delay={1.8}
+              duration={2}
             />
           </Link>
           <p className="fixed z-[100] sm:text-[18px] text-right text-underline sm:bottom-[60px] text-[14px] right-[20px] text-[var(--tw-text-gray-secondary)] bottom-[65px]">
             <ScrambleText
               text={`Want to hire me?`}
               className="scramble-text"
-              delay={1.8}
+              duration={2}
             />
             <a className="underline " href="mailto:contact@cesarolvr.com">
               <ScrambleText
                 text={`contact@cesarolvr.com`}
                 className="scramble-text"
-                delay={1.8}
+                duration={2}
               />
             </a>
           </p>
