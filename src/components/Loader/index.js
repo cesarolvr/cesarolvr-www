@@ -9,7 +9,7 @@ import "./index.scss";
 // Components
 import { Link } from "gatsby";
 
-const Loader = ({ isOpened = false, duration, linkBack, limit }) => {
+const Loader = ({ isOpened = false, duration, linkBack, limit, numberSize = "" }) => {
   const [value, setValue] = useState(0);
   useEffect(() => {
     const countUp = new CountUp("value", limit ? limit : 100, {
@@ -27,7 +27,7 @@ const Loader = ({ isOpened = false, duration, linkBack, limit }) => {
         ["-opened"]: isOpened,
       })}
     >
-      <div className="value" id="value"></div>
+      <div className={`value ${numberSize}`} id="value"></div>
       {linkBack && <Link to="/">{`<-`} go back to home</Link>}
     </div>
   );

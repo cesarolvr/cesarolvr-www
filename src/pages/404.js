@@ -10,8 +10,7 @@ import Loader from "../components/Loader";
 const NotFound = () => {
   return (
     <div className="not-found">
-      <p>404</p>
-      <Loader isOpened={true} linkBack={true} limit={404} />
+      <Loader isOpened={true} linkBack={true} limit={404} numberSize="!text-[100px]" />
       <Link to="/">go back to cesarolvr.com</Link>
     </div>
   );

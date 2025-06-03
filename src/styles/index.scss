@@ -151,6 +151,10 @@
   align-items: center;
   flex-shrink: 0;
   gap: 5px;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: slideUp 0.3s ease forwards;
+  animation-delay: 1.5s;
 }
 
 .blog-ticker-item {
@@ -191,5 +195,16 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
