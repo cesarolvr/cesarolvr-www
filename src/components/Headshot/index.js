@@ -36,8 +36,8 @@ const Headshot = () => {
     const scene = new THREE.Scene();
 
     // Object
-    const geometry = new THREE.PlaneGeometry(2, 2, 100, 100);
-    const geometry2 = new THREE.PlaneGeometry(2, 2, 100, 100);
+    const geometry = new THREE.PlaneGeometry(2.2, 2.2, 100, 100);
+    const geometry2 = new THREE.PlaneGeometry(2.2, 2.2, 100, 100);
     geometry2.applyMatrix4(new THREE.Matrix4().makeRotationY(Math.PI));
 
     // Material
@@ -256,7 +256,7 @@ const Headshot = () => {
               // displacement = dot(modalPosition.x, modalPosition.y);
               // displacement = dot(modalPosition.x + 0.5, modalPosition.y);
 
-              // displacement = random(modalPosition.xy) * 0.5;
+              // displacement = random(modalPosition.xy) * 0.2;
               vec2 rotateXY = rotate2d(1.5) * modalPosition.xy * 1.5;
               // Add stronger flagging effect with multiple wave frequencies
               float flagEffect = sin(modalPosition.x * 3.0 + uTime * 3.0) * 0.2; // Primary wave
@@ -266,7 +266,7 @@ const Headshot = () => {
 
               modalPosition.z += displacement;
               // Add 20 pixel offset to the right (converted to WebGL coordinates)
-              modalPosition.x += 0.6; // 20 pixels converted to WebGL space
+              modalPosition.x += 0.4; // 20 pixels converted to WebGL space
 
               gl_Position = projectionMatrix * viewMatrix * modalPosition;
             }
@@ -307,10 +307,10 @@ const Headshot = () => {
 
     // Set initial rotation - focus on Y axis
     sphere.rotation.x = 0;
-    sphere.rotation.y = Math.PI / 2; // 45 degrees
+    sphere.rotation.y = Math.PI / 6; // Changed from PI/4 to PI/6 for smaller angle
     sphere.rotation.z = 0;
     sphere2.rotation.x = 0;
-    sphere2.rotation.y = Math.PI / 2; // 45 degrees
+    sphere2.rotation.y = Math.PI / 6; // Changed from PI/4 to PI/6 for smaller angle
     sphere2.rotation.z = 0;
 
     // Sizes
@@ -384,9 +384,9 @@ const Headshot = () => {
       // update material
       shaderMaterial.uniforms.uTime.value = elapsedTime;
 
-      // Rotate primarily around Y axis with subtle movement
-      sphere.rotation.y = Math.PI / 4 + Math.sin(elapsedTime * 0.3) * 0.1;
-      sphere2.rotation.y = Math.PI / 4 + Math.sin(elapsedTime * 0.3) * 0.1;
+      // Rotate with smaller amplitude and slower speed
+      sphere.rotation.y = Math.PI / 6 + Math.sin(elapsedTime * 0.2) * 0.05; // Reduced amplitude from 0.1 to 0.05 and speed from 0.3 to 0.2
+      sphere2.rotation.y = Math.PI / 6 + Math.sin(elapsedTime * 0.2) * 0.05;
 
       // Update controls
       controls.update();
@@ -427,7 +427,7 @@ const Headshot = () => {
     initWaves();
   }, []);
 
-  return <canvas class="webgl"></canvas>;
+  return <canvas class="webgl cursor-grab"></canvas>;
 };
 
 export default Headshot;
