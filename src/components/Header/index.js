@@ -1,8 +1,10 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import SplitTextAnimation from "../SplitText";
 
 // Styles
 import "./index.scss";
+import "../SplitText/styles.scss";
 
 const Header = ({ onThemeChange, theme }) => {
   const pathname =
@@ -42,7 +44,13 @@ const Header = ({ onThemeChange, theme }) => {
         </p>
       )}
       <div className="header-logo text-[var(--color-total)] font-bold w-[100px] sm:w-[33%] flex justify-center">
-        <Link to="/">cesarolvr.com</Link>
+        <Link to="/">
+          <SplitTextAnimation 
+            text="cesarolvr.com" 
+            className="split-text"
+            delay={0.5}
+          />
+        </Link>
       </div>
 
       <ul className="header-list w-[100px] sm:w-[33%]">

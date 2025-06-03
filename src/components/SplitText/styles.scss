@@ -1,0 +1,15 @@
+.split-text {
+  display: inline-block;
+  overflow: hidden;
+  
+  .char {
+    display: inline-block;
+    transform-origin: 50% 50%;
+    will-change: transform, opacity;
+  }
+
+  .word {
+    display: inline-block;
+    margin-right: 0.25em;
+  }
+} 
