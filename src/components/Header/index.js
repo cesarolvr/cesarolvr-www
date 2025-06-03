@@ -1,10 +1,9 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import SplitTextAnimation from "../SplitText";
+import ScrambleText from "../ScrambleText";
 
 // Styles
 import "./index.scss";
-import "../SplitText/styles.scss";
 
 const Header = ({ onThemeChange, theme }) => {
   const pathname =
@@ -18,19 +17,44 @@ const Header = ({ onThemeChange, theme }) => {
       {pathname === "/" ? (
         <div className="header-holder w-[100px] sm:w-[33%]">
           <p className="text-[var(--tw-text-gray-secondary)] sm:text-[18px] text-[14px]">
-            Based in <br />
+            <ScrambleText
+              text={`Based in`}
+              className="scramble-text"
+              delay={1.5}
+            />{" "}
             <strong className="underline">
-              <small className="hidden sm:inline sm:text-[18px] text-[14px]">
-                São Paulo,{" "}
-              </small>{" "}
-              Brazil
+              <small className="sm:text-[18px] text-[14px]">
+                {!isMobile ? (
+                  <ScrambleText
+                    text={`São Paulo, Brazil`}
+                    className="scramble-text"
+                    duration={3}
+                  />
+                ) : (
+                  <ScrambleText
+                    text={`Brazil`}
+                    className="scramble-text"
+                    duration={3}
+                  />
+                )}
+              </small>
             </strong>
           </p>
           <br />
           <p className="text-[var(--tw-text-gray-secondary)] sm:text-[18px] text-[14px]">
-            Switch to <br />{" "}
+            <ScrambleText
+              text="Switch to"
+              className="scramble-text"
+              duration={3.5}
+            />
             <span onClick={onThemeChange} className="underline cursor-pointer">
-              <strong>{theme === "dark" ? "Light" : "Dark"} mode</strong>
+              <strong>
+                <ScrambleText
+                  text={`${theme === "dark" ? "Light" : "Dark"} mode`}
+                  className="scramble-text"
+                  duration={3.9}
+                />
+              </strong>
             </span>
           </p>
         </div>
@@ -45,10 +69,10 @@ const Header = ({ onThemeChange, theme }) => {
       )}
       <div className="header-logo text-[var(--color-total)] font-bold w-[100px] sm:w-[33%] flex justify-center">
         <Link to="/">
-          <SplitTextAnimation 
-            text="cesarolvr.com" 
-            className="split-text"
-            delay={0.5}
+          <ScrambleText
+            text="cesarolvr.com"
+            className="scramble-text"
+            duration={2.5}
           />
         </Link>
       </div>
@@ -59,7 +83,11 @@ const Header = ({ onThemeChange, theme }) => {
             to="/about/"
             className={pathname?.startsWith("/about") ? `-active` : ``}
           >
-            About
+            <ScrambleText
+              text="About"
+              className="scramble-text"
+              duration={3}
+            />
           </Link>
         </li>
 
@@ -69,13 +97,17 @@ const Header = ({ onThemeChange, theme }) => {
             title="soon"
             className={pathname?.startsWith("/blog") ? `-active` : ``}
           >
-            Blog
+            <ScrambleText text="Blog" className="scramble-text" duration={4} />
           </Link>
         </li>
 
         <li>
           <a href="https://github.com/cesarolvr/" target="_blank">
-            Experiments
+            <ScrambleText
+              text="Experiments"
+              className="scramble-text"
+              duration={5}
+            />
           </a>
         </li>
         <li>
@@ -83,7 +115,11 @@ const Header = ({ onThemeChange, theme }) => {
             to="/utilities/"
             className={pathname?.startsWith("/utilities") ? `-active` : ``}
           >
-            Utilities
+            <ScrambleText
+              text="Utilities"
+              className="scramble-text"
+              duration={6}
+            />
           </Link>
         </li>
       </ul>

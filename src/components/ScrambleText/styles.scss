@@ -1,0 +1,11 @@
+.scramble-text {
+  display: inline-block;
+  font-family: monospace;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+} 

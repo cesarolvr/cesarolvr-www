@@ -12,7 +12,7 @@ const SplitTextAnimation = ({ text, className, delay = 0 }) => {
     if (!textRef.current) return;
 
     const split = new SplitText(textRef.current, {
-      type: 'chars,words',
+      type: 'chars',
       charsClass: 'char',
       wordsClass: 'word'
     });
@@ -26,7 +26,7 @@ const SplitTextAnimation = ({ text, className, delay = 0 }) => {
       duration: 1,
       stagger: 0.02,
       delay: delay,
-      ease: 'back.out(1.7)'
+      ease: 'linear'
     });
 
     return () => {

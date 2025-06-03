@@ -60,6 +60,18 @@
         &.-active {
           color: var(--tw-text-gray-primary);
           text-decoration: underline;
+
+          .char {
+            color: var(--tw-text-gray-primary);
+            text-decoration: underline;
+          }
+        }
+
+        &:hover {
+          .char {
+            color: var(--tw-text-gray-primary);
+            text-decoration: underline;
+          }
         }
       }
     }

@@ -1,9 +1,23 @@
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .shortcut {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
   cursor: pointer;
+  gap: 0.5rem;
+  animation: pulse 2s ease-in-out infinite;
 
   p {
     margin: 0 3px;
@@ -15,8 +29,9 @@
   }
 
   .key {
-    // background-color: #3a3a3a;
-    padding: 0px 12px;
-    text-transform: lowercase;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 }
