@@ -32,7 +32,7 @@ const Actions = () => {
         <Header hideShortcut={true} goBackToHome={true} />
         <main>
           <Container>
-            <ul className="actions-list pl-5">
+            <ul className="actions-list md:pl-5">
               <li>
                 <a
                   className="hover:text-[var(--tw-text-gray-primary)]"

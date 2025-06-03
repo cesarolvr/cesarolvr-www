@@ -31,7 +31,7 @@
       padding: 25px 20px;
       cursor: pointer;
       line-height: 35px;
-      border-bottom: 1px solid #1c1d20;
+      border-bottom: 1px solid var(--border-primary);
 
       @media (min-width: 730px) {
         line-height: 55px;
@@ -45,7 +45,6 @@
         display: inline-block;
 
         &:hover {
-          // color: white;
           text-decoration: underline;
 
           .scramble-text {
