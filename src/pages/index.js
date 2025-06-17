@@ -46,12 +46,14 @@ const IndexPage = () => {
                 text="Cesar"
                 className="scramble-text min-w-[400px]"
                 duration={3}
+                placeholder="."
               />
 
               <ScrambleText
                 text="Oliveira"
                 className="scramble-text min-w-[400px]"
                 duration={3}
+                placeholder="."
               />
             </h1>
             <span className="w-[420px]"> </span>
@@ -63,6 +65,7 @@ const IndexPage = () => {
                     text="Front-end Engineer"
                     className="scramble-text inline-block"
                     duration={2}
+                    placeholder="."
                   />
                 </strong>{" "}
                 having fun crafting digital experiences

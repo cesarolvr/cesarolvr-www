@@ -32,7 +32,7 @@ const Blog = () => {
       <Cursor />
       <div className="blog">
         <Loader isOpened={isOpened} duration={0.5} />
-        <Header goBackToHome={true} />
+        <Header goBackToHome={true} disableScramble={true} />
         <main className="flex flex-col mb-10 max-w-full">
           <h3 className="about-title text-[50px] mb-6 font-black px-[5%] w-full mt-10 md:mt-0">
             Ideas. Opinions. Daydreams.

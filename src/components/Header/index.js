@@ -5,7 +5,7 @@ import ScrambleText from "../ScrambleText";
 // Styles
 import "./index.scss";
 
-const Header = ({ onThemeChange, theme }) => {
+const Header = ({ onThemeChange, theme, disableScramble = false }) => {
   const pathname =
     typeof window !== "undefined" ? window?.location?.pathname : "";
 
@@ -61,12 +61,16 @@ const Header = ({ onThemeChange, theme }) => {
       ) : (
         <p className="w-[100px] sm:w-[33%]">
           {!isMobile ? (
-            <Link to="/">
-              <ScrambleText
-                text={`<- back to home`}
-                className="scramble-text sm:text-[18px] text-[14px]"
-                duration={2}
-              />
+            <Link to="/" className="sm:text-[18px] text-[14px]">
+              {!disableScramble ? (
+                <ScrambleText
+                  text={`<- back to home`}
+                  className="scramble-text"
+                  duration={2}
+                />
+              ) : (
+                <>{`<- back to home`}</>
+              )}
             </Link>
           ) : (
             <Link to="/">
@@ -81,11 +85,16 @@ const Header = ({ onThemeChange, theme }) => {
       )}
       <div className="header-logo text-[var(--color-total)] w-[100px] sm:w-[33%] flex justify-center">
         <Link to="/">
-          <ScrambleText
-            text="cesarolvr.com"
-            className="scramble-text"
-            duration={2.5}
-          />
+          {!disableScramble ? (
+            <ScrambleText
+              text="cesarolvr.com"
+              className="scramble-text"
+              placeholder="*"
+              duration={2.5}
+            />
+          ) : (
+            <>cesarolvr.com</>
+          )}
         </Link>
       </div>
 
@@ -95,7 +104,15 @@ const Header = ({ onThemeChange, theme }) => {
             to="/about/"
             className={pathname?.startsWith("/about") ? `-active` : ``}
           >
-            <ScrambleText text="About" className="scramble-text" duration={3} />
+            {!disableScramble ? (
+              <ScrambleText
+                text="About"
+                className="scramble-text"
+                duration={3}
+              />
+            ) : (
+              <>About</>
+            )}
           </Link>
         </li>
 
@@ -105,17 +122,25 @@ const Header = ({ onThemeChange, theme }) => {
             title="soon"
             className={pathname?.startsWith("/blog") ? `-active` : ``}
           >
-            <ScrambleText text="Blog" className="scramble-text" duration={3} />
+            {!disableScramble ? (
+              <ScrambleText text="Blog" className="scramble-text" duration={3} />
+            ) : (
+              <>Blog</>
+            )}
           </Link>
         </li>
 
         <li>
           <a href="https://github.com/cesarolvr/" target="_blank">
-            <ScrambleText
-              text="Experiments"
-              className="scramble-text"
-              duration={3}
-            />
+            {!disableScramble ? (
+              <ScrambleText
+                text="Experiments"
+                className="scramble-text"
+                duration={3}
+              />
+            ) : (
+              <>Experiments</>
+            )}
           </a>
         </li>
         <li>
@@ -123,11 +148,15 @@ const Header = ({ onThemeChange, theme }) => {
             to="/utilities/"
             className={pathname?.startsWith("/utilities") ? `-active` : ``}
           >
-            <ScrambleText
-              text="Utilities"
-              className="scramble-text"
-              duration={3}
-            />
+            {!disableScramble ? (
+              <ScrambleText
+                text="Utilities"
+                className="scramble-text"
+                duration={3}
+              />
+            ) : (
+              <>Utilities</>
+            )}
           </Link>
         </li>
       </ul>
