@@ -169,7 +169,6 @@
 
   &:hover {
     transform: translateY(-4px);
-    // border: 1px solid white;
     font-weight: bold;
   }
 
@@ -191,10 +190,10 @@
 
 @keyframes ticker {
   0% {
-    transform: translateX(0);
+    transform: translateX(5%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-160%);
   }
 }
 

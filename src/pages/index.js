@@ -100,41 +100,35 @@ const IndexPage = () => {
             </a>
           </p>
           <div className="blog-ticker">
-            {articles.map((article, index) => {
-              return (
-                <div
-                  className="blog-ticker-wrapper"
-                  key={`${article.id}-${index}`}
-                >
-                  {article.posts
-                    .filter((post) => post.active)
-                    .reverse()
-                    .map((post, index) => {
-                      return (
-                        <a
-                          key={`${post.id}-${index}`}
-                          href={post.link}
-                          disabled={!post.active}
-                          className={`blog-ticker-item relative text-[var(--tw-text-gray-secondary)] bg-[var(--bg-primary)] border-[1px] border-[var(--border-primary)] hover:border-[var(--border-primary)] ${
-                            post.active
-                              ? ""
-                              : "-link-blocked cursor-not-allowed pointer-events-none"
-                          }`}
-                          title={post.active ? "Read now" : "Coming soon"}
-                        >
-                          <span className="emoji">{post.emoji}</span>
-                          {!post.active ? (
-                            <span className="absolute top-0 right-0 bg-white text-black px-2 py-1 font-bold text-xs">
-                              soon
-                            </span>
-                          ) : null}
-                          <h3>{post.title} -></h3>
-                        </a>
-                      );
-                    })}
-                </div>
-              );
-            })}
+            <div className="blog-ticker-wrapper">
+              {articles
+                .flatMap((yearGroup) => yearGroup.posts)
+                .filter((post) => post.active)
+                .reverse()
+                .map((post, index) => {
+                  return (
+                    <a
+                      key={`${post.id}-${index}`}
+                      href={post.link}
+                      disabled={!post.active}
+                      className={`blog-ticker-item relative text-[var(--tw-text-gray-secondary)] bg-[var(--bg-primary)] border-[1px] border-[var(--border-primary)] hover:border-[var(--border-primary)] ${
+                        post.active
+                          ? ""
+                          : "-link-blocked cursor-not-allowed pointer-events-none"
+                      }`}
+                      title={post.active ? "Read now" : "Coming soon"}
+                    >
+                      <span className="emoji">{post.emoji}</span>
+                      {!post.active ? (
+                        <span className="absolute top-0 right-0 bg-white text-black px-2 py-1 font-bold text-xs">
+                          soon
+                        </span>
+                      ) : null}
+                      <h3>{post.title} -&gt;</h3>
+                    </a>
+                  );
+                })}
+            </div>
           </div>
         </main>
         <Footer />

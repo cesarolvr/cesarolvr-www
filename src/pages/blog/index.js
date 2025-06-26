@@ -16,10 +16,12 @@ const Blog = () => {
   const [isOpened, setIsOpened] = React.useState(true);
   const [filter, setFilter] = React.useState("all"); // "all" or "published"
 
-  // Find the last active article instead of the first one
+  // Find the last active article across all years
   const lastPublished =
-    articles?.[0]?.posts?.filter((article) => article.active)?.pop()?.id ||
-    articles?.[0]?.posts?.[0]?.id;
+    articles
+      ?.flatMap((yearGroup) => yearGroup.posts)
+      ?.filter((article) => article.active)
+      ?.pop()?.id || articles?.[0]?.posts?.[0]?.id;
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -89,7 +91,7 @@ const Blog = () => {
                         <li
                           key={article.id}
                           id={article.id}
-                          className="flex border-b-[1px] border-[var(--border-primary)] flex-col items-start group px-[5%] pb-8 pt-5 w-full text-[var(--color-total-inverse)] hover:bg-[var(--bg-total)]"
+                          className="flex border-b-[1px] border-[var(--border-primary)] flex-col items-start group px-[5%] pb-8 pt-5 w-full text-[var(--color-total-inverse)] transition-none hover:bg-[var(--bg-total)]"
                         >
                           <a
                             href={
@@ -102,23 +104,23 @@ const Blog = () => {
                               <p className="pl-0 md:pr-4 pr-2 md:pl-0 text-[30px] w-[50px] inline-block shrink-0 text-center">
                                 {article.emoji}
                               </p>
-                              <p className="font-bold break-words text-[18px] md:text-[20px] group-hover:text-[var(--color-total-inverse)]">
-                                <span className="">{article.id}.</span>{" "}
+                              <p className="font-bold break-words text-[18px] md:text-[20px] group-hover:text-[var(--color-total-inverse)] group-hover:underline transition-none">
+                                <span className="transition-none">{article.id}.</span>{" "}
                                 {article.title}
                               </p>
                             </div>
                             <div className="md:pl-[50px]">
-                              <p className="text-[#777777] mb-6 text-[18px] group-hover:text-[var(--color-total-inverse)] max-w-[700px] block">
+                              <p className="text-[#777777] mb-6 text-[18px] group-hover:text-[var(--color-total-inverse)] max-w-[700px] block transition-none">
                                 {article.active
                                   ? article.description
                                   : "Will be published soon..."}
                               </p>
-                              <p className="text-[16px] group-hover:text-[#666] group-hover:hidden">
+                              <p className="text-[16px] group-hover:text-[#666] group-hover:hidden transition-none">
                                 {article.active
                                   ? article.readTime
                                   : "Go to the last published ->"}
                               </p>
-                              <p className="text-[16px] hidden group-hover:block group-hover:text-[var(--color-total-inverse)] font-bold">
+                              <p className="text-[16px] hidden group-hover:block group-hover:text-[var(--color-total-inverse)] font-bold transition-none">
                                 {article.active
                                   ? "Read ->"
                                   : "Go to the last published ->"}
