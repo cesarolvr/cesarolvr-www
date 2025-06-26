@@ -124,6 +124,8 @@
 }
 
 .post {
+  max-width: 100vw;
+  overflow-x: hidden;
   color: var(--tw-text-gray-primary);
   strong {
     color: var(--tw-text-gray-primary);

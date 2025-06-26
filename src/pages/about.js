@@ -159,7 +159,7 @@ const About = () => {
 
       <div className="about">
         <Loader isOpened={isOpened} duration={0.5} />
-        <Header goBackToHome={true} />
+        <Header goBackToHome={true} disableScramble={true} />
         <main>
           <div className="headshot column">
             {isMobile ? <img src={headshot} alt="headshot" /> : <Headshot />}

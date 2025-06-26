@@ -42,6 +42,10 @@
   background: transparent;
 }
 
+code {
+  line-break: anywhere;
+}
+
 /* For Firefox */
 * {
   scrollbar-width: thin;

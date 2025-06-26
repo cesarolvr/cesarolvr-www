@@ -74,11 +74,15 @@ const Header = ({ onThemeChange, theme, disableScramble = false }) => {
             </Link>
           ) : (
             <Link to="/">
-              <ScrambleText
-                text={`<- back`}
-                className="scramble-text sm:text-[18px] text-[14px]"
-                duration={2}
-              />
+              {!disableScramble ? (
+                <ScrambleText
+                  text={`<- back`}
+                  className="scramble-text sm:text-[18px] text-[14px]"
+                  duration={2}
+                />
+              ) : (
+                <>{`<- back`}</>
+              )}
             </Link>
           )}
         </p>
@@ -123,7 +127,11 @@ const Header = ({ onThemeChange, theme, disableScramble = false }) => {
             className={pathname?.startsWith("/blog") ? `-active` : ``}
           >
             {!disableScramble ? (
-              <ScrambleText text="Blog" className="scramble-text" duration={3} />
+              <ScrambleText
+                text="Blog"
+                className="scramble-text"
+                duration={3}
+              />
             ) : (
               <>Blog</>
             )}

@@ -29,7 +29,7 @@ const Actions = () => {
 
       <div className="actions">
         <Loader isOpened={isOpened} duration={0.5} />
-        <Header hideShortcut={true} goBackToHome={true} />
+        <Header hideShortcut={true} goBackToHome={true} disableScramble={true} />
         <main>
           <Container>
             <ul className="actions-list md:pl-5">

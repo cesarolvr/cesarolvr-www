@@ -24,7 +24,7 @@ const Post = () => {
       <Cursor />
       <div className="post">
         <Loader isOpened={isOpened} duration={0.5} />
-        <Header goBackToHome={true} />
+        <Header goBackToHome={true} disableScramble={true} />
         <main className="flex flex-col mb-10 max-w-[900px]">
           <article class="blog-intro">
             <header className="px-[5%] mb-4">
