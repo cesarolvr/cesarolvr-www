@@ -214,6 +214,7 @@ const SecretLetter = () => {
                       lado a não passar mal
                     </li>
                     <li>22. Recebeu sua amiga gringa no seu país</li>
+                    <li>23. Se pós-graduou</li>
                   </ul>
                   <br />
                   <p className="mb-4">
