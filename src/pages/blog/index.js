@@ -37,12 +37,12 @@ const Blog = () => {
         <Header goBackToHome={true} disableScramble={true} />
         <main className="flex flex-col mb-10 max-w-full">
           <h3 className="about-title text-[50px] mb-6 font-black px-[5%] w-full mt-10 md:mt-0">
-            Ideas. Opinions. Daydreams.
+            A developer's logbook
           </h3>
           <p className="paragraph md:w-[880px] text-[18px] px-[5%] w-full">
             Written by me, for my future self. You will find here an honest (and
             sometimes wrong) view of front-end, tech career, algorithms,
-            creative development, study strategies and technical leadership.
+            creative development and technical leadership.
           </p>
 
           <div className="px-[5%] mt-3">

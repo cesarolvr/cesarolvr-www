@@ -30,9 +30,9 @@ const Post = () => {
             <header className="px-[5%] mb-4">
               <p className="mb-3 text-[80px]">🐧</p>
               <h3 className="about-title text-[35px] md:text-[50px] mb-5 font-black w-full leading-[60px] md:mt-0">
-                First time using a Linux machine
+                First time using Linux machine
               </h3>
-              <time datetime="2014-05-20" className="text-[18px] text-[#bbb]">
+              <time datetime="2014-04-20" className="text-[18px] text-[#bbb]">
                 May 20, 2014
               </time>
             </header>
@@ -46,95 +46,109 @@ const Post = () => {
 
                 <ul className="list-disc pl-8">
                   <li className="mb-4">
-                    My initial skepticism about Linux users being "hipsters"
+                    Discovering that there's more than one operating system
                   </li>
                   <li className="mb-4">
-                    Discovering why people actually use Linux beyond showing off
+                    Learning about Linux as a movement, not just an OS
                   </li>
                   <li className="mb-4">
-                    The shocking speed difference between Windows and Linux file systems
+                    Understanding the difference between kernel and distributions
                   </li>
                   <li className="mb-4">
-                    My teacher's enthusiasm finally making sense
+                    Comparing Linux vs Windows and planning to experiment
                   </li>
                 </ul>
                 <br />
               </section>
               <section class="intro-text">
                 <p className="mb-4">
-                  I can't see why Linux users are so hipsters. I'm using Windows.
+                  Until I met Junior, I thought there was only one default system running inside all computers. After all, why should we worry about the OS if we can open the browser and just navigate the internet?
                 </p>
                 <br />
                 <p className="mb-4">
-                  That's what I was thinking when my teacher started talking about Linux like it was the best thing ever. All the computers at my school run Windows. I've never used macOS. And here comes this guy, super enthusiastic about Linux, talking about how amazing it is.
+                  Junior is my hardware and network teacher, and already in the first class, I noticed his passion for Operating Systems. Linux especially stands out in his speech.
                 </p>
                 <br />
                 <p className="mb-4">
-                  Are these people just trying to show off? What's the big deal?
+                  These first classes have given me a lot of "aha" moments, and then I started to expand my mind across OSs. Here's what I found:
                 </p>
                 <br />
                 <p className="mb-4">
-                  But then I actually tried it. And wow, was I wrong.
+                  <strong>Linux is not just an OS; it actually represents an entire movement and way of thinking. Sometimes it's even political.</strong>
                 </p>
                 <br />
                 <p className="mb-4">
-                  The first thing that hit me was the speed. I mean, I knew Windows could be slow sometimes, but I didn't realize how much of a difference there could be. Opening folders, copying files, installing programs - everything just felt... snappy. Like, really snappy.
+                  For example, the GNU project, started by Richard Stallman in the 80s, pushed the idea of free software—meaning freedom, not just price (very sophisticated idea even nowadays). The Free Software Foundation, also founded by Stallman, fights for users to have the right to run, study, modify, and share software. This is a big part of the Linux vibe.
                 </p>
                 <br />
                 <p className="mb-4">
-                  My teacher explained that Linux has a different file system architecture. Windows uses NTFS, which apparently has some overhead that Linux file systems like ext4 don't have. I don't understand all the technical details yet, but I can definitely feel the difference.
+                  Think of Linux's origins! It all started with Linus Torvalds, a student guy, who in 1991 began working on a kernel as a hobby. He shared his work, and the open-source community jumped in, contributing and developing it further. This collaborative spirit is a core part of the Linux philosophy. You see this reflected in the many different distributions available today, each catering to different needs and preferences.
                 </p>
                 <br />
                 <p className="mb-4">
-                  Then there's the package management thing. On Windows, you download installers from random websites, hope they're safe, and then deal with uninstallers that never really clean up properly. On Linux, you just type something like:
-                </p>
-                <br />
-                <SyntaxHighlighter
-                  language="bash"
-                  style={darcula}
-                  className="my-4 overflow-scroll rounded-3xl"
-                >
-                  {`sudo apt install firefox`}
-                </SyntaxHighlighter>
-                <br />
-                <p className="mb-4">
-                  And boom, it's installed. No random popups, no "Would you like to install this toolbar?", no leftover files everywhere. It's like having a proper app store, but for everything.
+                  And we can check it out by ourselves here: <a href="https://github.com/torvalds/linux/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">https://github.com/torvalds/linux/</a> (thats sick)
                 </p>
                 <br />
                 <p className="mb-4">
-                  I also discovered that a lot of development tools just work better on Linux. When I was trying to set up my PHP development environment, everything was so much smoother. No weird permission issues, no antivirus software blocking things, no registry problems.
+                  Understanding the topology of Linux helped me figure out (at least a little bit) how a machine works and what a kernel is. With that, people from all over the world can contribute and build on your ideas.
                 </p>
                 <br />
                 <p className="mb-4">
-                  The command line is actually useful here. On Windows, I always felt like the command prompt was this ancient thing that nobody really used. But on Linux, the terminal is powerful. You can do everything from there if you want to.
+                  These abstractions bring different characteristics to each system.
                 </p>
                 <br />
                 <p className="mb-4">
-                  I'm still learning, and I'm definitely not a Linux expert yet. But I'm starting to understand why my teacher was so excited about it. It's not about being a hipster or showing off - it's about having a system that actually works the way you expect it to.
+                  The kernel is the core of the OS, the part that talks directly to the hardware. Distributions, on the other hand, are complete operating systems built around the Linux kernel. They include the kernel, system utilities, desktop environments (like GNOME or KDE), and applications. Think of the kernel as the engine of a car, and the distribution as the whole car—engine, chassis, interior, and all the features that make it usable.
                 </p>
                 <br />
                 <p className="mb-4">
-                  The funny thing is, now when I go back to Windows, I notice all these little annoyances that I never paid attention to before. The slow file operations, the random slowdowns, the way programs install and uninstall...
+                  So I thought how can one distribution be "smarter" or better prepared for a specific topic than another? Why is this one for hacking, and another for server duty for example?
                 </p>
                 <br />
                 <p className="mb-4">
-                  I'm not saying Windows is bad or that everyone should switch to Linux. But I'm definitely seeing why some people prefer it, especially for development work.
+                  That's where customization comes in (even not understanding yet in the code itself). Distribution can be tailored with specific software, settings, and security tweaks for certain tasks. For example, Kali Linux is packed with security tools for penetration testing, while CentOS is popular for servers because of its stability and long-term support.
                 </p>
                 <br />
                 <p className="mb-4">
-                  My teacher was right. Sometimes you just have to try something to understand why people are so passionate about it.
+                  Just a daydream I had while writing this: Why are all the movies and culture about hacking and programming so exaggerated? A nerd sits in front of the computer, types some random Linux commands like <code>mv</code>, <code>cp</code>, <code>ls</code>, and then, voilà, system hacked and all credentials stolen. I can't wait for something more realistic (and maybe boring) involving social engineering and stuff.
+                </p>
+                <br />
+                <p className="mb-4">
+                  Back to the main: Everything is about commands and less about GUI.
+                </p>
+                <br />
+                <p className="mb-4">
+                  Red Hat is definitely worth mentioning. It's another favorite of my teacher. Red Hat is huge in the enterprise world, especially with Red Hat Enterprise Linux (RHEL). They're known for stability, security, and long-term support. What makes Red Hat special is how much they contribute to open source. They don't just use it, they help build it.
+                </p>
+                <br />
+                <p className="mb-4">
+                  <strong>The main differences from Windows (system I used all my life):</strong>
+                </p>
+                <br />
+                <ul className="list-disc pl-8 mb-4">
+                  <li className="mb-4">
+                    One of the biggest differences is that Linux is open source, while Windows is proprietary ($$).
+                  </li>
+                  <li className="mb-4">
+                    This affects cost, customization, and control. Linux is usually free, while Windows needs a license. Linux is super customizable and you can tweak almost anything.
+                  </li>
+                  <li className="mb-4">
+                    Windows is more locked down. Linux relies heavily on the terminal, while Windows is more GUI-focused (though PowerShell is getting better).
+                  </li>
+                  <li className="mb-4">
+                    Finally, Linux is known for stability and security, while Windows has had more issues with malware and vulnerabilities.
+                  </li>
+                </ul>
+                <br />
+                <p className="mb-4">
+                  All this abstractions of stability, security, customization is still cloudy for me, but I'm going to install a dual boot in my mom's machine and experiment it by myself.
+                </p>
+                <br />
+                <p className="mb-4">
+                  See ya!
                 </p>
               </section>
             </div>
-            <br />
-            <br />
-
-            <a href={"/blog/"} className="px-[5%] text-[16px]">
-              {"<- "} Back to blog
-            </a>
-            <br />
-            <br />
-            <br />
           </article>
         </main>
         <Note />
@@ -147,7 +161,7 @@ export default Post;
 
 export const Head = () => (
   <>
-    <title>First time using a Linux machine - Cesar Oliveira</title>
-    <meta name="description" content="My journey from skepticism to understanding: discovering why Linux users aren't just hipsters and experiencing the real performance benefits." />
+    <title>First time using Linux machine | cesarolvr</title>
+    <meta name="description" content="My first encounter with Linux and understanding it as more than just an operating system - a movement and philosophy." />
   </>
 ); 

@@ -97,12 +97,12 @@ export const articles = [
       {
         id: "010",
         emoji: "🐧",
-        title: "First time using a Linux machine",
+        title: "First time using Linux machine",
         description:
-          "I can't see why Linux users are so hipsters. I'm using Windows.",
-        readTime: "4 min read",
+          "My first encounter with Linux and understanding it as more than just an operating system - a movement and philosophy.",
+        readTime: "8 min read",
         link: "/blog/010-first-time-using-linux-machine",
-        active: false,
+        active: true,
       },
     ],
   },
@@ -113,9 +113,11 @@ export const articles = [
         id: "011",
         emoji: "🌐",
         title: "Coding inside a browser?",
-        readTime: "3 min read",
-        link: "/blog/browser-coding",
-        active: false,
+        description:
+          "My transition from desktop development to web development, discovering JavaScript and falling in love with web technologies.",
+        readTime: "6 min read",
+        link: "/blog/011-coding-inside-a-browser",
+        active: true,
       },
       {
         id: "012",
