@@ -100,7 +100,7 @@ const Post = () => {
                     href="https://www.amazon.com.br/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118871650"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 hover:underline"
+                    className="text-gray-900 font-bold underline"
                   >
                     JavaScript & jQuery: Interactive Front-End Web Development
                   </a>
@@ -122,7 +122,7 @@ const Post = () => {
                     href="https://abduzeedo.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-500 hover:underline"
+                    className="text-gray-900 font-bold underline"
                   >
                     Abduzeedo website
                   </a>
