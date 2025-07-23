@@ -64,37 +64,166 @@ const SecretLetter = () => {
               <br />
               <div className="text-[var(--color-total)] max-w-full w-full mb-16 px-[5%] leading-[50px] text-[26px]">
                 <section className="intro-text">
-                  <p className="mb-4">My love,</p>
+                  <p className="mb-4">Beatriz,</p>
                   <br />
                   <p className="mb-4">
-                    If you're reading this, it means you found the secret path
-                    and remembered the answer. Just like you always find your
-                    way to my heart, you found your way here too.
+                    Se você está lendo isso, significa que sabe de cor como foi
+                    aquele sábado. E isso diz muito sobre sua memória, uma
+                    característica sua, pela falta dela em algumas situações e
+                    sua precisão em outras.
+                    <br />
+                    <br />
+                    Esse texto hoje será sobre você e apenas você. Nada de nós,
+                    nada de mim, nada de nossa relação, nada de sua família,
+                    nada... Só você.
                   </p>
                   <br />
                   <p className="mb-4">
-                    Every day with you feels like discovering something new and
-                    beautiful. You make me want to be better, to create more, to
-                    love deeper.
+                    Quero começar pelo que, na minha opinião, é um de seus
+                    maiores encantos: O quão inteligente você é. E quando digo
+                    isso, não to dizendo de sua capacidade de calcular
+                    porcentagem, ou de pensar robóticamente, ou ler mapas. Isso
+                    não é inteligência...
+                    <br />
+                    <br />
+                    Eu to falando de sua capacidade de se conectar com as
+                    pessoas, sua maneira de ver o mundo, de planejar coisas
+                    (aquilo de você fez no meu aniversário, foi inacreditável. O
+                    melhor presente que eu já recebi na minha vida), sua forma
+                    de pensar, sua forma de se comunicar, sua forma de se
+                    expressar (mesmo durante uma conversa mais difícil), sua
+                    maneira de sentir empatia por problemas que nem são seus
+                    haha.
+                    <br />
+                    <br />
+                    Por vezes, você não consegue enxergar a fluidez com que lida
+                    com essas situações da vida, mas eu olhando de fora noto
+                    claramente o quanto você é brilhante apenas vivendo.
+                    <br />
+                    <br />
+                    Você consegue perceber nuances no ar, consegue perceber meu
+                    humor com apenas uma sílaba minha, percebe às vezes que tô
+                    ansioso sem mesmo eu perceber. E isso é muito impressionante
+                    porque não é só comigo (dado que moramos juntos) mas com
+                    pessoas que acabou de conhecer.
                   </p>
                   <br />
                   <p className="mb-4">
-                    This little secret page is just one more way I wanted to
-                    show you how much you mean to me. Even in my code, I'm
-                    thinking of you.
+                    Outro ponto que te tenho com inspiração e de certa maneira
+                    te invejo (a boa inveja) é sua capacidade de se manter
+                    otimista em situações contrárias. Você parece um tanque
+                    sólido e cheio de entusiasmo e esperança. Se o mundo
+                    acabasse hoje, pessoas como você seriam as responsáveis por
+                    reconstruir um mundo com sonhos novamente.
+                    <br />
+                    <br />
+                    Você costuma dizer que num apocalipse zumbi, você seria a
+                    primeira se entregar. <strong>Duvido</strong>.
+                    <br />
+                    <br />
+                    Provavelmente estaria liderando grupos de sobreviventes em
+                    busca de um novo mundo haha. Isso é claro para mim. Cheia de
+                    vida, humor, energia, disposição... Eu me inspiro em você,
+                    Bia.
                   </p>
                   <br />
                   <p className="mb-4">
-                    Thank you for being my inspiration, my support, my
-                    everything.
+                    Minha mãe certa vez me puxou a atenção para uma
+                    característica que você tem: Força. Não física (apesar de eu
+                    passar mal treinando contigo), mas mental. Você é o símbolo
+                    de mulher forte em meu modelo mental. Penso em mulher forte,
+                    penso em você na infância, agora e no seu futuro. Esse texto
+                    não é sobre mim, mas eu quero estar do seu lado e beber de
+                    sua força.
                   </p>
                   <br />
                   <p className="mb-4">
-                    I love you more than words can express.
+                    Não baixa a cabeça quando sabe que está no caminho certo,
+                    não passa por cima de valores próprios para agradar
+                    terceiros, luta pelo que acredita, prova seus pontos mesmo
+                    quando não precisa e finalmente tem humildade para
+                    reconhecer suas vitórias. Nós já discutimos várias vezes, e
+                    eu sei que estou argumentando com uma pessoa justa e
+                    correta. Que jamais trairá os seus.
                   </p>
                   <br />
                   <p className="mb-4">
-                    Forever yours,
+                    No começo da semana te pedi para que listasse e valorizasse
+                    todos os seus feitos do ano. Numa tentativa de deixar claro
+                    tudo o que tem feito, de toda sua grandeza e das histórias
+                    que está escrevendo para si mesma. Tenho certeza que se
+                    orgulhará dela e caso isso não aconteça, te prometo estar ao
+                    seu lado para te forçar a comemorar seus troféus (que não
+                    são poucos).
+                  </p>
+                  <br />
+                  <p className="mb-4">
+                    Por último, gostaria de te ajudar a listar todas as
+                    montanhas que você escalou e você poder ver que você é
+                    ímpar, é incomum, única, um raio que atinge duas vezes a
+                    mesma formiga, ganhar na loteria, seus primos acertarem um
+                    passe e uma aurora boreal na linha do equador.
+                  </p>
+                  <br />
+                  <ul className="list-disc list-inside mb-4">
+                    <li>1. Levou sua mãe pro exterior</li>
+                    <li>2. Levou seu irmão pro exterior</li>
+                    <li>3. Fez um curso avançado de comunicação corporativa</li>
+                    <li>4. Viajou para seu lugar dos sonhos</li>
+                    <li>5. Tirou fotos com big five</li>
+                    <li>6. Fez +20 sessões de terapia</li>
+                    <li>6. Treinou o ano todo</li>
+                    <li>7. Alcançou seus objetivos físicos</li>
+                    <li>8. Solidificou sua segunda língua</li>
+                    <li>
+                      9. Criou uma figura de amor na cabeça de um bebê (Zé)
+                    </li>
+                    <li>10. Me deu meu melhor presente da minha vida</li>
+                    <li>11. Se arriscou em esportes novos</li>
+                    <li>12. Se tornou um porto seguro para seu irmão</li>
+                    <li>
+                      13. Foi diva demais em um casamento e criou uma imagem
+                      inenarrável de noiva na minha cabeça
+                    </li>
+                    <li>
+                      14. Levou sua vózinha para o melhor final de ano dela
+                    </li>
+                    <li>
+                      15. Se tornou uma referência para várias novas gerações
+                      (Lavi, Sofi, Ana Julia, Alicia e Gabi)
+                    </li>
+                    <li>16. Parou de beber</li>
+                    <li>
+                      17. Decorou uma casa inteira e me mostrou o que é o
+                      aconchego de um lar
+                    </li>
+                    <li>
+                      18. Foi constantemente reconhecida por uma dos maiores
+                      CEOs do Brasil
+                    </li>
+                    <li>
+                      19. Trocou de liderança e esteve em um ambiente caótico no
+                      trabalho mas sempre com 110% de desempenho
+                    </li>
+                    <li>
+                      20. Viu o Abapuru. E provou pro babaca do seu lado que era
+                      o original
+                    </li>
+                    <li>
+                      21. Subiu uma montanha de 1km e ajudou o coitado do seu
+                      lado a não passar mal
+                    </li>
+                    <li>22. Recebeu sua amiga gringa no seu país</li>
+                  </ul>
+                  <br />
+                  <p className="mb-4">
+                    Esses são só os que lembrei em 20 min. Imagina parando para
+                    realmente pensar nisso...
+                  </p>
+                  <br />
+                  <p className="mb-4">Feliz 25 anos.</p>
+                  <p className="mb-4">
+                    Com idolatria,
                     <br />
                     Cesar
                   </p>
@@ -115,7 +244,7 @@ const SecretLetter = () => {
                       }}
                       className="hover:bg-[var(--color-total)] hover:scale-105 transition-all duration-300 bg-[var(--color-total)] text-[var(--bg-primary)] px-8 py-4 rounded-lg font-bold text-[18px] cursor-pointer"
                     >
-                      🎫 Click here for a surprise...
+                      👀 Não esquece de checar seu presente 👀
                     </button>
                   </div>
                 </section>
@@ -192,6 +321,7 @@ export const Head = () => (
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏽‍🦱</text></svg>"
     />
     <title>🎉 Feliz 2️⃣5️⃣! 🥳🍾🎊🪅🎁</title>
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content="A secret page with a special message." />
   </>
 );
