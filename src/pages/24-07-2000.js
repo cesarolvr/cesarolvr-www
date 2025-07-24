@@ -34,7 +34,7 @@ const SecretLetter = () => {
     const currentYear = brazilTime.getFullYear();
 
     // Return true only if it's July 24th, 2024 or later
-    return true;
+    // return true;
     return currentYear >= 2024 && currentMonth >= 7 && currentDay >= 24;
   };
 
