@@ -427,7 +427,7 @@ const Headshot = () => {
     initWaves();
   }, []);
 
-  return <canvas class="webgl cursor-grab"></canvas>;
+  return <canvas className="webgl cursor-grab"></canvas>;
 };
 
 export default Headshot;

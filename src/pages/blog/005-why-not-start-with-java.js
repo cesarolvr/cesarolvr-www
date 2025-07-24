@@ -26,7 +26,7 @@ const Post = () => {
         <Loader isOpened={isOpened} duration={0.5} />
         <Header goBackToHome={true} disableScramble={true} />
         <main className="flex flex-col mb-10 max-w-[900px]">
-          <article class="blog-intro">
+          <article className="blog-intro">
             <header className="px-[5%] mb-4">
               <p className="mb-3 text-[80px]">☕</p>
               <h3 className="about-title text-[35px] md:text-[50px] mb-5 font-black w-full leading-[60px] md:mt-0">
@@ -42,7 +42,7 @@ const Post = () => {
             <br />
             <br />
             <div className="text-[var(--color-total)] max-w-full w-full mb-16 px-[5%] leading-[50px] text-[26px]">
-              <section class="tldr text-[25px] leading-[45px]">
+              <section className="tldr text-[25px] leading-[45px]">
                 <p className="mb-4">
                   <strong>TL;DR</strong>
                 </p>
@@ -63,7 +63,7 @@ const Post = () => {
                 <br />
                 <br />
               </section>
-              <section class="intro-text">
+              <section className="intro-text">
                 <p>
                   I don't know yet why does Java make everything so complicated. I'm trying to
                   learn programming, but Java feels like it's going out of its
