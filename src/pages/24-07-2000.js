@@ -129,7 +129,8 @@ const SecretLetter = () => {
                     Sabe o que há em comum entre Lorena, Magabi, Ana Julia,
                     Caio, Vitor, Felipe, Fernando e João Pedro? Todos eles tem
                     você como uma amiga. Eles podem dormir tranquilos sabendo
-                    que tem todo esse "pacote de benefícios Beatriz" ao lado deles.
+                    que tem todo esse "pacote de benefícios Beatriz" ao lado
+                    deles.
                   </p>
                   <br />
                   <p className="mb-4">
@@ -261,6 +262,7 @@ const SecretLetter = () => {
                   <br />
                   <div className="text-center mt-8">
                     <button
+                      type="button"
                       onClick={() => {
                         setShowBoardingPass(true);
                         // Reset confetti first, then trigger it again
