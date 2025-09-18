@@ -22,8 +22,12 @@ specifically web development and creative development.`;
 
 const careerPath = [
   {
-    role: "Tech Lead | Senior Front-end Engineer",
-    details: `Itaú Unibanco | São Paulo, Brazil | 2023 -> current`,
+    role: "Senior Software Engineer",
+    details: `WithClutch | San Francisco, USA | 2025 -> current`,
+  },
+  {
+    role: "Lead Software Engineer",
+    details: `Itaú Unibanco | São Paulo, Brazil | 2023 -> 2025`,
   },
   {
     role: "Senior Front-end Engineer",

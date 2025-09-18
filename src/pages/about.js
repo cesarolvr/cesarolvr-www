@@ -179,7 +179,7 @@ const About = () => {
               A decade of experience as a Software Engineer (Front-end focused),
               working on large-scale and high-impact projects for digital
               companies, where I've crafted digital acquisition experiences,
-              dashboards, awwwards-like websites, design systems, animations
+              dashboards, awwwards-like websites, saas platforms, design systems, animations
               libraries, mobile apps and email marketing tools.
             </p>
             <p className="paragraph">
